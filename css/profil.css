@@ -1,0 +1,89 @@
+header{
+	margin-top: -5px;
+}
+
+.atas{
+	width: 100%;
+	height: 17px;
+}
+.navbar-brand img{
+	width: 70%;
+	margin: -5px 0px;
+}
+.nav-link {
+	font-size: 14px;
+}
+.title{
+	width: 100%;
+	height: 90px;
+	border: 1px solid #4682B4;
+	background-color: #4682B4;
+}
+.title h2{
+	color: white;
+	text-align: left;
+	margin: 30px 40px;
+	text-shadow: 2px 0px #696969;
+	font-weight: 700;
+	
+}
+.kolom{
+	width: 90%;
+	height: 500px;
+	margin-left: 5%;
+	
+}
+.bawah {
+	width: 100%;
+	height: 17px;
+	margin-bottom: -1px;
+}
+footer{
+	width: 100%;
+	height: 270px;
+	border: 1px solid black;
+	background-color: black;
+}
+.footer1{
+	width: 100%;
+	height: 200px;
+	background-color: #101010;
+}
+.footera{
+	float: left;
+	width: 30%;
+}
+.footera .logo{
+	margin: 30px;
+}
+.contact {
+	margin: -15px;
+	padding-left: 60px;
+}
+.contact .fb, .ig, .email, .tlp, .loc{
+	float: left;
+	width: 10%;
+	margin: 5px;
+}
+.footerb{
+	float: left;
+	width: 30%;
+}
+.footerb h4{
+	margin-top: 30px;
+	color: white;
+}
+.footerc{
+	float: left;
+	width: 40%;
+}
+.depag {
+	width: 20%;
+	margin: 5px;
+	padding-top: 30px;
+}
+.binanbud{
+	width: 75%;
+	margin: 5px;
+	padding-top: 30px;
+}
