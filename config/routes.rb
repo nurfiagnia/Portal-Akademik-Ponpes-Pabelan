@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'admin/index'
+
   root to: 'home#index'
   get "/profil", to: 'home#profil'
   get "/galeri", to: 'home#galeri'

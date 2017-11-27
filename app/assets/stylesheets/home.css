@@ -91,13 +91,12 @@ header{
 }
 .berita1{
 	float: left;
-	width: 35%;
+	width: 70%;
 	height: 100%;
 }
-.berita2{
+.card{
 	float: left;
-	width: 35%;
-	height: 100%;
+	width: 47%;
 }
 aside{
 	float: left;
