@@ -5,7 +5,7 @@ class AdminController < ApplicationController
   	username = params[:username]
   	password = params[:password]
   	respond_to do |format|
-  		if username != "admin" && password != "admin"
+  		if password != "admin" && username != "admin"
         format.html{ render :oops }        
   		else
         @kontak = Kontak.all

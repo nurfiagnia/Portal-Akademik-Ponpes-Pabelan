@@ -3,9 +3,9 @@ class SantriController < ApplicationController
   end
   def signin
   	username = params[:username]
-  	password = params[:password]
+  	#password = params[:user_params]
   	respond_to do |format|
-  		if username != "santri" && password != "santri"
+  		if params[:password] != "santri" && username != "santri"
         format.html{ render :oops }        
   		else
         @kontak = Kontak.all
@@ -18,4 +18,8 @@ class SantriController < ApplicationController
   end
   def index
   end
+  #private
+   # def user_params
+    #  params.require(:username).permit(:username).except(:password)
+    #end
 end

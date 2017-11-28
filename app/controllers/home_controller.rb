@@ -8,4 +8,16 @@ class HomeController < ApplicationController
   def kontak
   	@kontak = Kontak.all
   end
+  def psb
+  	
+  end
+  def kalender
+  	
+  end
+  def kenaikan
+  	
+  end
+  def kelulusan
+  	
+  end
 end
