@@ -1,0 +1,2 @@
+class Kontak < ApplicationRecord
+end

@@ -32,9 +32,9 @@
 				          Portal Pendidikan
 				        </a>
 				        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				          <a class="dropdown-item" href="#">Raport</a>
-				          <a class="dropdown-item" href="#">Pengumuman Kenaikan</a>
-				          <a class="dropdown-item" href="#">Pengumuman Kelulusan</a>
+				          <a class="dropdown-item" href="/santri">Raport</a>
+				          <a class="dropdown-item" href="/kenaikan-kelas">Pengumuman Kenaikan</a>
+				          <a class="dropdown-item" href="/kelulusan">Pengumuman Kelulusan</a>
 				        </div>
 				    </li>
                     
@@ -47,5 +47,43 @@
 	<!--title-->
 	<div class="title">
 	   <h2>Kontak</h2>
+	</div>
+	<div class="isi-kontak m-5">
+		<h3><strong>Pondok Pesantren Pabelan</strong></h3>
+		<p>Mungkid, Magelang, Jawa Tengah, Indonesia</p>
+		<table class="table table-light table-striped">
+			<% @kontak.each do |k| %>
+			<tr>
+				<td>Email</td>
+				<td>:</td>
+				<td><%= k.email %></td>
+			</tr>
+			<tr>
+				<td>Telepon & Fax</td>
+				<td>:</td>
+				<td><%= k.tlp %></td>
+			</tr>
+			<tr>
+				<td>Pengasuhan Santri</td>
+				<td>:</td>
+				<td><%= k.pengasuhan %></td>
+			</tr>
+			<tr>
+				<td>Kulliyatu-l-Mu’allimin Al-Islamiyah (KMI)</td>
+				<td>:</td>
+				<td><%= k.kmi %></td>
+			</tr>
+			<tr>
+				<td>Madrasah  Aliyah Pondok Pabelan</td>
+				<td>:</td>
+				<td><%= k.ma %></td>
+			</tr>
+			<tr>
+				<td>Sekretariat Ikatan Keluarga Pondok Pabelan</td>
+				<td>:</td>
+				<td><%= k.sikpb %></td>
+			</tr>
+			<% end %>
+		</table>
 	</div>
 	<!--end title-->

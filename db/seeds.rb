@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Kontak.destroy_all
+
+kontak = []
+
+first_contact= {
+	email: "supportpabelan@gmail.com",
+	tlp: "(0293) 782040",
+	pengasuhan: "0877-7007-1144 / 0822-2514-5745",
+	kmi: "(0293)  782061",
+	ma: "(0293) 3285188",
+	sikpb: "(0293) 3301645"
+}
+
+kontak.push(first_contact)
+
+Kontak.create(kontak)

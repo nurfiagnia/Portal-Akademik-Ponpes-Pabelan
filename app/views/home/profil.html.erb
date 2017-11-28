@@ -32,9 +32,9 @@
                   Portal Pendidikan
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Raport</a>
-                  <a class="dropdown-item" href="#">Pengumuman Kenaikan</a>
-                  <a class="dropdown-item" href="#">Pengumuman Kelulusan</a>
+                  <a class="dropdown-item" href="/santri">Raport</a>
+                  <a class="dropdown-item" href="/kenaikan-kelas">Pengumuman Kenaikan</a>
+                  <a class="dropdown-item" href="/kelulusan">Pengumuman Kelulusan</a>
                 </div>
             </li>
                     
@@ -49,30 +49,157 @@
 		<h2>Profil</h2>
 	</div>
 	<!--end title-->
+  <!--kolom-->
   <div class="kolom">
       <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#home">Pendiri</a>
+        <li class="nav-item active">
+          <a class="nav-link" data-toggle="tab" href="#pendiri">Pendiri</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#profile">Pimpinan / Pengasuh</a>
+          <a class="nav-link" data-toggle="tab" href="#pimpinan">Pimpinan / Pengasuh</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#profile">Sejarah</a>
+          <a class="nav-link" data-toggle="tab" href="#sejarah">Sejarah</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#profile">Visi dan Misi</a>
+          <a class="nav-link" data-toggle="tab" href="#visimisi">Visi dan Misi</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#profile">Yayasan</a>
+          <a class="nav-link" data-toggle="tab" href="#yayasan">Yayasan</a>
         </li>
     </ul>
+    <!--tab content-->
     <div id="myTabContent" class="tab-content">
-      <div class="tab-pane fade active" id="home">
-        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+      <!--profil pendiri-->
+      <div class="tab-pane fade active in" id="pendiri">
+        <!--foto pendiri-->
+        <div class="foto-pendiri">
+          <%= image_tag("pahamam.jpg") %>
+        </div>
+        <!--end foto pendiri-->
+        <!--biografi pendiri-->
+        <div class="biografi-pendiri">
+          <h3>Kh. Hamam Dja'far</h3>
+          <p align="justify">
+            Lahir di Desa Pabelan, Mungkid, Magelang, Jawa Tengah, pada 26 Februari 1938, adalah sulung dari dua putra pasangan Kiai Dja’far dan Nyai Hadijah. Hamam besar di bawah pengasuhan adik kakek pihak ibu, yaitu K.H. Kholil yang tinggal di sebelah selatan masjid pondok. Dalam keluarga Hamam mengalir darah ulama yang diturunkan oleh Kiai Haji Muhammad Ali bin Kiai Kertotaruno, pendiri Pondok Pabelan (sekitar tahun 1800-an) yang pertama, yang juga pengikut setia Pangeran Diponegoro. Menurut masyarakat setempat, Kiai Kertotaruno adalah keturunana Sunan Giri, salah satu wali penyebar agama Islam di Tanah Jawa.
+          </p>
+          <p align="justify">
+            Setelah menamatkan Sekolah Rakyat di desanya tahun 1949, Hamam melanjutkan ke Sekolah Menengah Islam di Muntilan sampai tahun 1952. Hamam sempat belajar di Pesantren Tebu Ireng, Jombang, Jawa Timur, baru kemudian mondok di Pondok Moderen Gontor, Ponorogo, Jawa Timur selama kurang lebih 11 tahun (1952-1963). Di Gontor, Hamam berguru secara langsung kepada “Trimurti” pendiri Pondok Moderen Darussalam Gontor: K.H. Ahmad Sahal, K.H. Zainudin Fanani, dan K.H. Imam Zarkasyi. Kelak, Hamam menjadi salah seorang anggota pengurus badan wakaf pondok yang terletak di Ponorogo itu.
+
+          </p>
+          <p align="justify">  
+            Setamat dari Gontor, dalam usia 25 tahun, Hamam kembali ke kampung halamannya dan kemudian mendirikan Balai Pendidikan Pondok Pabelan pada 28 Agustus 1965. Atas prestasinya dalam membangun Pondok Pabelan, Kiai Hamam dianugerahi Aga Khan Award untuk arsitektur pada tahun 1980, dan penghargaan Kalpataru untuk lingkungan hidup pada tahun 1982.
+          </p>
+        </div>
+        <!--end biografi pendiri-->
       </div>
-      <div class="tab-pane fade" id="profile">
-        <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+      <!--end profil pendiri-->
+      <!--sejarah-->
+      <div class="tab-pane fade" id="sejarah">
+        <!--foto sejarah-->
+        <div class="foto-sejarah">
+          <center><%= image_tag("sejarah.jpg") %></center>
+        </div>
+        <!--end foto sejarah-->
+        <!--sejarah pondok-->
+        <div class="sejarah-pondok">
+          <h3>Sejarah Pondok Pesantren Pabelan</h3>
+          <p align="justify">
+            Balai Pendidikan Pondok Pesantren Pabelan berada di bawah naungan Yayasan Wakaf Pondok Pabelan. Didirikan oleh K.H. Hamam Dja’far pada tanggal 28 Agustus 1965, Pondok Pesantren Pabelan terletak di Desa Pabelan, Kecamatan Mungkid, Kabupaten Magelang, Jawa Tengah. Tepatnya berada di jalan yang menghubungkan antara Yogyakarta dan Semarang. Kira-kira 35 kilometer dari arah Yogyakarta, 4 kilometer dari Muntilan dan 12 kilometer dari Kota Magelang. Pesantren Pabelan juga terletak di tepi jalur lalu lintas pariwisata Yogyakarta dan Borobudur. Jarak Pabelan ke Candi Borobudur adalah sekitar 9 kilometer.
+          </p>
+          <p align="justify">
+            Pondok Pesantren Pabelan merupakan lembaga pendidikan yang telah mengalami sejarah panjang. Keberadaannya seperti sekarang ini merupakan kebangkitan yang ketiga. Cikal bakal Pondok Pesantren Pabelan dimulai pada tahun 1800-an, ditandai dengan kegiatan mengaji yang dirintis oleh Kiai Raden Muhammad Ali. Tapi kemudian terhenti setelah terjadi perang Diponegoro (1825-1830) hingga waktu yang panjang. Kemudian, pada tahun 1900-an Pondok Pesantren Pabelan ini bangkit kembali di bawah asuhan Kiai Anwar dan dilanjutkan oleh Kiai Anshor. Namun kemudian Pondok Pabelan kembali mengalami kevakuman. Akhirnya, pada tanggal 28 Agustus 1965, salah seorang keturunan perintis Pondok Pesantren Pabelan, Hamam Dja’far, mendirikan kembali Pondok Pabelan dengan sistem dan kurikulum yang lebih modern, diberi nama Balai Pendidikan Pondok Pesantren Pabelan.
+          </p>
+          <p align="justify">
+            Pondok Pesantren Pabelan menyelenggarakan pendidikan untuk santri putra dan putri selama 6 tahun bagi lulusan Sekolah Dasar (SD) atau Madrasah Ibtidaiyah (MI), dan selama 4 tahun bagi lulusan Sekolah Menengah Pertama (SMP) atau Madrasah Tsanawiyah (MTs). Pendidikan formal yang digunakan adalah Kulliyatul Mu’allimien al-Islamiyah (KMI), yang sudah disetarakan dengan SMU berdasarkan SK Mendiknas. Di Pondok Pesantren Pabelan, para santri akan secara otomatis juga mengikuti program pendidikan Madrasah Tsanawiyah (MTs) dan Madrasah Aliyah (MA).
+          </p>
+          <p align="justify">
+            Selain itu, Pondok Pesantren Pabelan juga menyelenggarakan Kelas Takhassus (selama 1 tahun), bagi para santri yang berasal dari SMP atau berkeinginan memperdalam pengetahuan agama, sebagai persiapan masuk kelas 4 KMI atau setara dengan Kelas 1 Madrasah Aliyah.
+          </p>
+          <p align="justify">
+            Para santri tinggal dalam satu kompleks selama 24 jam, di bawah koordinasi pengurus Organisasi Pelajar Pondok Pabelan (OPPP), yang berada di bawah pengawasan dan bimbingan langsung para pimpinan (kiai). Para Pengurus merupakan santri kelas 5 dan 6 yang bertugas selama 1 tahun untuk melaksanakan kebijakan pimpinan pondok. Organisasi ini dimaksudkan untuk melatih santri dalam rangka pemahaman diri terhadap tanggung jawab, kejujuran, disiplin, cakap, dan kreatif sehingga membentuk jati diri yang kokoh
+          </p>
+        </div>
+        <!--end sejarah pondok-->
       </div>
-    </div>
+      <!--end sejarah-->
+      <!--visi dan misi-->
+      <div class="tab-pane fade" id="visimisi">
+          <br><h5>Visi</h5>
+          <p class="ml-4" align="justify">
+            Terdidiknya para santri menjadi Mukmin, Muslim dan Muhsin yang berbudi tinggi, berbadan sehat, berpengetahuan luas dan berpikiran bebas.
+          </p>
+          <br><h5>Misi</h5>
+          <ol>
+            <li><p>Menanamkan dan meningkatkan disiplin santri untuk melaksanakan ajaran Islam dalam kehidupan sehari – hari.</p></li>
+            <li><p>Menanamkan jiwa keikhlasan, kesederhanaan, ukhuwah diniyah, kemandirian dan kebebasan dalam kehidupan sehari – hari.</p></li>
+            <li><p>Menyelenggarakan pendidikan formal dengan Kurikulum Pesantren yang disesuaikan dengan Pendidikan Nasional.</p></li>
+            <li><p>Mendidik dan mengantarkan santri untuk mampu mengenal jati diri dan lingkungannya serta mempunyai motivasi dan kemampuan untuk mengembangkan diri sesuai dengan pilihan hidupnya.</p></li>
+            <li><p>Mendidik dan mempersiapkan santri untuk menjadi manusia mandiri dan berkhidmad kepada masyarakat, agama, nusa dan bangsa.</p></li>
+          </ol>
+      </div>
+      <!--end visi dan misi-->
+      <!--yayasan-->
+      <div class="tab-pane fade" id="yayasan">
+      
+      </div>
+      <!--end yayasan-->
+      <!--profil pimpinan-->
+      <div class="tab-pane fade" id="pimpinan">
+        <!--pimpinan1-->
+        <div class="pimpinan1">
+          <!--foto pimpinan 1-->
+          <div class="foto-pimpinan">
+            <center><%= image_tag("pimpinan1.jpg") %></center>
+          </div>
+          <!--end foto pimpinan 1-->
+          <!--biografi pimpinan 1-->
+          <div class="biografi-pimpinan">
+            <h3>KH. Ahmad Mustofa</h3>
+            <p align="justify">
+              lahir di Magelang, 8 Agustus 1944 adalah Pimpinan Umum Pondok Pabelan. Satu-satunya adik kandung KH Hamam Dja’far. Pendidikannya setelah menyelesaikan SR Muntilan I tahun 1957 melanjutkan di Madrasah Mu’allimin Muhammadiyah Yogyakarta hingga tamat tahun 1963. Kemudian mengikuti kuliah di Fakultas Syariah IAIN Yogyakarta (lulus 1971), serta kuliah pula di Fakultas Hukum Universitas Muhammadiyah Yogyakarta (lulus 1991). Selain aktif berkegiatan di Pondok Pabelan juga menjadi Hakim di Pengadilan Agama Magelang (1976-1982), Ketua Pengadilan Agama (PA) Kebumen, Kendal dan Kota Mungkid (1982-2002), serta Hakim Tinggi di Pengadilan Tinggi Agama Yogyakarta (2002-2008). Suami Hj. Nunun Nuki Aminten, alumnus Pondok Pabelan dan bapak dari lima orang anak, yakni Ririn Suni Amarini (wafat masih kecil), Muhammad Adi Sunata (35), Muhammad Rosyid Budiman (32), Muhammad Citradi (28), serta yang bungsu Muhammad Ciptadi (24).
+            </p>
+          </div>
+          <!--end biografi pimpinan 1-->
+        </div>
+        <!--end pimpinan 1-->
+        <!--pimpinan 2-->
+        <div class="pimpinan2">
+          <!--foto pimpinan 2-->
+          <div class="foto-pimpinan">
+            <center><%= image_tag("pimpinan2.jpg") %></center>
+          </div>
+          <!--end foto pimpinan 2-->
+          <!--biografi pimpinan 2-->
+          <div class="biografi-pimpinan">
+            <h3>KH. Ahmad Najib Amin</h3>
+            <p align="justify">
+               lahir di Magelang, 27 Juli 1966 adalah salah satu pimpinan Pondok Pesantren Pabelan. Anak pertama pasangan KH Hamam Dja’far dengan Rr. Djuhanah Rofiah dari dua bersaudara. Pendidikannya lulus dari SD Pabelan I 1979, KMI Pondok Pesantren Pabelan 1985, kemudian KMI Pondok Modern Gontor 1986 serta tahun 1987-1991 sempat mengikuti kuliah di Fakultas Tarbiyah Universitas Cokroaminoto Yogyakarta. Pengalaman organisasinya sebagai Sekretaris Pramuka Cabang Magelang 1984-1985, Wakil Kepala Madrasah Tsanawiyah Pondok Pabelan 1991-1993, dan tahun selanjutnya sebagai Pimpinan Pondok Pabelan. Pengalaman luar negerinya pada tahun 1982 sebagai ketua regu Indonesia dalam International Islamic Jamboree di Doha Qatar; tahun 1985 sebagai petugas pramugara haji Indonesia di Saudi Arabia; tahun 1987 mengikuti kursus pertanian di International Institute of Rural Reconstruction (IIRR) Philipine; tahun 2002 memenuhi undangan dalam Kunjungan Pimpinan Pesantren Indonesia di Amerika Serikat; serta tahun 2005 mengikuti studi banding sistem pendidikan di Jepang. Suami dari Nurul Faizah, S.Ag. alumnus Pondok Pabelan dan bapak dua orang anak yakni Zaima Bunga Wijayanti (23) dan Muhammad Adil Alwi Zaim (20).
+            </p>
+          </div>
+          <!--biografi pimpinan 2-->
+        </div>
+        <!--end pimpinan 2-->
+        <!--pimpinan 3-->
+        <div class="pimpinan3">
+          <!--foto pimpinan 3-->
+          <div class="foto-pimpinan">
+            <center><%= image_tag("pimpinan3.jpg") %></center>
+          </div>
+          <!--end foto pimpinan 3-->
+          <!--biografi pimpinan 3-->
+          <div class="biografi-pimpinan">
+            <h3>KH. Muhammad Balya</h3>
+            <p align="justify">
+               lahir di magelang, 5 Desember 1945 adalah salah satu pimpinan Pondok Pabelan. Aseli dari dan tinggal di desa Pabelan, Mungkid, Magelang. Lulus PGAN (6 tahun) Magelang tahun 1964. Pada tahun 1965-1966 menjadi guru di MWB Al-Wasliyah Bandongan, Magelang. Tahun 1966-1968 bertugas secara resmi di Pondok Pabelan. Jabatan awal di Pondok Pabelan sebagai sekretaris lembaga sekaligus sekretaris pribadi Kyai Hamam sehingga sering dipandang sebagai orang yang paling dekat dan paling memahami kyai. Setelah kiai Hamam wafat tahun 1993 beliau termasuk orang yang diberi amanah sebagai salah satu pimpinan Pondok Pabelan sampai tahun 2016. Suami Ny. Suswati, alumnus Pondok Pabelan, serta bapak tiga orang anak yakni Ahmad Faishal, SE (38); Nur Afiati, S.Pd (35); serta Ahmad Rais, S. Sos (33)
+            </p>
+          </div>
+          <!--end biografi pimpinan 3-->
+        </div>
+        <!--end pimpinan 3-->
+      </div>
+      <!--end profil pimpinan-->
+     </div>
+    <!--end tab content-->
   </div>
+  <!--end kolom-->

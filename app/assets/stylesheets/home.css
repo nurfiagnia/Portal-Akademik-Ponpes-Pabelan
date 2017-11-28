@@ -4,7 +4,7 @@ body{
 	background-attachment: fixed;
 }
 .wrapper{
-	background-color: black;
+	background-color: white;
 }
 header{
 	margin-top: -5px;
@@ -218,7 +218,7 @@ footer{
 .footer2 label{
 	margin: 25px 0px;
 }
-/*-------------------------------------------------------------------------------*/
+/*Profil-------------------------------------------------------------------------------*/
 .title{
 	width: 100%;
 	height: 90px;
@@ -233,7 +233,95 @@ footer{
 	font-weight: 700;
 }
 .kolom{
+	width: 86%;
+	height: 100%;
+	margin-left: 7%;
 	background-color: white;
+	
+}
+.foto-pendiri {
+	width: 22%;
+	float: left;
+}
+.foto-pendiri img{
+	width: 100%;
+	margin-top: 10px;
+}
+.biografi-pendiri{
+	width: 73%;
+	margin: 10px 20px;
+	float: left;
+}
+.biografi-pendiri h3{
+	text-align: center;
+}
+.biografi-pendiri p{
+	color: black;
+}
+.pimpinan1{
+	width: 33%;
+	float: left;
+}
+.pimpinan2{
+	width: 33%;
+	float: left;
+	border-left: 1px solid #D3D3D3;
+	border-right: 1px solid #D3D3D3;
+}
+.pimpinan3{
+	width: 33%;
+	float: left;
+}
+.foto-pimpinan{
+	margin-top: 10px;	
+}
+.foto-pimpinan img{
+	width: 75%;
 	height: 300px;
-	margin-bottom: -5px;
+}
+.biografi-pimpinan h3{
+	text-align: center;
+	margin-top: 10px;
+}
+.biografi-pimpinan p{
+	width: 90%;
+	margin: 18px;
+	color: black;
+}
+.foto-sejarah{
+	width: 100%;
+	height: 300px;
+}
+.foto-sejarah img{
+	width: 35%;
+	margin-top: 10px;
+}
+.sejarah-pondok h3{
+	text-align: center;
+}
+.sejarah-pondok{
+	margin: 10px;
+	color: black;
+}
+#visimisi {
+	color: black;
+}
+
+/*kontak--------------------------------------------------------------------------------*/
+.isi-kontak{
+	color: black;
+}
+
+/*login---------------------------------------------------------------------------------*/
+.login-area{
+	margin: 150px 35%;
+	background: rgba(211, 211, 211, 0.9);
+}
+.inside-login-area{
+	padding: 40px;
+}
+
+/*admin-----------------------------------------------------------------------------------*/
+.edit-kontak{
+	margin: 30px;
 }

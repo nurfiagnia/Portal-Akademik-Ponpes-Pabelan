@@ -1,2 +1,17 @@
-<h1>Admin#index</h1>
-<p>Find me in app/views/admin/index.html.erb</p>
+</header>
+<h1>Hi! Admin</h1>
+<div class="edit-kontak">
+	<%= form_tag do %>
+		<legend>Edit Kontak</legend>
+		<% @kontak.each do |k| %>
+			<%= text_field :email, params[:email], placeholder: "email", value: k.email %>
+			<%= text_field :tlp, params[:tlp], placeholder: "telpon", value: k.tlp %>
+			<%= text_field :pengasuhan, params[:pengasuhan], placeholder: "pengasuhan", value: k.pengasuhan %>
+			<%= text_field :kmi, params[:kmi], placeholder: "kmi", value: k.kmi %>
+			<%= text_field :ma, params[:ma], placeholder: "ma", value: k.ma %>
+			<%= text_field :sikpb, params[:sikpb], placeholder: "sikpb", value: k.sikpb %>
+			<%= submit_tag %>
+		<% end %>
+	<% end %>
+	<hr>
+</div>

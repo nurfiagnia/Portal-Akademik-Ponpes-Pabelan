@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  tlp: MyString
+  pengasuhan: MyString
+  kmi: MyString
+  ma: MyString
+  sikpb: MyString
+
+two:
+  email: MyString
+  tlp: MyString
+  pengasuhan: MyString
+  kmi: MyString
+  ma: MyString
+  sikpb: MyString

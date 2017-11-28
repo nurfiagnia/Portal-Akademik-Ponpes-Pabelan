@@ -6,5 +6,6 @@ class HomeController < ApplicationController
   def galeri
   end
   def kontak
+  	@kontak = Kontak.all
   end
 end
