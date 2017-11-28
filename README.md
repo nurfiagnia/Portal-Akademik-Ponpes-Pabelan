@@ -1,24 +1,25 @@
-# README
+<p align="center"><img src="https://farm5.staticflickr.com/4572/38605181691_9d17d7899b_o_d.png"></p>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# <p align="center">Sistem Akademik Ponpes Pabelan</p>
+Ini merupakan repository dari kelompok untuk memenuhi tugas besar
+pada matakuliah Pengembangan Aplikasi Web di Universitas Islam
+Negeri Sunan Gunung Djati Bandung.
 
-Things you may want to cover:
+## Yang kami gunakan
 
-* Ruby version
+* RoR
 
-* System dependencies
+* Bootsrap v4.0.0 Beta
 
-* Configuration
+* SQLite 3
 
-* Database creation
+## Kelompok
 
-* Database initialization
+Kelompok kami terdiri dari 2 orang yaitu :
 
-* How to run the test suite
+- **[Nurfi Agnia](https://instagram.com/nurfiagnia)**
+- [Harits Rahman Mazayamusthafa](https://instagram.com/haritsrm)
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+## <p align="center">Terimakasih sudah membaca :)</p>
