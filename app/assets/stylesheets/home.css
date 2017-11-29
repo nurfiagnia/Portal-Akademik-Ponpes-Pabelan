@@ -362,6 +362,26 @@ footer{
 	color: black;
 }
 
+/*galeri---------------------------------------------------------------------------------*/
+.setengahabad-galeri{
+	width: 100%;
+	margin: 20px 0px;
+}
+.setengahabad-galeri img{
+	width: 19%;
+	height: 200px;
+	margin: 2px 2px;
+}
+.kegiatan-galeri{
+	width: 100%;
+	margin: 20px 0px;
+}
+.kegiatan-galeri img{
+	width: 19%;
+	height: 200px;
+	margin: 2px 2px;
+}
+
 /*kontak--------------------------------------------------------------------------------*/
 .isi-kontak{
 	color: black;
