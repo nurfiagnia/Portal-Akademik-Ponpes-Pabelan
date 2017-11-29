@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root to: 'home#index'
   
   get "/profil", to: 'home#profil'
@@ -16,10 +17,13 @@ Rails.application.routes.draw do
   get "/fasilitas", to: 'home#fasilitas'
   get "/prestasi", to: 'home#prestasi'
 
-  get "/admin/login", to: 'admin#login'
-  post "/admin/login", to: 'admin#signin'
+  get "/admin", to: 'admin#login'
+  post "/admin", to: 'admin#signin'
 
   get "/santri", to: 'santri#login'
   post "/santri", to: 'santri#signin'
+
+  get "/guru", to: 'guru#login'
+  post "/guru", to: 'guru#signin'  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
