@@ -27,5 +27,7 @@ Rails.application.routes.draw do
 
   get "/guru", to: 'guru#login'
   post "/guru", to: 'guru#signin'  
+  get "/guru/index", to: 'guru#index'
+  delete "/guru/logout", to: 'guru#logout'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

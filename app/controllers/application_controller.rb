@@ -14,4 +14,18 @@ class ApplicationController < ActionController::Base
   		redirect_to admin_path
   	end
   end
+
+  helper_method :current_guru, :guru_logged_in?
+  def current_guru
+    @current_guru ||= Guru.find(session[:guru_id]) if session[:guru_id]
+  end
+  def guru_logged_in?
+    !!current_guru
+  end
+  def must_guru_login
+    if !guru_logged_in?
+      flash[:danger] = "You must login first!"
+      redirect_to guru_path
+    end
+  end
 end
