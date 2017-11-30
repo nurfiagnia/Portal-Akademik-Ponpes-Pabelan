@@ -1,5 +1,7 @@
 </header>
-<h1>Hi! Admin</h1>
+<% admin = current_admin %>
+<h1>Hi! <%= admin.username %></h1>
+<%= link_to 'logout',admin_logout_path, method: :delete %>
 <div class="edit-kontak">
 	<%= form_tag do %>
 		<legend>Edit Kontak</legend>

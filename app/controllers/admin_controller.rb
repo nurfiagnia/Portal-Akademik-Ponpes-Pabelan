@@ -1,18 +1,22 @@
 class AdminController < ApplicationController
+  before_action :must_admin_login, only: [:index]
   def login
   end
   def signin
-  	username = params[:username]
-  	password = params[:password]
-  	respond_to do |format|
-  		if password != "admin" && username != "admin"
-        format.html{ render :oops }        
+    admin = Admin.find_by(username: params[:username])
+  		if admin && admin.authenticate(params[:password])
+        session[:admin_id] = admin.id
+        redirect_to admin_index_path      
   		else
-        @kontak = Kontak.all
-        format.html{ render :index #redirect_to @username
-        }
+        render 'oops'
   		end
-  	end
+  end
+  def logout
+    session[:admin_id] = nil
+    redirect_to admin_path
+  end
+  def index
+      @kontak = Kontak.all
   end
   def oops
   end

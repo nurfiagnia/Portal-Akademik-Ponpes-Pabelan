@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   get "/admin", to: 'admin#login'
   post "/admin", to: 'admin#signin'
+  get "/admin/index", to: 'admin#index'
+  delete "/admin/logout", to: 'admin#logout'
 
   get "/santri", to: 'santri#login'
   post "/santri", to: 'santri#signin'

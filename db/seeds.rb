@@ -22,16 +22,7 @@ kontak.push(first_contact)
 
 Kontak.create(kontak)
 
-Yayasan.destroy_all
-
-yayasan = []
-
-first_data= {
-	status: "pengurus",
-	nama: "Nurfi",
-	jabatan: "ketua"
-}
-
-yayasan.push(first_data)
-
-Yayasan.create(yayasan)
+Admin.create(
+	username: "admin",
+	password_digest: "admin"
+)
