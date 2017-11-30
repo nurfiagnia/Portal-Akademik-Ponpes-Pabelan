@@ -8,7 +8,8 @@ class AdminController < ApplicationController
         session[:admin_id] = admin.id
         redirect_to admin_index_path      
   		else
-        render 'oops'
+        flash.now[:danger] = "Username atau Password salah!"
+        render 'login'
   		end
   end
   def logout
@@ -17,7 +18,5 @@ class AdminController < ApplicationController
   end
   def index
       @kontak = Kontak.all
-  end
-  def oops
   end
 end
