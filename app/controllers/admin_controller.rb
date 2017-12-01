@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-  before_action :must_admin_login, only: [:index]
+  before_action :must_admin_login, only: [:index, :guru, :santri]
   def login
   end
   def signin
@@ -16,7 +16,10 @@ class AdminController < ApplicationController
     session[:admin_id] = nil
     redirect_to admin_path
   end
-  def index
-      @kontak = Kontak.all
+  def guru
+      @guru = Guru.all
   end
+  def santri
+      @santri = Santri.all
+  end  
 end

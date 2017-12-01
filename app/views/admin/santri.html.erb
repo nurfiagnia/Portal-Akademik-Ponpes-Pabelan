@@ -1,0 +1,178 @@
+	<!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="#"><%= image_tag("LogoPutih.png") %></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                  <ul class="navbar-nav mr-auto">
+                  	<li class="nav-item">
+                      <a class="nav-link" href="/admin/index">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="/admin/santri">Data Santri</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/admin/guru">Data Guru</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/admin/pengaturan">Pengaturan</a>
+                    </li>
+                    <li class="nav-item">
+						          <%= link_to 'logout',admin_logout_path, method: :delete, class: 'nav-link' %>
+                    </li>                    
+                 </ul>
+                </div>  
+    </nav>
+    <!--end navbar-->
+  </header>
+  <!--end header-->
+  <div class="p-5">
+    <h1>Tabel Data Santri</h1>
+    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#form-santri">Santri Baru</button>
+  <div id="form-santri" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- konten modal-->
+      <div class="modal-content">
+        <!-- heading modal -->
+        <div class="modal-header">
+          <h4 class="modal-title">Tambah Data Santri Baru</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- body modal -->
+        <div class="modal-body">
+          <%= form_tag do %>
+            <%= text_field_tag :username, params[:username], class: "form-control",  placeholder: "Username" %>
+            <br>
+            <%= password_field_tag :password, params[:password], class: "form-control", placeholder: "Password" %>
+            <br>
+            <%= text_field_tag :nama, params[:nama], class: "form-control",  placeholder: "Nama" %>
+            <br>
+            <%= text_field_tag :nis, params[:nis], class: "form-control", placeholder: "NIS" %>
+            <br>
+            <%= text_field_tag :nisn, params[:nisn], class: "form-control", placeholder: "NISN" %>
+            <br>
+            <%= text_field_tag :jk, params[:jk], class: "form-control", placeholder: "Jenis Kelamin" %>
+            <br>
+            <%= text_field_tag :tempat, params[:tempat], class: "form-control", placeholder: "Tempat" %>
+            <br>
+            <%= text_field_tag :tl, params[:tl], class: "form-control", placeholder: "Tanggal Lahir" %>
+            <br>
+            <%= text_field_tag :agama, params[:agama], class: "form-control", placeholder: "Agama" %>
+            <br>
+            <%= text_field_tag :anak_ke, params[:anak_ke], class: "form-control", placeholder: "Anak ke-" %>
+            <br>
+            <%= text_field_tag :status_keluarga, params[:status_keluarga], class: "form-control", placeholder: "Status Keluarga" %>
+            <br>
+            <%= text_field_tag :alamat, params[:alamat], class: "form-control",  placeholder: "Alamat" %>
+            <br>
+            <%= text_field_tag :tlp, params[:tlp], class: "form-control", placeholder: "Telepon" %>
+            <br>
+            <%= text_field_tag :kelas, params[:kelas], class: "form-control", placeholder: "Kelas" %>
+            <br>
+            <%= text_field_tag :tahun_masuk, params[:tahun_masuk], class: "form-control", placeholder: "Tahun Masuk" %>
+            <br>
+            <%= text_field_tag :nama_sekolah, params[:nama_sekolah], class: "form-control", placeholder: "Nama Sekolah Sebelumnya" %>
+            <br>
+            <%= text_field_tag :alamat_sekolah, params[:alamat_sekolah], class: "form-control",  placeholder: "Alamat Sekolah Sebelumnya" %>
+            <br>
+            <%= text_field_tag :nama_ayah, params[:nama_ayah], class: "form-control", placeholder: "Nama Ayah" %>
+            <br>
+            <%= text_field_tag :nama_ibu, params[:nama_ibu], class: "form-control", placeholder: "Nama Ibu" %>
+            <br>
+            <%= text_field_tag :pekerjaan_ayah, params[:pekerjaan_ayah], class: "form-control", placeholder: "Pekerjaan Ayah" %>
+            <br>
+            <%= text_field_tag :pekerjaan_ibu, params[:pekerjaan_ibu], class: "form-control", placeholder: "Pekerjaan Ibu" %>
+            <br>
+            <%= text_field_tag :agama_ayah, params[:agama_ayah], class: "form-control", placeholder: "Agama Ayah" %>
+            <br>
+            <%= text_field_tag :agama_ibu, params[:agama_ibu], class: "form-control", placeholder: "Agama Ibu" %>
+            <br>
+            <%= text_field_tag :nama_wali, params[:nama_wali], class: "form-control", placeholder: "Nama Wali" %>
+            <br>
+            <%= text_field_tag :agama_wali, params[:agama_wali], class: "form-control", placeholder: "Agama Wali" %>
+            <br>
+            <%= text_field_tag :alamat_wali, params[:alamat_wali], class: "form-control", placeholder: "Alamat Wali" %>
+            <br>
+            <%= text_field_tag :tlp_wali, params[:tlp_wali], class: "form-control", placeholder: "Telepon Orang tua atau Wali" %>
+            <br>
+            <%= text_field_tag :pekerjaan_wali, params[:pekerjaan_wali], class: "form-control", placeholder: "Pekerjaan Wali" %>
+            <br>
+        </div>
+        <!-- footer modal -->
+        <div class="modal-footer">
+          <center><%= submit_tag 'Simpan', class: "btn btn-outline-primary" %></center>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <table class="table table-light">
+    <tr>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Nama</th>
+      <th>NIS</th>
+      <th>NISN</th>
+      <th>Jenis Kelamin</th>
+      <th>Tempat</th>
+      <th>Tanggal Lahir</th>
+      <th>Agama</th>
+      <th>Anak ke-</th>
+      <th>Status Keluarga</th>
+      <th>Alamat</th>
+      <th>Nomor Telepon</th>
+      <th>Kelas</th>
+      <th>Tahun Masuk</th>
+      <th>Nama Sekolah Sebelumnya</th>
+      <th>Alamat Sekolah Sebelumnya</th>
+      <th>Nama Ayah</th>
+      <th>Nama Ibu</th>
+      <th>Pekerjaan Ayah</th>
+      <th>Pekerjaan Ibu</th>
+      <th>Agama Ayah</th>
+      <th>Agama Ibu</th>
+      <th>Nama Wali</th>
+      <th>Agama Wali</th>
+      <th>Alamat Wali</th>
+      <th>Telepon Orang Tua / Wali</th>
+      <th>Pekerjaan Wali</th>
+      <th></th>
+    </tr>
+    <% @santri.each do |santri| %>
+    <tr>
+      <td><%= santri.username %></td>
+      <td><%= santri.password %></td>
+      <td><%= santri.nama %></td>
+      <td><%= santri.nis %></td>
+      <td><%= santri.nisn %></td>
+      <td><%= santri.jk %></td>
+      <td><%= santri.tempat %></td>
+      <td><%= santri.tl %></td>
+      <td><%= santri.agama %></td>
+      <td><%= santri.anak_ke %></td>
+      <td><%= santri.status_keluarga %></td>
+      <td><%= santri.alamat %></td>
+      <td><%= santri.tlp %></td>
+      <td><%= santri.kelas %></td>
+      <td><%= santri.tahun_masuk %></td>
+      <td><%= santri.nama_sekolah %></td>
+      <td><%= santri.alamat_sekolah %></td>
+      <td><%= santri.nama_ayah %></td>
+      <td><%= santri.nama_ibu %></td>
+      <td><%= santri.pekerjaan_ayah %></td>
+      <td><%= santri.pekerjaan_ibu %></td>
+      <td><%= santri.agama_ayah %></td>
+      <td><%= santri.agama_ibu %></td>
+      <td><%= santri.nama_wali %></td>
+      <td><%= santri.agama_wali %></td>
+      <td><%= santri.alamat_wali %></td>
+      <td><%= santri.tlp_wali %></td>
+      <td><%= santri.pekerjaan_wali %></td>
+      <td><%= link_to 'Hapus', admin_guru_path(santri), method: :delete %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+  </div>

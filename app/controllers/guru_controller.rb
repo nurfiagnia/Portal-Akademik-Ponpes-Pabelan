@@ -18,4 +18,26 @@ class GuruController < ApplicationController
     session[:guru_id] = nil
     redirect_to guru_path
   end
+
+  def guru
+    @guru = Guru.all
+  end
+  def gurubaru
+    @guru = Guru.new(guru_params)
+      if @guru.save
+        redirect_to admin_guru_path
+      else
+        flash.now[:danger] = "Data yang anda masukkan tidak valid!"
+      end
+  end
+  def hapusguru
+    @guru = Guru.find(params[:id])
+    @guru.destroy
+    redirect_to admin_guru_path
+  end
+
+  private
+    def guru_params
+      params.permit(:username, :password, :nama, :nip, :jk, :ttl, :alamat, :no_tlp, :mapel, :pendidikan)
+    end
 end
