@@ -38,5 +38,11 @@ Rails.application.routes.draw do
   get "/guru/profil", to: 'guru#profil'
   post "/guru/profil", to: 'guru#update'
   delete "/guru/logout", to: 'guru#logout'
+
+
+  get "/pengasuhan", to: 'pengasuhan#login'
+  post "/pengasuhan", to: 'pengasuhan#signin'  
+  get "/pengasuhan/index", to: 'pengasuhan#index'
+  delete "/pengasuhan/logout", to: 'pengasuhan#logout'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
