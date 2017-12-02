@@ -4,6 +4,10 @@ class GuruController < ApplicationController
   end
   def index
   end
+  def profil    
+  end
+  def penilaian    
+  end
   def signin
     guru = Guru.find_by(username: params[:username])
     if guru && guru.authenticate(params[:password])
@@ -34,6 +38,16 @@ class GuruController < ApplicationController
     @guru = Guru.find(params[:id])
     @guru.destroy
     redirect_to admin_guru_path
+  end
+  def update
+    @guru = Guru.find(session[:guru_id])
+    if @guru.update(guru_params)
+      flash[:success] = "Biodata berhasil diubah"
+      redirect_to guru_profil_path
+    else
+      flash[:danger] = "Biodata gagal diubah!"
+      redirect_to guru_profil_path
+    end
   end
 
   private
