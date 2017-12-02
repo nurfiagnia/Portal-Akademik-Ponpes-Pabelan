@@ -55,7 +55,7 @@
             <br>
             <%= text_field_tag :nip, params[:nip], class: "form-control", placeholder: "NIP" %>
             <br>
-            <%= text_field_tag :jk, params[:jk], class: "form-control", placeholder: "Jenis Kelamin" %>
+            <%= select_tag(:jk, options_for_select([['Pria', 'Pria'], ['Wanita','Wanita']]), class: "form-control") %>
             <br>
             <%= text_field_tag :ttl, params[:ttl], class: "form-control", placeholder: "Tanggal Lahir" %>
             <br>

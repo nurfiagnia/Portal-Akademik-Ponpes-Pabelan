@@ -29,7 +29,10 @@
   <!--end header-->
   <div class="p-5">
     <h1>Tabel Data Santri</h1>
-    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#form-santri">Santri Baru</button>
+    <div class="form-row">
+      <button type="button" class="btn btn-outline-primary col-md-3" data-toggle="modal" data-target="#form-santri">Santri Baru</button>
+      <%= select_tag(:kelas, options_for_select([['1','1'],['2','2'],['3','3'],['4','4'],['5','5'],['6','6']]), class: "form-control ml-5 col-md-3") %>
+    </div>
   <div id="form-santri" class="modal fade" role="dialog">
     <div class="modal-dialog">
       <!-- konten modal-->
@@ -148,6 +151,7 @@
     </div>
   </div>
   <hr>
+  <legend>Santri Putra</legend>
   <table class="table table-light">
     <tr>
       <th>Username</th>
@@ -173,6 +177,36 @@
       <td><%= santri.tahun_masuk %></td>
       <td><%= santri.tlp_wali %></td>
       <td><%= link_to 'Hapus', admin_guru_path(santri), method: :delete %></td>
+    </tr>
+    <% end %>
+  </table>
+  <hr>
+  <legend>Santri Putri</legend>
+  <table class="table table-light">
+    <tr>
+      <th>Username</th>
+      <th>Nama</th>
+      <th>NIS</th>
+      <th>NISN</th>
+      <th>Jenis Kelamin</th>
+      <th>Alamat</th>
+      <th>Kelas</th>
+      <th>Tahun Masuk</th>
+      <th>Telepon Orang Tua / Wali</th>
+      <th></th>
+    </tr>
+    <% @santriwati.each do |santriwati| %>
+    <tr>
+      <td><%= santriwati.username %></td>
+      <td><%= santriwati.nama %></td>
+      <td><%= santriwati.nis %></td>
+      <td><%= santriwati.nisn %></td>
+      <td><%= santriwati.jk %></td>
+      <td><%= santriwati.alamat %></td>
+      <td><%= santriwati.kelas %></td>
+      <td><%= santriwati.tahun_masuk %></td>
+      <td><%= santriwati.tlp_wali %></td>
+      <td><%= link_to 'Hapus', admin_guru_path(santriwati), method: :delete %></td>
     </tr>
     <% end %>
   </table>
