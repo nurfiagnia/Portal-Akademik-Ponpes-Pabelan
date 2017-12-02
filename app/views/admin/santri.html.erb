@@ -42,9 +42,14 @@
         <!-- body modal -->
         <div class="modal-body">
           <%= form_tag do %>
-            <%= text_field_tag :username, params[:username], class: "form-control",  placeholder: "Username" %>
-            <br>
-            <%= password_field_tag :password, params[:password], class: "form-control", placeholder: "Password" %>
+            <div class="form-row">
+              <div class="col-md-6">
+                <%= text_field_tag :username, params[:username], class: "form-control",  placeholder: "Username" %>
+              </div>
+              <div class="col-md-6">
+                <%= password_field_tag :password, params[:password], class: "form-control", placeholder: "Password" %>
+              </div>
+            </div>
             <br>
             <%= text_field_tag :nama, params[:nama], class: "form-control",  placeholder: "Nama" %>
             <br>
@@ -52,49 +57,84 @@
             <br>
             <%= text_field_tag :nisn, params[:nisn], class: "form-control", placeholder: "NISN" %>
             <br>
-            <%= text_field_tag :jk, params[:jk], class: "form-control", placeholder: "Jenis Kelamin" %>
+            <div class="form-row">
+              <div class="col-md-5">
+                <%= text_field_tag :jk, params[:jk], class: "form-control", placeholder: "Jenis Kelamin" %>
+              </div>
+              <div class="col-md-7">
+                <%= text_field_tag :agama, params[:agama], class: "form-control", placeholder: "Agama" %>
+              </div>
+            </div>
             <br>
-            <%= text_field_tag :tempat, params[:tempat], class: "form-control", placeholder: "Tempat" %>
+            <div class="form-row">
+              <div class="col-md-5">
+                <%= text_field_tag :tempat, params[:tempat], class: "form-control", placeholder: "Tempat" %>
+              </div>
+              <div class="col-md-7">
+                <%= text_field_tag :tl, params[:tl], class: "form-control", placeholder: "Tanggal Lahir" %>
+              </div>
+            </div>
             <br>
-            <%= text_field_tag :tl, params[:tl], class: "form-control", placeholder: "Tanggal Lahir" %>
-            <br>
-            <%= text_field_tag :agama, params[:agama], class: "form-control", placeholder: "Agama" %>
-            <br>
-            <%= text_field_tag :anak_ke, params[:anak_ke], class: "form-control", placeholder: "Anak ke-" %>
-            <br>
-            <%= text_field_tag :status_keluarga, params[:status_keluarga], class: "form-control", placeholder: "Status Keluarga" %>
+            <div class="form-row">
+              <div class="col-md-5">  
+                <%= text_field_tag :anak_ke, params[:anak_ke], class: "form-control", placeholder: "Anak ke-" %>
+              </div>
+              <div class="col-md-7">
+                <%= text_field_tag :status_keluarga, params[:status_keluarga], class: "form-control", placeholder: "Status Keluarga" %>
+              </div>
+            </div>
             <br>
             <%= text_field_tag :alamat, params[:alamat], class: "form-control",  placeholder: "Alamat" %>
             <br>
             <%= text_field_tag :tlp, params[:tlp], class: "form-control", placeholder: "Telepon" %>
             <br>
-            <%= text_field_tag :kelas, params[:kelas], class: "form-control", placeholder: "Kelas" %>
-            <br>
-            <%= text_field_tag :tahun_masuk, params[:tahun_masuk], class: "form-control", placeholder: "Tahun Masuk" %>
+            <div class="form-row">
+              <div class="col-md-5">
+                <%= text_field_tag :kelas, params[:kelas], class: "form-control", placeholder: "Kelas" %>
+              </div>
+              <div class="col-md-7">
+                <%= text_field_tag :tahun_masuk, params[:tahun_masuk], class: "form-control", placeholder: "Tahun Masuk" %>
+              </div>
+            </div>
             <br>
             <%= text_field_tag :nama_sekolah, params[:nama_sekolah], class: "form-control", placeholder: "Nama Sekolah Sebelumnya" %>
             <br>
             <%= text_field_tag :alamat_sekolah, params[:alamat_sekolah], class: "form-control",  placeholder: "Alamat Sekolah Sebelumnya" %>
             <br>
-            <%= text_field_tag :nama_ayah, params[:nama_ayah], class: "form-control", placeholder: "Nama Ayah" %>
+            <div class="form-row">
+              <div class="col-md-5">
+                <%= text_field_tag :nama_ayah, params[:nama_ayah], class: "form-control", placeholder: "Nama Ayah" %>
+              </div>
+              <div class="col-md-7">
+                <%= text_field_tag :nama_ibu, params[:nama_ibu], class: "form-control", placeholder: "Nama Ibu" %>
+              </div>
+            </div>
             <br>
-            <%= text_field_tag :nama_ibu, params[:nama_ibu], class: "form-control", placeholder: "Nama Ibu" %>
+            <div class="form-row">
+              <div class="col-md-5">
+                <%= text_field_tag :pekerjaan_ayah, params[:pekerjaan_ayah], class: "form-control", placeholder: "Pekerjaan Ayah" %>
+              </div>
+              <div class="col-md-7">
+                <%= text_field_tag :pekerjaan_ibu, params[:pekerjaan_ibu], class: "form-control", placeholder: "Pekerjaan Ibu" %>
+              </div>
+            </div>
             <br>
-            <%= text_field_tag :pekerjaan_ayah, params[:pekerjaan_ayah], class: "form-control", placeholder: "Pekerjaan Ayah" %>
+            <div class="form-row">
+              <div class="col-md-5">
+                <%= text_field_tag :agama_ayah, params[:agama_ayah], class: "form-control", placeholder: "Agama Ayah" %>
+              </div>
+              <div class="col-md-7">
+                <%= text_field_tag :agama_ibu, params[:agama_ibu], class: "form-control", placeholder: "Agama Ibu" %>
+              </div>
+            </div>
             <br>
-            <%= text_field_tag :pekerjaan_ibu, params[:pekerjaan_ibu], class: "form-control", placeholder: "Pekerjaan Ibu" %>
-            <br>
-            <%= text_field_tag :agama_ayah, params[:agama_ayah], class: "form-control", placeholder: "Agama Ayah" %>
-            <br>
-            <%= text_field_tag :agama_ibu, params[:agama_ibu], class: "form-control", placeholder: "Agama Ibu" %>
+            <%= text_field_tag :tlp_wali, params[:tlp_wali], class: "form-control", placeholder: "Telepon Orang tua atau Wali" %>
             <br>
             <%= text_field_tag :nama_wali, params[:nama_wali], class: "form-control", placeholder: "Nama Wali" %>
             <br>
             <%= text_field_tag :agama_wali, params[:agama_wali], class: "form-control", placeholder: "Agama Wali" %>
             <br>
             <%= text_field_tag :alamat_wali, params[:alamat_wali], class: "form-control", placeholder: "Alamat Wali" %>
-            <br>
-            <%= text_field_tag :tlp_wali, params[:tlp_wali], class: "form-control", placeholder: "Telepon Orang tua atau Wali" %>
             <br>
             <%= text_field_tag :pekerjaan_wali, params[:pekerjaan_wali], class: "form-control", placeholder: "Pekerjaan Wali" %>
             <br>
@@ -111,65 +151,27 @@
   <table class="table table-light">
     <tr>
       <th>Username</th>
-      <th>Password</th>
       <th>Nama</th>
       <th>NIS</th>
       <th>NISN</th>
       <th>Jenis Kelamin</th>
-      <th>Tempat</th>
-      <th>Tanggal Lahir</th>
-      <th>Agama</th>
-      <th>Anak ke-</th>
-      <th>Status Keluarga</th>
       <th>Alamat</th>
-      <th>Nomor Telepon</th>
       <th>Kelas</th>
       <th>Tahun Masuk</th>
-      <th>Nama Sekolah Sebelumnya</th>
-      <th>Alamat Sekolah Sebelumnya</th>
-      <th>Nama Ayah</th>
-      <th>Nama Ibu</th>
-      <th>Pekerjaan Ayah</th>
-      <th>Pekerjaan Ibu</th>
-      <th>Agama Ayah</th>
-      <th>Agama Ibu</th>
-      <th>Nama Wali</th>
-      <th>Agama Wali</th>
-      <th>Alamat Wali</th>
       <th>Telepon Orang Tua / Wali</th>
-      <th>Pekerjaan Wali</th>
       <th></th>
     </tr>
     <% @santri.each do |santri| %>
     <tr>
       <td><%= santri.username %></td>
-      <td><%= santri.password %></td>
       <td><%= santri.nama %></td>
       <td><%= santri.nis %></td>
       <td><%= santri.nisn %></td>
       <td><%= santri.jk %></td>
-      <td><%= santri.tempat %></td>
-      <td><%= santri.tl %></td>
-      <td><%= santri.agama %></td>
-      <td><%= santri.anak_ke %></td>
-      <td><%= santri.status_keluarga %></td>
       <td><%= santri.alamat %></td>
-      <td><%= santri.tlp %></td>
       <td><%= santri.kelas %></td>
       <td><%= santri.tahun_masuk %></td>
-      <td><%= santri.nama_sekolah %></td>
-      <td><%= santri.alamat_sekolah %></td>
-      <td><%= santri.nama_ayah %></td>
-      <td><%= santri.nama_ibu %></td>
-      <td><%= santri.pekerjaan_ayah %></td>
-      <td><%= santri.pekerjaan_ibu %></td>
-      <td><%= santri.agama_ayah %></td>
-      <td><%= santri.agama_ibu %></td>
-      <td><%= santri.nama_wali %></td>
-      <td><%= santri.agama_wali %></td>
-      <td><%= santri.alamat_wali %></td>
       <td><%= santri.tlp_wali %></td>
-      <td><%= santri.pekerjaan_wali %></td>
       <td><%= link_to 'Hapus', admin_guru_path(santri), method: :delete %></td>
     </tr>
     <% end %>

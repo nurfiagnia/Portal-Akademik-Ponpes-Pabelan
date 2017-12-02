@@ -17,7 +17,8 @@ class AdminController < ApplicationController
     redirect_to admin_path
   end
   def guru
-      @guru = Guru.all
+      @gurus = Guru.find_by_sql("SELECT * FROM gurus WHERE pendidikan = 'MTs'")
+      @guru = Guru.find_by_sql("SELECT * FROM gurus WHERE pendidikan = 'MA'")
   end
   def santri
       @santri = Santri.all

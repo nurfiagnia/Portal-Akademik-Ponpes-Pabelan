@@ -1,0 +1,66 @@
+<table class="table table-light">
+    <tr>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Nama</th>
+      <th>NIS</th>
+      <th>NISN</th>
+      <th>Jenis Kelamin</th>
+      <th>Tempat</th>
+      <th>Tanggal Lahir</th>
+      <th>Agama</th>
+      <th>Anak ke-</th>
+      <th>Status Keluarga</th>
+      <th>Alamat</th>
+      <th>Nomor Telepon</th>
+      <th>Kelas</th>
+      <th>Tahun Masuk</th>
+      <th>Nama Sekolah Sebelumnya</th>
+      <th>Alamat Sekolah Sebelumnya</th>
+      <th>Nama Ayah</th>
+      <th>Nama Ibu</th>
+      <th>Pekerjaan Ayah</th>
+      <th>Pekerjaan Ibu</th>
+      <th>Agama Ayah</th>
+      <th>Agama Ibu</th>
+      <th>Nama Wali</th>
+      <th>Agama Wali</th>
+      <th>Alamat Wali</th>
+      <th>Telepon Orang Tua / Wali</th>
+      <th>Pekerjaan Wali</th>
+      <th></th>
+    </tr>
+    <% @santri.each do |santri| %>
+    <tr>
+      <td><%= santri.username %></td>
+      <td><%= santri.password %></td>
+      <td><%= santri.nama %></td>
+      <td><%= santri.nis %></td>
+      <td><%= santri.nisn %></td>
+      <td><%= santri.jk %></td>
+      <td><%= santri.tempat %></td>
+      <td><%= santri.tl %></td>
+      <td><%= santri.agama %></td>
+      <td><%= santri.anak_ke %></td>
+      <td><%= santri.status_keluarga %></td>
+      <td><%= santri.alamat %></td>
+      <td><%= santri.tlp %></td>
+      <td><%= santri.kelas %></td>
+      <td><%= santri.tahun_masuk %></td>
+      <td><%= santri.nama_sekolah %></td>
+      <td><%= santri.alamat_sekolah %></td>
+      <td><%= santri.nama_ayah %></td>
+      <td><%= santri.nama_ibu %></td>
+      <td><%= santri.pekerjaan_ayah %></td>
+      <td><%= santri.pekerjaan_ibu %></td>
+      <td><%= santri.agama_ayah %></td>
+      <td><%= santri.agama_ibu %></td>
+      <td><%= santri.nama_wali %></td>
+      <td><%= santri.agama_wali %></td>
+      <td><%= santri.alamat_wali %></td>
+      <td><%= santri.tlp_wali %></td>
+      <td><%= santri.pekerjaan_wali %></td>
+      <td><%= link_to 'Hapus', admin_guru_path(santri), method: :delete %></td>
+    </tr>
+    <% end %>
+  </table>
