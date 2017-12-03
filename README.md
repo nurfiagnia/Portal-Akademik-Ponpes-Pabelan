@@ -13,6 +13,8 @@ Negeri Sunan Gunung Djati Bandung.
 
 * SQLite 3
 
+* Port : localhost:3000
+
 ## Kelompok
 
 Kelompok kami terdiri dari 2 orang yaitu :
