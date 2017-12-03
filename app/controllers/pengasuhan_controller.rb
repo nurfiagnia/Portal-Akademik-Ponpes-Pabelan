@@ -1,21 +1,18 @@
 class PengasuhanController < ApplicationController
   def login
   end
-
   def signin
-  	username = params[:username]
-  	password = params[:password]
-  	respond_to do |format|
-  		if password != "pengasuhan" && username != "pengasuhan"
-        format.html{ render :oops }        
-  		else
-        @kontak = Kontak.all
-        format.html{ render :index #redirect_to @username
-        }
-  		end
-  	end
+    pengasuhan = Pengasuhan.find_by(username: params[:username])
+      if pengasuhan && pengasuhan.authenticate(params[:password])
+        session[:pengasuhan_id] = pengasuhan.id
+        redirect_to pengasuhan_index_path      
+      else
+        flash.now[:danger] = "Username atau Password salah!"
+        render 'login'
+      end
   end
-  def oops
-  	
+  def logout
+    session[:pengasuhan_id] = nil
+    redirect_to pengasuhan_path
   end
 end

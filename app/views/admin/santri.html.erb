@@ -62,7 +62,7 @@
             <br>
             <div class="form-row">
               <div class="col-md-5">
-                <%= text_field_tag :jk, params[:jk], class: "form-control", placeholder: "Jenis Kelamin" %>
+                <%= select_tag(:jk, options_for_select([['Pria', 'Pria'], ['Wanita','Wanita']]), class: "form-control") %>
               </div>
               <div class="col-md-7">
                 <%= text_field_tag :agama, params[:agama], class: "form-control", placeholder: "Agama" %>
@@ -176,7 +176,7 @@
       <td><%= santri.kelas %></td>
       <td><%= santri.tahun_masuk %></td>
       <td><%= santri.tlp_wali %></td>
-      <td><%= link_to 'Hapus', admin_guru_path(santri), method: :delete %></td>
+      <td><%= link_to 'Hapus', admin_santri_path(santri), method: :delete %></td>
     </tr>
     <% end %>
   </table>

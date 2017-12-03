@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nama: MyString
+  nis: MyString
+  nisn: MyString
+  kelas: MyString
+  thn_ajaran: 1
+  mapel: MyString
+  kkm: 9.99
+  angka: 9.99
+  praktik: 9.99
+  huruf: MyString
+
+two:
+  nama: MyString
+  nis: MyString
+  nisn: MyString
+  kelas: MyString
+  thn_ajaran: 1
+  mapel: MyString
+  kkm: 9.99
+  angka: 9.99
+  praktik: 9.99
+  huruf: MyString

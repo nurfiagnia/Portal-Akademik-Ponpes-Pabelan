@@ -1,0 +1,2 @@
+class Nilai < ApplicationRecord
+end
