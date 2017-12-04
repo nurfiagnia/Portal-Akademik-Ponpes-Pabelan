@@ -1,0 +1,12 @@
+language: ruby
+rvm:
+  - "2.3.3"
+env:
+  - DB=sqlite3
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rake
+before_script:
+  - cp config/database.travis.yml config/database.yml
+bundle_args: --binstubs=./bundler_stubs
