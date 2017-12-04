@@ -1,0 +1,2 @@
+class Pengasuhan < ApplicationRecord
+end

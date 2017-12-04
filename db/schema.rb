@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171203041043) do
+ActiveRecord::Schema.define(version: 20171204091118) do
 
   create_table "admins", force: :cascade do |t|
     t.string "username"
@@ -56,6 +56,19 @@ ActiveRecord::Schema.define(version: 20171203041043) do
     t.decimal "angka"
     t.decimal "praktik"
     t.string "huruf"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pengasuhans", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.string "nama"
+    t.string "jk"
+    t.string "alamat"
+    t.string "tempat"
+    t.date "tanggal_lahir"
+    t.string "tlp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -23,5 +23,11 @@ class AdminController < ApplicationController
   def santri
       @santri = Santri.find_by_sql("SELECT * FROM santris WHERE jk = 'Pria'")
       @santriwati = Santri.find_by_sql("SELECT * FROM santris WHERE jk = 'Wanita'")
-  end  
+  end 
+  def pengasuhan
+     @pengasuhan = Pengasuhan.all
+  end 
+  def pengaturan
+    
+  end
 end
