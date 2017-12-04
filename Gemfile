@@ -57,8 +57,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Gemfile
 # for CRuby, Rubinius, including Windows and RubyInstaller
-gem "sqlite3", :platform => [:ruby, :mswin, :mingw]
+gem "sqlite3", :platform => [:ruby, :mswin, :mingw], group: [:development, :test]
 
 # for JRuby
 gem "jdbc-sqlite3", :platform => :jruby
-gem 'pg'
+gem 'pg', group: :production
+gem 'rails_12factor', group: :production
