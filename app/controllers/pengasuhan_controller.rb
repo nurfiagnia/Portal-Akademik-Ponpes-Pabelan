@@ -44,6 +44,6 @@ class PengasuhanController < ApplicationController
 
   private
     def pengasuhan_params
-      params.permit(:username, :password, :nama, :jk, :ttl, :alamat, :no_tlp)
+      params.permit(:username, :password, :nama, :jk, :tempat, :tanggal_lahir, :alamat, :tlp)
     end
 end

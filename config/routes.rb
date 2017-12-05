@@ -27,11 +27,18 @@ Rails.application.routes.draw do
   post "/admin/santri", to: 'santri#santribaru'
   delete "/admin/santri.:id", to: 'santri#hapussantri'
   get "/admin/pengasuhan", to: 'admin#pengasuhan'
+  post "/admin/pengasuhan", to: 'pengasuhan#pengasuhanbaru'
+  delete "/admin/pengasuhan.:id", to: 'pengasuhan#hapuspengasuhan'
   get "/admin/pengaturan", to: 'admin#pengaturan'
   delete "/admin/logout", to: 'admin#logout'
 
   get "/santri", to: 'santri#login'
   post "/santri", to: 'santri#signin'
+  get "/santri/raport", to: 'santri#raport'
+  delete "/santri/logout", to: 'santri#logout'
+  get "/santri/index", to: 'santri#index'
+  get "/santri/profil", to: 'santri#profil'
+  post "/santri/profil", to: 'santri#update'
 
   get "/guru", to: 'guru#login'
   post "/guru", to: 'guru#signin'  

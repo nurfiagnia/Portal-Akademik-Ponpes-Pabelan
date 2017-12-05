@@ -28,4 +28,18 @@ class ApplicationController < ActionController::Base
       redirect_to guru_path
     end
   end
+
+  helper_method :current_santri, :santri_logged_in?
+  def current_santri
+    @current_santri ||= Santri.find(session[:santri_id]) if session[:santri_id]
+  end
+  def santri_logged_in?
+    !!current_santri
+  end
+  def must_santri_login
+    if !santri_logged_in?
+      flash[:danger] = "You must login first!"
+      redirect_to santri_path
+    end
+  end  
 end

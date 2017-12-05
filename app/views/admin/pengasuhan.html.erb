@@ -32,9 +32,9 @@
 <!--end header-->
 <div class="p-5">
   <h1>Tabel Data Pengasuhan</h1>
-  <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#form-guru">Pengasuhan Baru
+  <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#form-pengasuhan">Pengasuhan Baru
   </button>
-  <div id="form-guru" class="modal fade" role="dialog">
+  <div id="form-pengasuhan" class="modal fade" role="dialog">
     <div class="modal-dialog">
       <!-- konten modal-->
       <div class="modal-content">
@@ -62,11 +62,11 @@
             <br>
             <%= text_field_tag :tempat, params[:tempat], class: "form-control", placeholder: "Tempat" %>
             <br>
-            <%= text_field_tag :tl, params[:tl], class: "form-control", placeholder: "Tanggal Lahir" %>
+            <%= text_field_tag :tanggal_lahir, params[:tanggal_lahir], class: "form-control", placeholder: "Tanggal Lahir" %>
             <br>
             <%= text_field_tag :alamat, params[:alamat], class: "form-control",  placeholder: "Alamat" %>
             <br>
-            <%= text_field_tag :no_tlp, params[:no_tlp], class: "form-control", placeholder: "Telepon" %>
+            <%= text_field_tag :tlp, params[:tlp], class: "form-control", placeholder: "Telepon" %>
             </div>
             <br>
         </div>
@@ -89,17 +89,21 @@
       <th>Nama</th>
       <th>Jenis Kelamin</th>
       <th>Alamat</th>
+      <th>Tempat</th>
+      <th>Tanggal Lahir</th>
       <th>Nomor Telepon</th>
       <th></th>
     </tr>
-    <% @pengasuhan.each do |pengasuhan| %>
+    <% @pengasuhanputra.each do |pengasuhanputra| %>
     <tr>
-      <td><%= pengasuhan.username %></td>
-      <td><%= pengasuhan.nama %></td>
-      <td><%= pengasuhan.jk %></td>
-      <td><%= pengasuhan.alamat %></td>
-      <td><%= pengasuhan.no_tlp %></td>
-      <td><%= link_to 'Hapus', admin_pengasuhan_path(pengasuhan), method: :delete %></td>
+      <td><%= pengasuhanputra.username %></td>
+      <td><%= pengasuhanputra.nama %></td>
+      <td><%= pengasuhanputra.jk %></td>
+      <td><%= pengasuhanputra.alamat %></td>
+      <td><%= pengasuhanputra.tempat %></td>
+      <td><%= pengasuhanputra.tanggal_lahir %></td>
+      <td><%= pengasuhanputra.tlp %></td>
+      <td><%= link_to 'Hapus', admin_pengasuhan_path(pengasuhanputra), method: :delete %></td>
     </tr>
     <% end %>
   </table>
@@ -111,17 +115,21 @@
       <th>Nama</th>
       <th>Jenis Kelamin</th>
       <th>Alamat</th>
+      <th>Tempat</th>
+      <th>Tanggal Lahir</th>
       <th>Nomor Telepon</th>
       <th></th>
     </tr>
-    <% @pengasuhan.each do |pengasuhan| %>
+    <% @pengasuhanputri.each do |pengasuhanputri| %>
     <tr>
-      <td><%= pengasuhan.username %></td>
-      <td><%= pengasuhan.nama %></td>
-      <td><%= pengasuhan.jk %></td>
-      <td><%= pengasuhan.alamat %></td>
-      <td><%= pengasuhan.no_tlp %></td>
-      <td><%= link_to 'Hapus', admin_pengasuhan_path(pengasuhan), method: :delete %></td>
+      <td><%= pengasuhanputri.username %></td>
+      <td><%= pengasuhanputri.nama %></td>
+      <td><%= pengasuhanputri.jk %></td>
+      <td><%= pengasuhanputri.alamat %></td>
+      <td><%= pengasuhanputri.tempat %></td>
+      <td><%= pengasuhanputri.tanggal_lahir %></td>
+      <td><%= pengasuhanputri.tlp %></td>
+      <td><%= link_to 'Hapus', admin_pengasuhan_path(pengasuhanputri), method: :delete %></td>
     </tr>
     <% end %>
   </table>

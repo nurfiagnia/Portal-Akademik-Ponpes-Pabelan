@@ -5,7 +5,7 @@ class SantriController < ApplicationController
   	santri = Santri.find_by(username: params[:username])
       if santri && santri.authenticate(params[:password])
         session[:santri_id] = santri.id
-        redirect_to santri_raport_path      
+        redirect_to santri_index_path      
       else
         flash.now[:danger] = "Username atau Password salah!"
         render 'login'
@@ -15,9 +15,12 @@ class SantriController < ApplicationController
     session[:santri_id] = nil
     redirect_to santri_path
   end
-  def oops
+  def index
+
   end
   def raport
+  end
+  def profil 
   end
   def santribaru
     @santri = Santri.new(santri_params)
@@ -32,6 +35,16 @@ class SantriController < ApplicationController
     @santri = Santri.find(params[:id])
     @santri.destroy
     redirect_to admin_santri_path
+  end
+  def update
+    @santri = Santri.find(session[:santri_id])
+    if @santri.update(santri_params)
+      flash[:success] = "Biodata berhasil diubah"
+      redirect_to santri_profil_path
+    else
+      flash[:danger] = "Biodata gagal diubah!"
+      redirect_to santri_profil_path
+    end
   end
   private
     def santri_params

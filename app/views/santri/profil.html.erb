@@ -1,0 +1,265 @@
+<!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="#"><%= image_tag("LogoPutih.png") %></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                  <ul class="navbar-nav mr-auto">
+                  	<li class="nav-item ">
+                      <a class="nav-link" href="/santri/index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/santri/raport">Raport</a>
+                    </li>
+                    <li class="nav-item active">
+                      <a class="nav-link " href="/santri/profil">Profil</a>
+                    <li class="nav-item">
+						          <%= link_to 'logout', santri_logout_path, method: :delete, class: 'nav-link' %>
+                    </li>                    
+                 </ul>
+                </div>  
+</nav>
+<!--end navbar-->
+</header>
+<!--end header-->
+<% santri = current_santri %>
+  <!--title-->
+  <div class="title2">
+     <h2>Profil Santri</h2>
+  </div>
+  <!--end title-->
+  <% flash.each do |type, message| %>
+    <div class="alert alert-<%= type %>"><%= message %></div>
+  <% end %>
+  <div class="biodata-santri m-5">
+    <table class="table table-light">
+      <tr>
+        <th>Username</th>
+        <td><%= santri.username %></td>
+      </tr>
+      <tr>
+        <th>Nama</th>
+        <td><%= santri.nama %></td>
+      </tr>
+      <tr>
+        <th>NIS</th>
+        <td><%= santri.nis %></td>
+      </tr>
+      <tr>
+        <th>NISN</th>
+        <td><%= santri.nisn %></td>
+      </tr>
+      <tr>
+        <th>Jenis Kelamin</th>
+        <td><%= santri.jk %></td>
+      </tr>
+      <tr>
+        <th>Tempat</th>
+        <td><%= santri.tempat %></td>
+      </tr>
+      <tr>
+        <th>Tanggal Lahir</th>
+        <td><%= santri.tl %></td>
+      </tr>
+      <tr>
+        <th>Agama</th>
+        <td><%= santri.agama %></td>
+      </tr>
+      <tr>
+        <th>Anak ke </th>
+        <td><%= santri.anak_ke %></td>
+      </tr>
+      <tr>
+        <th>Status Keluarga</th>
+        <td><%= santri.status_keluarga %></td>
+      </tr>
+      <tr>
+        <th>Alamat</th>
+        <td><%= santri.alamat %></td>
+      </tr>
+      <tr>
+        <th>Nomor Telepon</th>
+        <td><%= santri.tlp %></td>
+      </tr>
+      <tr>
+        <th>Kelas</th>
+        <td><%= santri.kelas %></td>
+      </tr>
+      <tr>
+        <th>Tahun Masuk</th>
+        <td><%= santri.tahun_masuk %></td>
+      </tr>
+      <tr>
+        <th>Nama Sekolah Sebelumnya</th>
+        <td><%= santri.nama_sekolah %></td>
+      </tr>
+      <tr>
+        <th>Alamat Sekolah Sebelumnya</th>
+        <td><%= santri.alamat_sekolah %></td>
+      </tr>
+      <tr>
+        <th>Nama Ayah</th>
+        <td><%= santri.nama_ayah %></td>
+      </tr>
+      <tr>
+        <th>Nama Ibu</th>
+        <td><%= santri.nama_ibu %></td>
+      </tr>
+      <tr>
+        <th>Pekerjaan Ayah</th>
+        <td><%= santri.pekerjaan_ayah %></td>
+      </tr>
+      <tr>
+        <th>Pekerjaan Ibu</th>
+        <td><%= santri.pekerjaan_ibu %></td>
+      </tr>
+      <tr>
+        <th>Agama Ayah</th>
+        <td><%= santri.agama_ayah %></td>
+      </tr>
+      <tr>
+        <th>Agama Ibu</th>
+        <td><%= santri.agama_ibu %></td>
+      </tr>
+      <tr>
+        <th>Nama Wali</th>
+        <td><%= santri.nama_wali %></td>
+      </tr>
+      <tr>
+        <th>Agama Wali</th>
+        <td><%= santri.agama_wali %></td>
+      </tr>
+      <tr>
+        <th>Alamat Wali</th>
+        <td><%= santri.alamat_wali %></td>
+      </tr>
+      <tr>
+        <th>Telepon Orang Tua / Wali</th>
+        <td><%= santri.tlp_wali %></td>
+      </tr>
+      <tr>
+        <th>Pekerjaan Wali</th>
+        <td><%= santri.pekerjaan_wali %></td>
+      </tr>
+    </table>
+    <center><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#form-guru">Edit Biodata</button></center>
+    <div id="form-guru" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- konten modal-->
+        <div class="modal-content">
+          <!-- heading modal -->
+          <div class="modal-header">
+            <h4 class="modal-title">Edit Biodata Santri</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+           <!-- body modal -->
+        <div class="modal-body">
+          <%= form_tag do %>
+            <div class="form-row">
+              <div class="col-md-6">
+                <%= text_field_tag :username, params[:username], class: "form-control",  placeholder: "Username", value: santri.username %>
+              </div>
+              <div class="col-md-6">
+                <%= password_field_tag :password, params[:password], class: "form-control", placeholder: "Password", value: santri.password_digest %>
+              </div>
+            </div>
+            <br>
+            <%= text_field_tag :nama, params[:nama], class: "form-control",  placeholder: "Nama", value: santri.nama %>
+            <br>
+            <%= text_field_tag :nis, params[:nis], class: "form-control", placeholder: "NIS", value: santri.nis %>
+            <br>
+            <%= text_field_tag :nisn, params[:nisn], class: "form-control", placeholder: "NISN", value: santri.nisn %>
+            <br>
+            <div class="form-row">
+              <div class="col-md-5">
+                <%= select_tag(:jk, options_for_select([['Pria', 'Pria'], ['Wanita','Wanita']]), class: "form-control") %>
+              </div>
+              <div class="col-md-7">
+                <%= text_field_tag :agama, params[:agama], class: "form-control", placeholder: "Agama", value: santri.agama %>
+              </div>
+            </div>
+            <br>
+            <div class="form-row">
+              <div class="col-md-5">
+                <%= text_field_tag :tempat, params[:tempat], class: "form-control", placeholder: "Tempat", value: santri.tempat %>
+              </div>
+              <div class="col-md-7">
+                <%= text_field_tag :tl, params[:tl], class: "form-control", placeholder: "Tanggal Lahir", value: santri.tl %>
+              </div>
+            </div>
+            <br>
+            <div class="form-row">
+              <div class="col-md-5">  
+                <%= text_field_tag :anak_ke, params[:anak_ke], class: "form-control", placeholder: "Anak ke-", value: santri.anak_ke %>
+              </div>
+              <div class="col-md-7">
+                <%= text_field_tag :status_keluarga, params[:status_keluarga], class: "form-control", placeholder: "Status Keluarga", value: santri.status_keluarga %>
+              </div>
+            </div>
+            <br>
+            <%= text_field_tag :alamat, params[:alamat], class: "form-control",  placeholder: "Alamat", value: santri.alamat %>
+            <br>
+            <%= text_field_tag :tlp, params[:tlp], class: "form-control", placeholder: "Telepon", value: santri.tlp %>
+            <br>
+            <div class="form-row">
+              <div class="col-md-5">
+                <%= text_field_tag :kelas, params[:kelas], class: "form-control", placeholder: "Kelas", value: santri.kelas %>
+              </div>
+              <div class="col-md-7">
+                <%= text_field_tag :tahun_masuk, params[:tahun_masuk], class: "form-control", placeholder: "Tahun Masuk", value: santri.tahun_masuk %>
+              </div>
+            </div>
+            <br>
+            <%= text_field_tag :nama_sekolah, params[:nama_sekolah], class: "form-control", placeholder: "Nama Sekolah Sebelumnya", value: santri.nama_sekolah %>
+            <br>
+            <%= text_field_tag :alamat_sekolah, params[:alamat_sekolah], class: "form-control",  placeholder: "Alamat Sekolah Sebelumnya", value: santri.alamat_sekolah %>
+            <br>
+            <div class="form-row">
+              <div class="col-md-5">
+                <%= text_field_tag :nama_ayah, params[:nama_ayah], class: "form-control", placeholder: "Nama Ayah", value: santri.nama_ayah %>
+              </div>
+              <div class="col-md-7">
+                <%= text_field_tag :nama_ibu, params[:nama_ibu], class: "form-control", placeholder: "Nama Ibu", value: santri.nama_ibu %>
+              </div>
+            </div>
+            <br>
+            <div class="form-row">
+              <div class="col-md-5">
+                <%= text_field_tag :pekerjaan_ayah, params[:pekerjaan_ayah], class: "form-control", placeholder: "Pekerjaan Ayah", value: santri.pekerjaan_ayah %>
+              </div>
+              <div class="col-md-7">
+                <%= text_field_tag :pekerjaan_ibu, params[:pekerjaan_ibu], class: "form-control", placeholder: "Pekerjaan Ibu", value: santri.pekerjaan_ibu %>
+              </div>
+            </div>
+            <br>
+            <div class="form-row">
+              <div class="col-md-5">
+                <%= text_field_tag :agama_ayah, params[:agama_ayah], class: "form-control", placeholder: "Agama Ayah", value: santri.agama_ayah %>
+              </div>
+              <div class="col-md-7">
+                <%= text_field_tag :agama_ibu, params[:agama_ibu], class: "form-control", placeholder: "Agama Ibu", value: santri.agama_ibu %>
+              </div>
+            </div>
+            <br>
+            <%= text_field_tag :tlp_wali, params[:tlp_wali], class: "form-control", placeholder: "Telepon Orang tua atau Wali", value: santri.tlp_wali %>
+            <br>
+            <%= text_field_tag :nama_wali, params[:nama_wali], class: "form-control", placeholder: "Nama Wali", value: santri.nama_wali %>
+            <br>
+            <%= text_field_tag :agama_wali, params[:agama_wali], class: "form-control", placeholder: "Agama Wali", value: santri.agama_wali %>
+            <br>
+            <%= text_field_tag :alamat_wali, params[:alamat_wali], class: "form-control", placeholder: "Alamat Wali", value: santri.alamat_wali %>
+            <br>
+            <%= text_field_tag :pekerjaan_wali, params[:pekerjaan_wali], class: "form-control", placeholder: "Pekerjaan Wali", value: santri.pekerjaan_wali %>
+            <br>
+        </div>
+        <!--end body modal-->
+          <!-- footer modal -->
+          <div class="modal-footer">
+            <center><%= submit_tag 'Simpan', class: "btn btn-outline-primary" %></center>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

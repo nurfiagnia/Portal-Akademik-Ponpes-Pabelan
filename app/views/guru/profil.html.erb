@@ -82,7 +82,7 @@
             <%= form_tag do %>
               <%= text_field_tag :username, params[:username], class: "form-control",  placeholder: "Username", value: guru.username %>
               <br>
-              <%= password_field_tag :password, params[:password], class: "form-control", placeholder: "Password", value: guru.password %>
+              <%= password_field_tag :password, params[:password], class: "form-control", placeholder: "Password", value: guru.password_digest %>
               <br>
               <%= text_field_tag :nama, params[:nama], class: "form-control",  placeholder: "Nama", value: guru.nama %>
               <br>
