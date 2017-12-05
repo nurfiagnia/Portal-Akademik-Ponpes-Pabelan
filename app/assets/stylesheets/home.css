@@ -275,7 +275,52 @@ footer{
 	color: black;
 	margin: 10px 0px;	
 }
-
+/*prestasi-----------------------------------------------------------------------------*/
+.prestasi{
+	margin: 10px 120px;
+}
+.foto-prestasi1 img{
+	height: 330px;
+	width: 350px;
+}
+.isiprestasi1{
+	color: black;
+}
+.isiprestasi1 h3{
+	margin-top: 20px;
+}
+.isiprestasi1 a:hover {
+	color: #4682B4;
+	font-weight: 700;
+}
+.foto-prestasi2 img{
+	height: 330px;
+	width: 350px;
+}
+.isiprestasi2{
+	color: black;
+}
+.isiprestasi2 h3{
+	margin-top: 20px; 
+}
+.isiprestasi2 a:hover {
+	color: #4682B4;
+	font-weight: 700;
+}
+.foto-prestasi3 img{
+	height: 330px;
+	width: 350px;
+}
+.isiprestasi3{
+	color: black;
+}
+.isiprestasi3 h3{
+	margin-top: 20px; 
+}
+.isiprestasi3 a:hover {
+	color: #4682B4;
+	font-weight: 700;
+}
 /*Profil-------------------------------------------------------------------------------*/
 .title{
 	width: 100%;
