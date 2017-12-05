@@ -1,0 +1,104 @@
+<!--navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#"><%= image_tag("LogoPutih.png") %></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+      	<li class="nav-item active">
+          <a class="nav-link" href="/guru/index">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/guru/penilaian">Penilaian</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/guru/profil">Profil</a>
+            <li class="nav-item">
+					     <%= link_to 'logout', guru_logout_path, method: :delete, class: 'nav-link' %>
+            </li>                    
+      </ul>
+    </div>  
+</nav>
+<!--end navbar-->
+</header>
+<!--end header-->
+<% pengasuhan = current_pengasuhan %>
+  <!--title-->
+  <div class="title2">
+     <h2>Profil Pengasuhan</h2>
+  </div>
+  <!--end title-->
+  <% flash.each do |type, message| %>
+    <div class="alert alert-<%= type %>"><%= message %></div>
+  <% end %>
+  <div class="biodata-pengasuhan m-5">
+    <table class="table table-light">
+      <tr>
+        <th>Username</th>
+        <td><%= pengasuhan.username %></td>
+      </tr>
+      <tr>
+        <th>Nama</th>
+        <td><%= pengasuhan.nama %></td>
+      </tr>
+      <tr>
+        <th>Jenis Kelamin</th>
+        <td><%= pengasuhan.jk %></td>
+      </tr>
+      <tr>
+        <th>Tempat</th>
+        <td><%= pengasuhan.tempat %></td>
+      </tr>
+      <tr>
+        <th>Tanggal Lahir</th>
+        <td><%= pengasuhan.tanggal_lahir %></td>
+      </tr>
+      <tr>
+        <th>Alamat</th>
+        <td><%= pengasuhan.alamat %></td>
+      </tr>
+      <tr>
+        <th>Nomor Telepon</th>
+        <td><%= pengasuhan.tlp %></td>
+      </tr>
+    </table>
+    <center><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#form-pengasuhan">Edit Biodata</button></center>
+    <div id="form-pengasuhan" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- konten modal-->
+        <div class="modal-content">
+          <!-- heading modal -->
+          <div class="modal-header">
+            <h4 class="modal-title">Edit Biodata Pengasuhan</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <!-- body modal -->
+          <div class="modal-body">
+            <%= form_tag do %>
+              <%= text_field_tag :username, params[:username], class: "form-control",  placeholder: "Username", value: pengasuhan.username %>
+              <br>
+              <%= password_field_tag :password, params[:password], class: "form-control", placeholder: "Password", value: pengasuhan.password_digest %>
+              <br>
+              <%= text_field_tag :nama, params[:nama], class: "form-control",  placeholder: "Nama", value: pengasuhan.nama %>
+              <br>
+              <%= text_field_tag :jk, params[:jk], class: "form-control", placeholder: "Jenis Kelamin", value: pengasuhan.jk %>
+              <br>
+              <%= text_field_tag :alamat, params[:alamat], class: "form-control",  placeholder: "Alamat", value: pengasuhan.alamat %>
+              <br>
+              <%= text_field_tag :tempat, params[:tempat], class: "form-control", placeholder: "Tempat", value: pengasuhan.tempat %> 
+              <br>
+              <%= text_field_tag :tanggal_lahir, params[:tanggal_lahir], class: "form-control", placeholder: "Tanggal Lahir", value: pengasuhan.tanggal_lahir %>
+              <br>
+              <%= text_field_tag :tlp, params[:tlp], class: "form-control", placeholder: "Telepon", value: pengasuhan.tlp %>
+              <br>
+          </div>
+          <!-- footer modal -->
+          <div class="modal-footer">
+            <center><%= submit_tag 'Simpan', class: "btn btn-outline-primary" %></center>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

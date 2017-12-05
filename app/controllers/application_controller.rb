@@ -42,4 +42,18 @@ class ApplicationController < ActionController::Base
       redirect_to santri_path
     end
   end  
+
+  helper_method :current_pengasuhan, :pengasuhan_logged_in?
+  def current_pengasuhan
+    @current_pengasuhan ||= Pengasuhan.find(session[:pengasuhan_id]) if session[:pengasuhan_id]
+  end
+  def pengasuhan_logged_in?
+    !!current_pengasuhan
+  end
+  def must_pengasuhan_login
+    if pengasuhan_logged_in?
+      flash[:danger] = "You must login first!"
+      redirect_to pengasuhan_path
+    end
+  end  
 end
