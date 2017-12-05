@@ -81,4 +81,49 @@
       <!--end konten modal-->
     </div>
   </div>
+<hr>
+  <legend>Pengasuhan Putra</legend>
+  <table class="table table-light">
+    <tr>
+      <th>Username</th>
+      <th>Nama</th>
+      <th>Jenis Kelamin</th>
+      <th>Alamat</th>
+      <th>Nomor Telepon</th>
+      <th></th>
+    </tr>
+    <% @pengasuhan.each do |pengasuhan| %>
+    <tr>
+      <td><%= pengasuhan.username %></td>
+      <td><%= pengasuhan.nama %></td>
+      <td><%= pengasuhan.jk %></td>
+      <td><%= pengasuhan.alamat %></td>
+      <td><%= pengasuhan.no_tlp %></td>
+      <td><%= link_to 'Hapus', admin_pengasuhan_path(pengasuhan), method: :delete %></td>
+    </tr>
+    <% end %>
+  </table>
+  <hr>
+  <legend>Pengasuhan Putri</legend>
+  <table class="table table-light">
+    <tr>
+      <th>Username</th>
+      <th>Nama</th>
+      <th>Jenis Kelamin</th>
+      <th>Alamat</th>
+      <th>Nomor Telepon</th>
+      <th></th>
+    </tr>
+    <% @pengasuhan.each do |pengasuhan| %>
+    <tr>
+      <td><%= pengasuhan.username %></td>
+      <td><%= pengasuhan.nama %></td>
+      <td><%= pengasuhan.jk %></td>
+      <td><%= pengasuhan.alamat %></td>
+      <td><%= pengasuhan.no_tlp %></td>
+      <td><%= link_to 'Hapus', admin_pengasuhan_path(pengasuhan), method: :delete %></td>
+    </tr>
+    <% end %>
+  </table>
 </div>
+  

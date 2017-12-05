@@ -29,7 +29,6 @@ class GuruController < ApplicationController
   def gurubaru
     @guru = Guru.new(guru_params)
       if @guru.save
-        expect(response).to be_successful
         redirect_to admin_guru_path
       else
         flash.now[:danger] = "Data yang anda masukkan tidak valid!"

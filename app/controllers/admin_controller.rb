@@ -6,7 +6,6 @@ class AdminController < ApplicationController
     admin = Admin.find_by(username: params[:username])
   		if admin && admin.authenticate(params[:password])
         session[:admin_id] = admin.id
-        expect(response).to be_successful
         redirect_to admin_index_path      
   		else
         flash.now[:danger] = "Username atau Password salah!"
