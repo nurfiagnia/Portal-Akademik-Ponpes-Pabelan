@@ -6,7 +6,8 @@ class GuruController < ApplicationController
   end
   def profil    
   end
-  def penilaian    
+  def penilaian 
+    @nilai = Nilai.all   
   end
   def signin
     guru = Guru.find_by(username: params[:username])

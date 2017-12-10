@@ -38,11 +38,21 @@
         <th>Nama Santri</th>
         <th>NIS</th>
         <th>NISN</th>
+        <th>Kelas</th>
         <th>Angka</th>
         <th>Huruf</th>
         <th></th>
       </tr>
+      <% @nilai.each do |nilai| %>
       <tr>
+        <td><%= nilai.nama %></td>
+        <td><%= nilai.nis %></td>
+        <td><%= nilai.nisn %></td>
+        <td><%= nilai.kelas %></td>
+        <td><%= nilai.angka %></td>
+        <td><%= nilai.huruf %></td>
+        <td><%= link_to 'Tambah nilai' %></td>
       </tr>
+      <% end %>
     </table>
   </div>
