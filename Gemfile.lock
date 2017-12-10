@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/hilmysyarif/sms_gateway.git
+  revision: ba29ec651d82cc07dbc8579acaa67066b8a77bf2
+  branch: master
+  specs:
+    sms_gateway (0.3.0)
+      httparty
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -76,6 +84,8 @@ GEM
     ffi (1.9.18-x86-mingw32)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    httparty (0.15.6)
+      multi_xml (>= 0.5.2)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -95,6 +105,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.10.3)
     multi_json (1.12.2)
+    multi_xml (0.6.0)
     nio4r (2.1.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
@@ -211,6 +222,7 @@ DEPENDENCIES
   rails_12factor
   sass-rails (~> 5.0)
   selenium-webdriver
+  sms_gateway (= 0.3.0)!
   sqlite3
   turbolinks (~> 5)
   tzinfo-data

@@ -1,0 +1,19 @@
+---
+
+development:
+    adapter: sms_gateway_me
+    email: haritzrahman98@gmail.com
+    password: akusukakamu4
+    device: 69200
+
+test:
+    adapter: sms_gateway_me
+    email: haritzrahman98@gmail.com
+    password: akusukakamu4
+    device: 69200
+
+production:
+    adapter: sms_gateway_me
+    email: haritzrahman98@gmail.com
+    password: akusukakamu4
+    device: 69200
