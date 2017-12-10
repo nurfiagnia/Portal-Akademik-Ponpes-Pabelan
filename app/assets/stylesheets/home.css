@@ -6,6 +6,7 @@ body{
 .wrapper{
 	background-image: url(default-bg.png);
 	background-repeat: repeat;
+	width: 100%;
 }
 header{
 	margin-top: -5px;
@@ -44,13 +45,13 @@ header{
 }
 .pendidikan{
 	width: 100%;
-	height: 300px;
+	height: 320px;
 	background-image: url(default-bg.png);
 	background-repeat: repeat;
 }
 .pendidikan h3{
 	text-align: center;
-	padding-top: 33px;
+	padding-top: 3%;
 	text-shadow: 2px 0px #ffcc00;
 	font-weight: 700;
 	font-family: Arial;
@@ -62,8 +63,8 @@ header{
 }
 .icon div{
 	width: 13%;
+	margin-left: 8%;
 	float: left;
-	margin-left: 95px;
 }
 .icon div img{
 	width: 100%;
@@ -76,20 +77,9 @@ header{
 	width: 105%;
 	-webkit-filter: drop-shadow(0px 0px 8px rgba(255, 204, 0, 0.9));
 }
-.label h5{
-	position: absolute;
-}
-.kmi{
-	margin: 130px 301px;
-}
-.mts{
-	margin: 130px 542px;
-}
-.takhasus{
-	margin: 130px 750px;
-}
-.ma{
-	margin: 130px 1034px;
+.icon p{
+	margin-top: 5%;
+	text-align: center;
 }
 .berita{
 	width: 100%;
@@ -132,28 +122,35 @@ aside{
 .explore{
 	width: 90%;
 	height: 450px;
-	margin-left: 90px;
+	margin-left: 10%;
+	clear: both;
 }
 .explore h3{
 	text-align: center;
 	color: black;
 	margin-top: 50px;
-	margin-left: -40px;
+	margin-left: -10%;
 	font-weight: 900;
 	font-family: BroadWay;
 	font-size: 30pt;
 }
 .explore div{
-	width: 250px;
+	width: 20%;
 	height: 270px;
 	float: left;
-	margin:50px 70px;
+	margin:5%;
 	background: rgba(211, 211, 211, 0.7);
 }
-.explore div img{
-	width: 150px;
-	height: 150px;
-	margin: 30px 50px;
+.explore1 img{
+	width: 80%;
+	margin: 5% 0%;
+}
+.explore2 img{
+	width: 85%;
+	margin: 2% 0% 2% 0%;
+}
+.explore3 img{
+	width: 90%;
 }
 .explore div h5{
 	text-align: center;
@@ -184,14 +181,13 @@ footer{
 }
 .footera{
 	float: left;
-	width: 30%;
+	width: 28%;
 }
 .footera .logo{
-	margin: 30px;
+	margin: 7%;
 }
 .contact {
-	margin: -15px;
-	padding-left: 60px;
+	margin: -5% 0% 20% 12%;
 }
 .contact .fb, .ig, .email, .tlp, .loc{
 	float: left;
@@ -207,28 +203,28 @@ footer{
 	width: 30%;
 }
 .footerb h4{
-	margin-top: 30px;
+	margin-top: 7%;
 	color: white;
 }
 .footerc{
 	float: left;
-	width: 40%;
+	width: 42%;
 }
 .depag {
 	width: 20%;
-	margin: 5px;
-	padding-top: 30px;
+	margin: 1%;
+	padding-top: 5%;
 }
 .binanbud{
-	width: 75%;
-	margin: 5px;
-	padding-top: 30px;
+	width: 70%;
+	margin: 1%;
+	padding-top: 5%;
 }
 .footer2{
-	margin-bottom: -5px;
+	clear: both;
 }
 .footer2 label{
-	margin: 25px 0px;
+	margin-top: 2%;
 }
 
 /*title 2...........................................................................*/
@@ -275,7 +271,52 @@ footer{
 	color: black;
 	margin: 10px 0px;	
 }
-
+/*prestasi-----------------------------------------------------------------------------*/
+.prestasi{
+	margin: 10px 120px;
+}
+.foto-prestasi1 img{
+	height: 330px;
+	width: 350px;
+}
+.isiprestasi1{
+	color: black;
+}
+.isiprestasi1 h3{
+	margin-top: 20px;
+}
+.isiprestasi1 a:hover {
+	color: #4682B4;
+	font-weight: 700;
+}
+.foto-prestasi2 img{
+	height: 330px;
+	width: 350px;
+}
+.isiprestasi2{
+	color: black;
+}
+.isiprestasi2 h3{
+	margin-top: 20px; 
+}
+.isiprestasi2 a:hover {
+	color: #4682B4;
+	font-weight: 700;
+}
+.foto-prestasi3 img{
+	height: 330px;
+	width: 350px;
+}
+.isiprestasi3{
+	color: black;
+}
+.isiprestasi3 h3{
+	margin-top: 20px; 
+}
+.isiprestasi3 a:hover {
+	color: #4682B4;
+	font-weight: 700;
+}
 /*Profil-------------------------------------------------------------------------------*/
 .title{
 	width: 100%;
@@ -405,4 +446,112 @@ footer{
 }
 .oops-image{
 	width: 20%;
+}
+/*------------------------------------------RESPONSIVE------------------------------------*/
+@media screen and (max-width: 1000px)
+{
+	.berita1
+	{
+		width: 100%;
+		background-image: url(default-bg.png);
+		background-repeat: repeat;
+	}
+	.berita{
+		height: auto;
+	}
+	aside {
+		width: 100%;
+		background-image: url(default-bg.png);
+		background-repeat: repeat;
+	}
+	.footer1{
+		height: auto;
+		background-color: #101010;
+	}
+	.footera{
+		width: 50%;
+	}
+	.footerb{
+		width: 50%;
+	}
+	.footerc{
+		width: 100%;
+		background-color: #101010;
+	}
+	.footer2 {
+		height: auto;
+		background-color: black;
+	}
+	.pendidikan{
+		width: 100%;
+	}
+	.icon1, .icon2, .icon3, .icon4 {
+		width: 100%;
+	}
+}
+@media screen and (max-width: 480px)
+{
+	.pendidikan {
+		width: 100%;
+		height: auto;
+		background-image: url(default-bg.png);
+		background-repeat: repeat;
+	}
+	.icon {
+		width: 100%;
+		margin: 0%;
+		background-image: url(default-bg.png);
+		background-repeat: repeat;
+	}
+	.icon div{
+		width: 50%;
+		background-image: url(default-bg.png);
+		background-repeat: repeat;
+		margin: 0%;
+	}
+	.icon div img{
+		width: 60%;
+		margin: 0% 20%;
+	}
+	.icon div img:hover{
+		width: 60%;
+	}
+	/*
+	.explore {
+		width: 90%;
+		height: auto;
+	}
+	.explore div{
+		width: 100%;
+	}
+	.explore1 img{
+		width: 100%;
+	}
+	*/
+	.footer{
+		width: 100%;
+		height: auto;
+	}
+	.footer1{
+		width: 100%;
+		height: auto;
+		background-color: #101010;
+	}
+	.footera{
+		width: 100%;
+	}
+	.footerb{
+		width: 100%;
+		height: auto;
+		background-color: #101010;
+	}
+	.footerc{
+		width: 100%;
+		background-color: #101010;
+	}
+	.footer2 {
+		height: auto;
+		background-color: black;
+	}
+
 }
