@@ -1,4 +1,4 @@
----
+    ---
 
 development:
     adapter: sms_gateway_me
