@@ -55,5 +55,9 @@ Rails.application.routes.draw do
   delete "/pengasuhan/logout", to: 'pengasuhan#logout'
   get "/pengasuhan/profil", to: 'pengasuhan#profil'
   post "/pengasuhan/profil", to: 'pengasuhan#update'
+  get "/pengasuhan/mail", to: 'pengasuhan#mail'
+  post "/pengasuhan/mail", to: 'pengasuhan#sendd'
+  get "/pengasuhan/penilaian2", to: 'pengasuhan#penilaian2'
+   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

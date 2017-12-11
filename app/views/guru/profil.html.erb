@@ -1,5 +1,5 @@
 	<!--navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                 <a class="navbar-brand" href="#"><%= image_tag("LogoPutih.png") %></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -82,7 +82,7 @@
             <%= form_tag do %>
               <%= text_field_tag :username, params[:username], class: "form-control",  placeholder: "Username", value: guru.username %>
               <br>
-              <%= password_field_tag :password, params[:password], class: "form-control", placeholder: "Password", value: guru.password_digest %>
+              <%= password_field_tag :password, params[:password], class: "form-control", placeholder: "Password", :required => true %>
               <br>
               <%= text_field_tag :nama, params[:nama], class: "form-control",  placeholder: "Nama", value: guru.nama %>
               <br>

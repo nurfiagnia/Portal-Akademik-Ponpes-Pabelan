@@ -6,16 +6,19 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
-      	<li class="nav-item active">
-          <a class="nav-link" href="/guru/index">Home</a>
+      	<li class="nav-item">
+          <a class="nav-link" href="/pengasuhan/index">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/guru/penilaian">Penilaian</a>
+          <a class="nav-link" href="/pengasuhan/penilaian">Raport</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/guru/profil">Profil</a>
+          <a class="nav-link" href="/pengasuhan/mail">Pesan</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/pengasuhan/profil">Profil</a>
             <li class="nav-item">
-					     <%= link_to 'logout', guru_logout_path, method: :delete, class: 'nav-link' %>
+					     <%= link_to 'logout', pengasuhan_logout_path, method: :delete, class: 'nav-link' %>
             </li>                    
       </ul>
     </div>  
@@ -78,7 +81,7 @@
             <%= form_tag do %>
               <%= text_field_tag :username, params[:username], class: "form-control",  placeholder: "Username", value: pengasuhan.username %>
               <br>
-              <%= password_field_tag :password, params[:password], class: "form-control", placeholder: "Password", value: pengasuhan.password_digest %>
+              <%= password_field_tag :password, params[:password], class: "form-control", placeholder: "Password", :required => true  %>
               <br>
               <%= text_field_tag :nama, params[:nama], class: "form-control",  placeholder: "Nama", value: pengasuhan.nama %>
               <br>

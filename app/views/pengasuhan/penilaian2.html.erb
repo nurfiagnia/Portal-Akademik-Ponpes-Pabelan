@@ -1,0 +1,61 @@
+<!--navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#"><%= image_tag("LogoPutih.png") %></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+      	<li class="nav-item">
+          <a class="nav-link" href="/pengasuhan/index">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pengasuhan/penilaian">Raport</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pengasuhan/mail">Pesan</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/pengasuhan/profil">Profil</a>
+            <li class="nav-item">
+					     <%= link_to 'logout', pengasuhan_logout_path, method: :delete, class: 'nav-link' %>
+            </li>                    
+      </ul>
+    </div>  
+</nav>
+<!--end navbar-->
+</header>
+<!--end header-->
+<% guru = current_guru %>
+  <!--title-->
+  <div class="title2">
+     <h2>Penilaian Mata Pelajaran <%= guru.mapel %></h2>
+  </div>
+  <!--end title-->
+  <% flash.each do |type, message| %>
+    <div class="alert alert-<%= type %>"><%= message %></div>
+  <% end %>
+  <div class="m-5">
+    <table class="table table-light">
+      <tr>
+        <th>Nama Santri</th>
+        <th>NIS</th>
+        <th>NISN</th>
+        <th>Kelas</th>
+        <th>Angka</th>
+        <th>Huruf</th>
+        <th></th>
+      </tr>
+      <% @nilai.each do |nilai| %>
+      <tr>
+        <td><%= nilai.nama %></td>
+        <td><%= nilai.nis %></td>
+        <td><%= nilai.nisn %></td>
+        <td><%= nilai.kelas %></td>
+        <td><%= nilai.angka %></td>
+        <td><%= nilai.huruf %></td>
+        <td><%= link_to 'Tambah nilai' %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>

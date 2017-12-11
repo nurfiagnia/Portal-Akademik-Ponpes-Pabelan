@@ -71,7 +71,7 @@
                 <%= text_field_tag :mapel, params[:mapel], class: "form-control",  placeholder: "Mata Pelajaran" %>
               </div>
               <div class="col-md-5">
-                <%= text_field_tag :pendidikan, params[:pendidikan], class: "form-control", placeholder: "Jenjang" %>
+                <%= select_tag(:pendidikan, options_for_select([['MTs', 'MTs'], ['Takhasus', 'Takhasus'], ['MA', 'MA']]), class: "form-control") %>
               </div>
             </div>
             <br>
@@ -113,6 +113,34 @@
     <% end %>
   </table>
   <hr>
+  <legend>Takhasus</legend>
+  <table class="table table-light">
+    <tr>
+      <th>Username</th>
+      <th>Nama</th>
+      <th>NIP</th>
+      <th>Jenis Kelamin</th>
+      <th>Alamat</th>
+      <th>Nomor Telepon</th>
+      <th>Mata Pelajaran</th>
+      <th>Jenjang</th>
+      <th></th>
+    </tr>
+    <% @gurut.each do |gurutakhasus| %>
+    <tr>
+      <td><%= gurutakhasus.username %></td>
+      <td><%= gurutakhasus.nama %></td>
+      <td><%= gurutakhasus.nip %></td>
+      <td><%= gurutakhasus.jk %></td>
+      <td><%= gurutakhasus.alamat %></td>
+      <td><%= gurutakhasus.no_tlp %></td>
+      <td><%= gurutakhasus.mapel %></td>
+      <td><%= gurutakhasus.pendidikan %></td>
+      <td><%= link_to 'Hapus', admin_guru_path(gurutakhasus), method: :delete %></td>
+    </tr>
+    <% end %>
+  </table>
+  <hr>
   <legend>MA</legend>
   <table class="table table-light">
     <tr>
@@ -141,4 +169,4 @@
     <% end %>
   </table>
 </div>
-  </div>
+</div>

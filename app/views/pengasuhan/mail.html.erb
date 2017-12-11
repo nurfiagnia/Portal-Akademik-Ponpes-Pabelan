@@ -6,13 +6,13 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarColor01">
                   <ul class="navbar-nav mr-auto">
-                  	<li class="nav-item active">
+                  	<li class="nav-item">
                       <a class="nav-link" href="/pengasuhan/index">Home</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="/pengasuhan/raport">Raport</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                       <a class="nav-link" href="/pengasuhan/mail">Pesan</a>
                     </li>
                     <li class="nav-item">
@@ -26,20 +26,12 @@
 <!--end navbar-->
 </header>
 <!--end header-->
-<% pengasuhan = current_pengasuhan %>
-  <div class="m-5">
-    <h1>Hi! <%= pengasuhan.nama %></h1>
-    <hr>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  </div>
+<!--pesan-->
+<div class="pesan">
+  <%= form_tag do %>
+  <%= text_field_tag :notlp, params[:notlp] , class: 'form-control', placeholder: 'no tujuan'  %>
+  <%= text_field_tag :isisms, params[:isisms] , class: 'form-control', placeholder: 'isi pesan'  %>
+  <%= submit_tag 'kirim' %>
+<% end %>
+</div>
+<!--end pesan->

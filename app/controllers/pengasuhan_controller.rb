@@ -41,6 +41,19 @@ class PengasuhanController < ApplicationController
       redirect_to pengasuhan_profil_path
     end
   end
+  def mail
+    
+  end
+  def sendd
+    m = SmsGateway::Sms.new(number: (params[:notlp]), message: (params[:isisms]), device: '69200')
+    if m.deliver
+      flash[:success] = "Sms sedang diproses"
+      redirect_to pengasuhan_mail_path
+    else
+      flash.now[:danger] = "Gagal!"
+      render 'mail'
+    end
+  end
 
   private
     def pengasuhan_params

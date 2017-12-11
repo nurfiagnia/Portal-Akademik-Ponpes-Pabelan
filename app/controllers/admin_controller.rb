@@ -18,6 +18,7 @@ class AdminController < ApplicationController
   end
   def guru
       @gurus = Guru.find_by_sql("SELECT * FROM gurus WHERE pendidikan = 'MTs'")
+      @gurut = Guru.find_by_sql("SELECT * FROM gurus WHERE pendidikan = 'Takhasus'")
       @guru = Guru.find_by_sql("SELECT * FROM gurus WHERE pendidikan = 'MA'")
   end
   def santri
