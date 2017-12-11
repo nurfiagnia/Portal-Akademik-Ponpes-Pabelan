@@ -6,8 +6,12 @@ class GuruController < ApplicationController
   end
   def profil    
   end
+  def edit
+    @nilai = Santri.all
+  end
   def penilaian 
-    @nilai = Nilai.all   
+    @nilai = Nilai.all  
+    @santri = Santri.all 
   end
   def signin
     guru = Guru.find_by(username: params[:username])
@@ -23,7 +27,6 @@ class GuruController < ApplicationController
     session[:guru_id] = nil
     redirect_to guru_path
   end
-
   def guru
     @guru = Guru.all
   end
@@ -50,9 +53,20 @@ class GuruController < ApplicationController
       redirect_to guru_profil_path
     end
   end
-
+  def nilaibaru
+    @nilai = Nilai.new(nilai_params)
+      if @nilai.save
+        redirect_to guru_penilaian_path
+      else
+        flash.now[:danger] = "Gagal menambahkan nilai"
+        render 'penilaian'
+      end
+  end
   private
     def guru_params
       params.permit(:username, :password, :nama, :nip, :jk, :ttl, :alamat, :no_tlp, :mapel, :pendidikan)
+    end
+    def nilai_params
+      params.permit(:nama, :nis, :nisn, :kelas, :thn_ajaran, :mapel, :kkm, :angka, :praktik, :huruf)
     end
 end

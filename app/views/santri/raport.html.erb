@@ -15,7 +15,7 @@
                     <li class="nav-item">
                       <a class="nav-link" href="/santri/profil">Profil</a>
                     <li class="nav-item">
-						          <%= link_to 'logout', santri_logout_path, method: :delete, class: 'nav-link' %>
+						<%= link_to 'logout', santri_logout_path, method: :delete, class: 'nav-link' %>
                     </li>                    
                  </ul>
                 </div>  
@@ -23,30 +23,21 @@
 <!--end navbar-->
 </header>
 <!--end header-->
+<% santri = current_santri %>
 <div class="raport-santri m-5">
 	<legend>Nilai Raport</legend>
 	<hr>
 	<table class="table table-dark">
-		<tr>
-			<th>Bahasa Indonesia</th>
-			<td>angka</td>
-			<td>huruf</td>
-		</tr>
-		<tr>
-			<th>Matematika</th>
-			<td>angka</td>
-			<td>huruf</td>
-		</tr>
-		<tr>
-			<th>IPA</th>
-			<td>angka</td>
-			<td>huruf</td>
-		</tr>
-		<tr>
-			<th>IPS</th>
-			<td>angka</td>
-			<td>huruf</td>
-		</tr>
+		<% @raport.each do |raport| %>
+			<% if (santri.nis==raport.nis) %>
+			<tr>
+				<th><%= raport.mapel %></th>
+				<td><%= raport.angka %></td>
+				<td><%= raport.praktik %></td>
+				<td><%= raport.huruf %></td>
+			</tr>
+			<% end %>
+		<% end %>
 	</table>
 </div>
 <div class="kenaikan-kelas-santri m-5">
@@ -73,5 +64,4 @@
 		</tr>
 	</table>
 </div>
-<a href="">Logout</a>
 </div>

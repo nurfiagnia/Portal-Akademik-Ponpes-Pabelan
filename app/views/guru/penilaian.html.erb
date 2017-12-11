@@ -40,18 +40,19 @@
         <th>NISN</th>
         <th>Kelas</th>
         <th>Angka</th>
+        <th>Praktik</th>
         <th>Huruf</th>
         <th></th>
       </tr>
-      <% @nilai.each do |nilai| %>
+      <% @santri.each do |santri|%>
       <tr>
-        <td><%= nilai.nama %></td>
-        <td><%= nilai.nis %></td>
-        <td><%= nilai.nisn %></td>
-        <td><%= nilai.kelas %></td>
-        <td><%= nilai.angka %></td>
-        <td><%= nilai.huruf %></td>
-        <td><%= link_to 'Tambah nilai' %></td>
+        <td><%= santri.nama %></td>
+        <td><%= santri.nis %></td>
+        <td><%= santri.nisn %></td>
+        <td><%= santri.kelas %></td>
+        <td></td>
+        <td></td>
+        <td><a data-toggle="modal" data-target="#myModal" data-remote="<%= guru_edit_path(santri) %> #form-nilai" class="btn btn-mini">Tambah Nilai</a></td>
       </tr>
       <% end %>
     </table>

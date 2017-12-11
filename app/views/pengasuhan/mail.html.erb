@@ -18,7 +18,7 @@
                     <li class="nav-item">
                       <a class="nav-link" href="/pengasuhan/profil">Profil</a>
                     <li class="nav-item">
-						          <%= link_to 'logout', santri_logout_path, method: :delete, class: 'nav-link' %>
+						          <%= link_to 'logout', pengasuhan_logout_path, method: :delete, class: 'nav-link' %>
                     </li>                    
                  </ul>
                	</div>  
@@ -26,12 +26,18 @@
 <!--end navbar-->
 </header>
 <!--end header-->
+<!--title-->
+<div class="title2">
+  <h2>Layanan SMS</h2>
+</div>
+<!--end title-->
 <!--pesan-->
 <div class="pesan">
   <%= form_tag do %>
-  <%= text_field_tag :notlp, params[:notlp] , class: 'form-control', placeholder: 'no tujuan'  %>
-  <%= text_field_tag :isisms, params[:isisms] , class: 'form-control', placeholder: 'isi pesan'  %>
-  <%= submit_tag 'kirim' %>
+  <%= text_field_tag :notlp, params[:notlp] , class: 'form-control', placeholder: 'No tujuan'  %>
+  <%= text_area_tag :isisms, params[:isisms] , class: 'form-control', placeholder: 'Isi pesan'  %>
+  <hr>
+  <center><%= submit_tag 'kirim', class: 'btn btn-outline-primary' %></center>
 <% end %>
 </div>
 <!--end pesan->

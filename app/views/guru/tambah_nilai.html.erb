@@ -1,0 +1,41 @@
+<div id="form-nilai" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <!-- konten modal-->
+            <div class="modal-content">
+              <!-- heading modal -->
+              <div class="modal-header">
+                <h4 class="modal-title">Tambah Nilai</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <!-- body modal -->
+              <div class="modal-body">
+                <%= form_for @nilai, :html => {:class => ''} do |f| %>
+                  <%= f.text_field :nama, params[:nama], class: "form-control",  placeholder: "Nama", :readonly => true %>
+                  <br>
+                  <%= f.text_field :nis, params[:nis], class: "form-control",  placeholder: "NIS", :readonly => true %>
+                  <br>
+                  <%= f.text_field :nisn, params[:nisn], class: "form-control",  placeholder: "NISN", :readonly => true %>
+                  <br>
+                  <%= f.text_field :kelas, params[:kelas], class: "form-control",  placeholder: "Kelas", :readonly => true %>
+                  <br>
+                  <%= f.text_field :thn_ajaran, params[:thn_ajaran], class: "form-control",  placeholder: "Tahun Ajaran" %>
+                  <br>
+                  <%= f.text_field :mapel, params[:mapel], class: "form-control",  placeholder: "Mapel", :readonly => true %>
+                  <br>
+                  <%= f.text_field  :kkm, params[:kkm], class: "form-control",  placeholder: "KKM" %>
+                  <br>
+                  <%= f.text_field :angka, params[:angka], class: "form-control",  placeholder: "Angka" %>
+                  <br>
+                  <%= f.text_field :praktik, params[:praktik], class: "form-control",  placeholder: "Praktik" %>
+                  <br>
+                  <%= f.text_field :huruf, params[:huruf], class: "form-control",  placeholder: "Huruf" %>
+              </div>
+              <!-- footer modal -->
+              <div class="modal-footer">
+                <center><%= f.submit 'Simpan', class: "btn btn-outline-primary" %></center>
+              </div>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>

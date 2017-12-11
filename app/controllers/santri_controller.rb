@@ -19,6 +19,7 @@ class SantriController < ApplicationController
 
   end
   def raport
+    @raport = Nilai.all
   end
   def profil 
   end
