@@ -52,7 +52,48 @@
         <td><%= santri.kelas %></td>
         <td></td>
         <td></td>
-        <td><a data-toggle="modal" data-target="#myModal" data-remote="<%= guru_edit_path(santri) %> #form-nilai" class="btn btn-mini">Tambah Nilai</a></td>
+        <td><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#form-nilai">Guru Baru</button></td>
+        <div id="form-nilai" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <!-- konten modal-->
+            <div class="modal-content">
+              <!-- heading modal -->
+              <div class="modal-header">
+                <h4 class="modal-title">Tambah Nilai</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <!-- body modal -->
+              <div class="modal-body">
+                <%= form_tag %>
+                  <%= text_field_tag :nama, params[:nama], class: "form-control",  placeholder: "Nama", :readonly => true %>
+                  <br>
+                  <%= text_field_tag :nis, params[:nis], class: "form-control",  placeholder: "NIS", :readonly => true %>
+                  <br>
+                  <%= text_field_tag :nisn, params[:nisn], class: "form-control",  placeholder: "NISN", :readonly => true %>
+                  <br>
+                  <%= text_field_tag :kelas, params[:kelas], class: "form-control",  placeholder: "Kelas", :readonly => true %>
+                  <br>
+                  <%= text_field_tag :thn_ajaran, params[:thn_ajaran], class: "form-control",  placeholder: "Tahun Ajaran" %>
+                  <br>
+                  <%= text_field_tag :mapel, params[:mapel], class: "form-control",  placeholder: "Mapel", :readonly => true %>
+                  <br>
+                  <%= text_field_tag  :kkm, params[:kkm], class: "form-control",  placeholder: "KKM" %>
+                  <br>
+                  <%= text_field_tag :angka, params[:angka], class: "form-control",  placeholder: "Angka" %>
+                  <br>
+                  <%= text_field_tag :praktik, params[:praktik], class: "form-control",  placeholder: "Praktik" %>
+                  <br>
+                  <%= text_field_tag :huruf, params[:huruf], class: "form-control",  placeholder: "Huruf" %>
+              </div>
+              <!-- footer modal -->
+              <div class="modal-footer">
+                <center><%= submit_tag 'Simpan', class: "btn btn-outline-primary" %></center>
+              </div>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </tr>
       <% end %>
     </table>
