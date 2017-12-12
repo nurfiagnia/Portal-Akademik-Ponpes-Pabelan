@@ -36,6 +36,7 @@ class GuruController < ApplicationController
         redirect_to admin_guru_path
       else
         flash.now[:danger] = "Data yang anda masukkan tidak valid!"
+        redirect_to admin_guru_path
       end
   end
   def hapusguru
