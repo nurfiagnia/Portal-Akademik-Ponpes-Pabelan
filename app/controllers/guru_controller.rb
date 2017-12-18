@@ -27,9 +27,6 @@ class GuruController < ApplicationController
     session[:guru_id] = nil
     redirect_to guru_path
   end
-  def guru
-    @guru = Guru.all
-  end
   def gurubaru
     @guru = Guru.new(guru_params)
       if @guru.save

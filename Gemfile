@@ -45,6 +45,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara'
+  gem 'rspec-rails'
   # Adds support for Capybara system testing and selenium driver
   #gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
@@ -66,3 +67,4 @@ gem "sqlite3", :platform => [:ruby, :mswin, :mingw], group: [:development, :test
 gem "jdbc-sqlite3", :platform => :jruby
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
+gem 'simplecov', require: false, group: :test
