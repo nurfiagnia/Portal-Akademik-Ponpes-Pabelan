@@ -29,4 +29,11 @@ RSpec.describe AdminController, type: :controller do
 			get :pengasuhan, params: { id: pengasuhan.to_param }
 		end
 	end
+
+	context 'GET #pengaturan' do
+		it 'returns success response' do
+			get :pengaturan
+			expect(response).to be_success
+		end
+	end
 end

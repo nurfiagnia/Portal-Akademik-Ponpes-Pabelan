@@ -30,6 +30,7 @@ class GuruController < ApplicationController
   def gurubaru
     @guru = Guru.new(guru_params)
       if @guru.save
+        flash[:success] = "Data berhasil disimpan"
         redirect_to admin_guru_path
       else
         flash.now[:danger] = "Data yang anda masukkan tidak valid!"
