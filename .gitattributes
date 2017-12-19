@@ -1,0 +1,9 @@
+* linguist-vendored
+*.js linguist-vendored=false
+*.coffee linguist-vendored=false
+*.css linguist-vendored=false
+*.yml linguist-vendored=false
+*.json linguist-vendored=false
+*.rb linguist-vendored=false
+*.html linguist-vendored=true
+*.html.erb linguist-vendored=true
