@@ -26,6 +26,7 @@ gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem 'rails-controller-testing', '~> 1.0', '>= 1.0.2'
 gem "sms_gateway", '0.3.0', github:'hilmysyarif/sms_gateway', branch: 'master'
+gem 'closure_tree'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

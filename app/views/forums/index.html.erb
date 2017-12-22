@@ -1,0 +1,10 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1>Join the discussion</h1>
+    <p>Click the button below to start a new thread:</p>
+    <p>
+      <%= link_to 'Add new topic', forums_path, class: 'btn btn-primary btn-lg' %>
+    </p>
+  </div>
+</div>
+<%= forums_tree_for @comments %>
