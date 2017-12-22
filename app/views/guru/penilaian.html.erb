@@ -33,29 +33,25 @@
     <div class="alert alert-<%= type %>"><%= message %></div>
   <% end %>
   <div class="m-5">
+    <%= form_tag(guru_penilaian_path, :method => "get", :class => 'form-row m-5') do %>
+      <%= select_tag(:kelas, options_for_select([['PILIH KELAS',''],['1',1],['2',2],['3',3],['4',4],['5',5],['6',6]],), class: "form-control col-md-3", style: "height: 52px; margin-left: 25%;") %>
+      <%= submit_tag 'Pilih', class: 'btn btn-primary col-md-3' %>
+    <% end %>
     <table class="table table-light">
       <tr>
         <th>Nama Santri</th>
         <th>NIS</th>
         <th>NISN</th>
         <th>Kelas</th>
-        <th>Angka</th>
-        <th>Praktik</th>
-        <th>Huruf</th>
         <th></th>
       </tr>
       <% @santri.each do |santri|%>
-      <% @nilai.each do |nilai|%>
       <tr>
         <td><%= santri.nama %></td>
         <td><%= santri.nis %></td>
         <td><%= santri.nisn %></td>
         <td><%= santri.kelas %></td>
-        <% if nilai.nis = santri.nis %>
-        <td><%= nilai.angka %></td>
-        <td><%= nilai.praktik %></td>
-        <td><%= nilai.huruf %></td>
-        <% end %>
+        <% if santri.nis != nil %>
         <td><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#form-nilai<%= santri.id %>">Tambah Nilai</button></td>
         <div id="form-nilai<%= santri.id %>" class="modal fade" role="dialog">
           <div class="modal-dialog">
@@ -98,8 +94,77 @@
             </div>
           </div>
         </div>
+        <% end %>
       </tr>
       <% end %>
+    </table>
+    <hr>
+    <legend>Hasil Input</legend>
+    <table class="table table-light">
+      <tr>
+        <th>Nama Santri</th>
+        <th>NIS</th>
+        <th>NISN</th>
+        <th>Kelas</th>
+        <th>Angka</th>
+        <th>Praktik</th>
+        <th>Huruf</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <% @nilai.each do |santri|%>
+      <tr>
+        <td><%= santri.nama %></td>
+        <td><%= santri.nis %></td>
+        <td><%= santri.nisn %></td>
+        <td><%= santri.kelas %></td>
+        <td><%= santri.angka %></td>
+        <td><%= santri.praktik %></td>
+        <td><%= santri.huruf %></td>
+        <td><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#form-nilai<%= santri.id %>">Edit</button></td>
+        <td><%= link_to 'Delete','#', class: "btn btn-outline-danger" %></td>
+        <div id="form-nilai<%= santri.id %>" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <!-- konten modal-->
+            <div class="modal-content">
+              <!-- heading modal -->
+              <div class="modal-header">
+                <h4 class="modal-title">Tambah Nilai</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <!-- body modal -->
+              <div class="modal-body">
+                <%= form_tag %>
+                  <%= text_field_tag :nama, params[:nama], class: "form-control",  placeholder: "Nama", value: santri.nama, :readonly => true %>
+                  <br>
+                  <%= text_field_tag :nis, params[:nis], class: "form-control",  placeholder: "NIS", value: santri.nis, :readonly => true %>
+                  <br>
+                  <%= text_field_tag :nisn, params[:nisn], class: "form-control",  placeholder: "NISN", value: santri.nisn, :readonly => true %>
+                  <br>
+                  <%= text_field_tag :kelas, params[:kelas], class: "form-control",  placeholder: "Kelas", value: santri.kelas, :readonly => true %>
+                  <br>
+                  <%= text_field_tag :thn_ajaran, params[:thn_ajaran], class: "form-control",  placeholder: "Tahun Ajaran" %>
+                  <br>
+                  <%= text_field_tag :mapel, params[:mapel], class: "form-control",  placeholder: "Mapel", value: guru.mapel, :readonly => true %>
+                  <br>
+                  <%= text_field_tag  :kkm, params[:kkm], class: "form-control",  placeholder: "KKM" %>
+                  <br>
+                  <%= text_field_tag :angka, params[:angka], class: "form-control",  placeholder: "Angka" %>
+                  <br>
+                  <%= text_field_tag :praktik, params[:praktik], class: "form-control",  placeholder: "Praktik" %>
+                  <br>
+                  <%= text_field_tag :huruf, params[:huruf], class: "form-control",  placeholder: "Huruf" %>
+              </div>
+              <!-- footer modal -->
+              <div class="modal-footer">
+                <center><%= submit_tag 'Simpan', class: "btn btn-outline-primary" %></center>
+              </div>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </tr>
       <% end %>
     </table>
   </div>

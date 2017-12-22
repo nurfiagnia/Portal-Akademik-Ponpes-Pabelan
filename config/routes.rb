@@ -61,7 +61,9 @@ Rails.application.routes.draw do
   post "/pengasuhan/mail", to: 'pengasuhan#sendd'
   get "/pengasuhan/penilaian2", to: 'pengasuhan#penilaian2'
    
-
+  get "/forums/login", to: 'forums#login'
+  post "/forums/login", to: 'forums#signin'
+  delete "/forums/logout", to: 'forums#logout'
   resources :forums, only: [:index, :create, :new]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

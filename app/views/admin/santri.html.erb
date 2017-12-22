@@ -34,7 +34,10 @@
     <h1>Tabel Data Santri</h1>
     <div class="form-row">
       <button type="button" class="btn btn-outline-primary col-md-3" data-toggle="modal" data-target="#form-santri">Santri Baru</button>
-      <%= select_tag(:kelas, options_for_select([['1','1'],['2','2'],['3','3'],['4','4'],['5','5'],['6','6']]), class: "form-control ml-5 col-md-3") %>
+      <%= form_tag(admin_santri_path, :method => "get", :class => 'form-row ml-5 col-md-7') do %>
+        <%= select_tag(:kelas, options_for_select([['PILIH KELAS',''],['1',1],['2',2],['3',3],['4',4],['5',5],['6',6]],), class: "form-control col-md-3", style: "height: 52px;") %>
+        <%= submit_tag 'Pilih', class: 'btn btn-primary col-md-3' %>
+      <% end %>
     </div>
   <div id="form-santri" class="modal fade" role="dialog">
     <div class="modal-dialog">

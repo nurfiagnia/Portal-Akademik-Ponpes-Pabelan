@@ -56,4 +56,24 @@ class ApplicationController < ActionController::Base
       redirect_to pengasuhan_path
     end
   end  
+
+  helper_method :current_forums, :forums_logged_in?
+  def current_forums
+    @current_forums ||= Pengasuhan.find(session[:pengasuhan_id]) if session[:pengasuhan_id]
+    @current_forums ||= Santri.find(session[:santri_id]) if session[:santri_id]
+    @current_forums ||= Guru.find(session[:guru_id]) if session[:guru_id]
+    @current_forums ||= Admin.find(session[:admin_id]) if session[:admin_id]
+  end
+  def forums_logged_in?
+    !!current_forums
+  end 
+
+  helper_method :current_nilai
+  def current_nilai
+    @santri = Santri.all
+    @santri.each do |s|
+      @current_nilai ||= Nilai.joins("INNER JOIN santris ON santris.nis = nilais.nis") if s.nis
+    end
+    @current_nilai
+  end
 end

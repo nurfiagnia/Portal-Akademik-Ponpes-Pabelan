@@ -22,8 +22,8 @@ class AdminController < ApplicationController
       @guru = Guru.find_by_sql("SELECT * FROM gurus WHERE pendidikan = 'MA'")
   end
   def santri
-      @santri = Santri.find_by_sql("SELECT * FROM santris WHERE jk = 'Pria'")
-      @santriwati = Santri.find_by_sql("SELECT * FROM santris WHERE jk = 'Wanita'")
+      @santri = Santri.find_by_sql("SELECT * FROM santris WHERE jk = 'Pria' AND kelas = '#{params[:kelas]}'")
+      @santriwati = Santri.find_by_sql("SELECT * FROM santris WHERE jk = 'Wanita' AND kelas = '#{params[:kelas]}'")
   end 
   def pengasuhan
      @pengasuhanputra = Pengasuhan.find_by_sql("SELECT * FROM pengasuhans WHERE jk = 'Pria'")

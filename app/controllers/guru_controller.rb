@@ -10,8 +10,9 @@ class GuruController < ApplicationController
     @nilai = Santri.all
   end
   def penilaian 
-    @nilai = Nilai.all  
-    @santri = Santri.all 
+    guru = current_guru
+    @nilai = Nilai.find_by_sql("SELECT * FROM nilais WHERE mapel = '#{guru.mapel}' AND kelas = '#{params[:kelas]}'") 
+    @santri = Santri.find_by_sql("SELECT * FROM santris WHERE kelas = '#{params[:kelas]}'")
   end
   def signin
     guru = Guru.find_by(username: params[:username])

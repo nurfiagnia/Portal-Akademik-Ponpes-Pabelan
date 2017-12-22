@@ -1,0 +1,22 @@
+</header>
+</div>
+	<div class="login-area">
+		<% flash.each do |type, message| %>
+  	 	<div class="alert alert-<%= type %>"><%= message %></div>
+  		<% end %>
+		<div class="inside-login-area">
+			<%= form_tag do %>
+			<center>
+				<%= image_tag("LogoPabelan.png") %>
+				<legend>Forum Login</legend>
+			</center>
+			<hr>
+			<%= text_field_tag :username, params[:username], class: "form-control", placeholder: "Username" %>
+			<%= text_field_tag :password, params[:password], class: "form-control", type: "password", placeholder: "Password" %>
+			<br>
+			<center>
+				<%= submit_tag "Login", class: "btn btn-success" %>
+			</center>
+			<% end %>
+		</div>
+	</div>
