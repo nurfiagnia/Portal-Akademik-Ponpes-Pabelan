@@ -8,8 +8,8 @@ def new
 end
 
 def create
-  if params[:comment][:parent_id].to_i > 0
-    parent = Forum.find_by_id(params[:comment].delete(:parent_id))
+  if params[:forum][:parent_id].to_i > 0
+    parent = Forum.find_by_id(params[:forum].delete(:parent_id))
     @comment = parent.children.build(comment_params)
   else
     @comment = Forum.new(comment_params)
@@ -17,7 +17,7 @@ def create
 
   if @comment.save
     flash[:success] = 'Your comment was successfully added!'
-    redirect_to root_url
+    redirect_to forums_path
   else
     render 'new'
   end
@@ -26,7 +26,7 @@ end
 private
 
   def comment_params
-    params.require(:comment).permit(:title, :body, :author)
+    params.require(:forum).permit(:title, :body, :author)
   end
 
 end

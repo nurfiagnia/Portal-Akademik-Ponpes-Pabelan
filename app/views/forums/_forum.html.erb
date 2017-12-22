@@ -1,18 +1,18 @@
 <div class="well">
-  <h2><%= comment.title %></h2>
-  <p class="text-muted"><%= comment.root? ? "Started by" : "Replied by" %> <strong><%= comment.author %></strong> on
-    <%= l(comment.created_at, format: '%B, %d %Y %H:%M:%S') %></p>
+  <h2><%= forum.title %></h2>
+  <p class="text-muted"><%= forum.root? ? "Started by" : "Replied by" %> <strong><%= forum.author %></strong> on
+    <%= l(forum.created_at, format: '%B, %d %Y %H:%M:%S') %></p>
 
   <blockquote>
-  <p><%= comment.body %></p>
+  <p><%= forum.body %></p>
 </blockquote>
 
 
 <% from_reply_form ||= nil %>
 <% unless from_reply_form %>
-  <% if comment.leaf? %>
+  <% if forum.leaf? %>
     <small class="text-muted">There are no replies yet - be the first one to reply!</small>
   <% end %>
-  <p><%= link_to 'reply', new_comment_path(comment.id) %></p>
+  <p><%= link_to 'reply', new_forum_path(forum.id) %></p>
 <% end %>
 </div>

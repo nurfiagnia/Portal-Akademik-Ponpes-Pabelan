@@ -62,6 +62,6 @@ Rails.application.routes.draw do
   get "/pengasuhan/penilaian2", to: 'pengasuhan#penilaian2'
    
 
-  resources :forums, only: [:index, :create]
+  resources :forums, only: [:index, :create, :new]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
