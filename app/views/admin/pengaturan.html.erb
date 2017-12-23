@@ -56,9 +56,12 @@
     <div id="myTabContent" class="tab-content">
       <!--visi dan misi-->
       <div class="tab-pane fade show active" id="tahunajaran">
+        <center><h1 class="mt-5">Tahun Ajaran Default</h1></center>
           <%= form_tag do %>
-            <%= text_field_tag :tahunajaran, params[:tahunajaran], class: "form-control", value: @tahunajaran.tahun %>
-            <%= submit_tag 'Set', class: "btn btn-outline-primary" %>
+            <div class="p-5 form-row">
+              <%= text_field_tag :tahunajaran, params[:tahunajaran], class: "form-control col-md-10", value: @tahunajaran.tahun %>
+              <%= submit_tag 'Set', class: "btn btn-outline-primary col-md-2" %>
+            </div>
           <% end %>
       </div>
      </div>

@@ -19,7 +19,9 @@ class SantriController < ApplicationController
 
   end
   def raport
-    @raport = Nilai.all
+    santri = current_santri
+    @raport = Nilai.find_by_sql("SELECT * FROM nilais WHERE nis = '#{santri.nis}' AND kelas = '#{params[:kelas]}'")
+    @kelas = Nilai.find_by_sql("SELECT kelas FROM nilais WHERE nis = '#{santri.nis}' GROUP BY kelas")
   end
   def profil 
   end

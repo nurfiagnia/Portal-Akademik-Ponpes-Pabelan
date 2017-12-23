@@ -25,18 +25,20 @@
 <!--end header-->
 <% santri = current_santri %>
 <div class="raport-santri m-5">
+	<%= form_tag(santri_raport_path, :method => "get", :class => 'form-row mx-5') do %>
+      <%= select_tag(:kelas, options_for_select(kelas_collect), class: "form-control col-md-3", style: "height: 52px; margin-left: 25%;") %>
+      <%= submit_tag 'Pilih', class: 'btn btn-primary col-md-3' %>
+    <% end %>
 	<legend>Nilai Raport</legend>
 	<hr>
 	<table class="table table-dark">
 		<% @raport.each do |raport| %>
-			<% if (santri.nis==raport.nis) %>
 			<tr>
 				<th><%= raport.mapel %></th>
 				<td><%= raport.angka %></td>
 				<td><%= raport.praktik %></td>
 				<td><%= raport.huruf %></td>
 			</tr>
-			<% end %>
 		<% end %>
 	</table>
 </div>

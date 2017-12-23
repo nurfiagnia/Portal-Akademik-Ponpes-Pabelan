@@ -1,7 +1,9 @@
 </header>
 </div>
 	<div class="login-area">
-		<p id="notice"><%= notice %></p>
+		<% flash.each do |type, message| %>
+  	 	<div class="alert alert-<%= type %>"><%= message %></div>
+  		<% end %>
 		<div class="inside-login-area">
 			<%= form_tag do %>
 			<center>
