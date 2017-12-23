@@ -16,6 +16,8 @@ Negeri Sunan Gunung Djati Bandung.
 * Jika sudah terinstall RoR pada PC anda, ketikkan
 
 	<tt>bundle install</tt><br>
+	<tt>gem uninstall bcrypt</tt>
+	<tt>gem install bcrypt --platform=ruby</tt>
 	<tt>rake db:migrate</tt><br>
 	<tt>rake db:seed</tt><br>
 	<tt>rails s</tt>
@@ -29,7 +31,7 @@ Negeri Sunan Gunung Djati Bandung.
 	<tt>username = 'admin'</tt><br>
 	<tt>password = 'admin'</tt>
 
-bisa dilihat di folder <tt>db/seeds.rb</tt>
+	bisa dilihat di folder <tt>db/seeds.rb</tt>
 
 * Masukkan data dan have fun :)
 

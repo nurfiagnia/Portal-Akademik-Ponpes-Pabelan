@@ -9,10 +9,6 @@ RSpec.describe GuruController, type: :controller do
 			guru = Guru.create(username: 'sample', password: 'sample')
 			expect(response).to be_success
 		end
-		it 'returns profil response' do
-			get :profil
-			expect(response).to be_success
-		end
 	end
 	context 'GET #hapusguru' do
 		it 'destroy guru data' do
