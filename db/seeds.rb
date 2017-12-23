@@ -24,12 +24,12 @@ Kontak.create(kontak)
 
 Admin.create(
 	username: "admin",
-	password_digest: "admin"
+	password: "admin"
 )
 
 Guru.create(
 	username: "nurfi29",
-	password_digest: "12345678nine",
+	password: "12345678nine",
 	nama: "Nurfi Agnia",
 	nip: "2017301129011997",
 	jk: "Wanita",
