@@ -34,7 +34,10 @@
 <div class="kolom">
     <ul class="nav nav-tabs">
       <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#psb">Info PSB</a>
+        <a class="nav-link active" data-toggle="tab" href="#tahunajaran">Tahun Ajaran</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#psb">Info PSB</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#kalender">Kalender Akademik</a>
@@ -49,5 +52,16 @@
         <a class="nav-link" data-toggle="tab" href="#kelulusan">Kelulusan Santri</a>
       </li>
   </ul>
+  <!--tab content-->
+    <div id="myTabContent" class="tab-content">
+      <!--visi dan misi-->
+      <div class="tab-pane fade show active" id="tahunajaran">
+          <%= form_tag do %>
+            <%= text_field_tag :tahunajaran, params[:tahunajaran], class: "form-control", value: @tahunajaran.tahun %>
+            <%= submit_tag 'Set', class: "btn btn-outline-primary" %>
+          <% end %>
+      </div>
+     </div>
+    <!--end tab content-->
 </div>
 <!--end kolom-->

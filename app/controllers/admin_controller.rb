@@ -30,6 +30,14 @@ class AdminController < ApplicationController
      @pengasuhanputri = Pengasuhan.find_by_sql("SELECT * FROM pengasuhans WHERE jk = 'Wanita'")
   end 
   def pengaturan
-    
+    @tahunajaran = Tahunajaran.first
+  end
+  def setpengaturan
+    @tahunajaran = Tahunajaran.first
+    if @tahunajaran.update(params[:tahunajaran])
+      redirect_to admin_pengaturan_path
+    else
+      render 'pengaturan'
+    end
   end
 end

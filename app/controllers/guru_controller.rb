@@ -1,5 +1,5 @@
 class GuruController < ApplicationController
-  before_action :must_guru_login, only: [:index]
+  before_action :must_guru_login, only: [:index, :penilaian, :profil]
   def login
   end
   def index
@@ -11,7 +11,8 @@ class GuruController < ApplicationController
   end
   def penilaian 
     guru = current_guru
-    @nilai = Nilai.find_by_sql("SELECT * FROM nilais WHERE mapel = '#{guru.mapel}' AND kelas = '#{params[:kelas]}'") 
+    @tahunajaran = Tahunajaran.first
+    @nilai = Nilai.find_by_sql("SELECT * FROM nilais WHERE mapel = '#{guru.mapel}' AND kelas = '#{params[:kelas]}' AND thn_ajaran = '#{@tahunajaran.tahun}'") 
     @santri = Santri.find_by_sql("SELECT * FROM santris WHERE kelas = '#{params[:kelas]}'")
   end
   def signin
@@ -56,9 +57,27 @@ class GuruController < ApplicationController
   def nilaibaru
     @nilai = Nilai.new(nilai_params)
       if @nilai.save
-        redirect_to guru_penilaian_path
+        redirect_back(fallback_location: guru_penilaian_path)
       else
         flash.now[:danger] = "Gagal menambahkan nilai"
+        render 'penilaian'
+      end
+  end
+  def updatenilai
+    @nilai = Nilai.find(params[:id])
+    if @nilai.update(nilai_params)
+        redirect_back(fallback_location: guru_penilaian_path)
+      else
+        flash.now[:danger] = "Gagal merubah nilai"
+        render 'penilaian'
+      end
+  end
+  def hapusnilai
+    @nilai = Nilai.find(params[:id])
+    if @nilai.destroy
+        redirect_back(fallback_location: guru_penilaian_path)
+      else
+        flash.now[:danger] = "Gagal hapus nilai"
         render 'penilaian'
       end
   end

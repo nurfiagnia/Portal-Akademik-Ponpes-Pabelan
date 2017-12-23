@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   post "/admin/pengasuhan", to: 'pengasuhan#pengasuhanbaru'
   delete "/admin/pengasuhan.:id", to: 'pengasuhan#hapuspengasuhan'
   get "/admin/pengaturan", to: 'admin#pengaturan'
+  post "/admin/pengaturan", to: 'admin#setpengaturan'
   delete "/admin/logout", to: 'admin#logout'
 
   get "/santri", to: 'santri#login'
@@ -46,6 +47,8 @@ Rails.application.routes.draw do
   get "guru/edit", to: 'guru#edit'
   get "/guru/penilaian", to: 'guru#penilaian'
   post "/guru/penilaian", to: 'guru#nilaibaru'
+  put "/guru/penilaian.:id", to: 'guru#updatenilai'
+  delete "/guru/penilaian.:id", to: 'guru#hapusnilai'
   get "/guru/profil", to: 'guru#profil'
   post "/guru/profil", to: 'guru#update'
   delete "/guru/logout", to: 'guru#logout'
