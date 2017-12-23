@@ -1,11 +1,11 @@
 <p align="center"><img src="https://farm5.staticflickr.com/4572/38605181691_9d17d7899b_o_d.png"></p>
 
-= Sistem Akademik Ponpes Pabelan
+# Sistem Akademik Ponpes Pabelan
 Ini merupakan repository dari kelompok untuk memenuhi tugas besar
 pada matakuliah Pengembangan Aplikasi Web di Universitas Islam
 Negeri Sunan Gunung Djati Bandung.
 
-== Instalasi dan pemakaian
+## Instalasi dan pemakaian
 
 * Download ZIP file dari repository ini. atau ketikkan pada command line:
 	
@@ -20,7 +20,7 @@ Negeri Sunan Gunung Djati Bandung.
 	rake db:seed
 	rails s
 
-* <tt>rails s</tt> untuk menjalankan server
+* rails s untuk menjalankan server
 
 * Buka laman admin untuk penggunaan pertama http://127.0.0.1:9999/admin
 
@@ -33,7 +33,7 @@ bisa dilihat di folder db/seeds.rb
 
 * Masukkan data dan have fun :)
 
-== Tools yang kami gunakan
+## Tools yang kami gunakan
 
 * OS <tt>Kali Rolling 2017.1</tt> <tt>Windows 8.1</tt> <tt>Windows 10</tt>
 
@@ -51,7 +51,7 @@ bisa dilihat di folder db/seeds.rb
 
 * Port : 9999
 
-== Kelompok
+## Kelompok
 
 Kelompok kami terdiri dari 2 orang yaitu :
 
@@ -60,8 +60,8 @@ Kelompok kami terdiri dari 2 orang yaitu :
 
 
 
-== Terimakasih sudah membaca :)
+## Terimakasih sudah membaca :)
 
-== Lisensi
+## Lisensi
 
 - NHLv4 Copyright 2017 Sistem Akademik Ponpes Pabelan
