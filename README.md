@@ -1,11 +1,13 @@
 <p align="center"><img src="https://farm5.staticflickr.com/4572/38605181691_9d17d7899b_o_d.png"></p>
 
-# <h1 align="center">Sistem Akademik Ponpes Pabelan</h1><hr><hr>
+# <a href="https://ponpes-pabelan.herokuapp.com"><h1 align="center">Sistem Akademik Ponpes Pabelan</h1></a><hr><hr>
 Ini merupakan repository dari kelompok untuk memenuhi tugas besar
 pada matakuliah Pengembangan Aplikasi Web di Universitas Islam
 Negeri Sunan Gunung Djati Bandung.
 
 ## Instalasi dan pemakaian
+
+* Demo https://ponpes-pabelan.herokuapp.com
 
 * Download ZIP file dari repository ini. atau ketikkan pada command line:
 	
@@ -51,7 +53,7 @@ Negeri Sunan Gunung Djati Bandung.
 
 * Travis CI
 
-* Heroku https://akademik-pabelan.herokuapp.com
+* Heroku Cloud App
 
 * Port : 9999
 
@@ -65,6 +67,10 @@ Kelompok kami terdiri dari 2 orang yaitu :
 
 
 ## <h2 align="center">Terimakasih sudah membaca :)</h2>
+
+## Demo Website
+
+* https://ponpes-pabelan.herokuapp.com
 
 ## Lisensi
 
