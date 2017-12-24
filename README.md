@@ -18,8 +18,8 @@ Negeri Sunan Gunung Djati Bandung.
 * Jika sudah terinstall RoR pada PC anda, ketikkan
 
 	<tt>bundle install</tt><br>
-	<tt>gem uninstall bcrypt</tt>
-	<tt>gem install bcrypt --platform=ruby</tt>
+	<tt>gem uninstall bcrypt</tt><br>
+	<tt>gem install bcrypt --platform=ruby</tt><br>
 	<tt>rake db:migrate</tt><br>
 	<tt>rake db:seed</tt><br>
 	<tt>rails s</tt>
