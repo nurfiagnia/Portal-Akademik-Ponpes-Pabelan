@@ -1,10 +1,13 @@
 class ForumsController < ApplicationController
   def index
-  @comments = Forum.hash_tree
+    @thread = Issue.all
   end
 
 def new
-	@comment = Forum.new(parent_id: params[:parent_id])
+end
+def show
+  @issue = Issue.find(params[:id])
+  #@comments = @issue.comments.includes(:user)
 end
 def login
   
@@ -50,14 +53,8 @@ def logout
   end
 end
 def create
-  if params[:forum][:parent_id].to_i > 0
-    parent = Forum.find_by_id(params[:forum].delete(:parent_id))
-    @comment = parent.children.build(comment_params)
-  else
-    @comment = Forum.new(comment_params)
-  end
-
-  if @comment.save
+  @issue = Issue.new(issue_params)
+  if @issue.save
     flash[:success] = 'Your comment was successfully added!'
     redirect_to forums_path
   else
@@ -67,8 +64,8 @@ end
 
 private
 
-  def comment_params
-    params.require(:forum).permit(:title, :body, :author)
+  def issue_params
+    params.permit(:title, :author)
   end
 
 end

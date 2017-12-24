@@ -67,7 +67,10 @@
         <td><%= guru.mapel %></td>
       </tr>
     </table>
-    <center><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#form-guru">Edit Biodata</button></center>
+    <center>
+      <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#form-guru">Edit Biodata</button>
+      <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#formpass-guru">Ganti Password</button>
+    </center>
     <div id="form-guru" class="modal fade" role="dialog">
       <div class="modal-dialog">
         <!-- konten modal-->
@@ -79,11 +82,7 @@
           </div>
           <!-- body modal -->
           <div class="modal-body">
-            <%= form_tag do %>
-              <%= text_field_tag :username, params[:username], class: "form-control",  placeholder: "Username", value: guru.username %>
-              <br>
-              <%= password_field_tag :password, params[:password], class: "form-control", placeholder: "Password", :required => true %>
-              <br>
+            <%= form_tag(:controller => "guru", :action => "update", :method => "post") %>
               <%= text_field_tag :nama, params[:nama], class: "form-control",  placeholder: "Nama", value: guru.nama %>
               <br>
               <%= text_field_tag :nip, params[:nip], class: "form-control", placeholder: "NIP", value: guru.nip %>
@@ -104,7 +103,33 @@
           <!-- footer modal -->
           <div class="modal-footer">
             <center><%= submit_tag 'Simpan', class: "btn btn-outline-primary" %></center>
-          <% end %>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="formpass-guru" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- konten modal-->
+        <div class="modal-content">
+          <!-- heading modal -->
+          <div class="modal-header">
+            <h4 class="modal-title">Ganti Password Guru</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <!-- body modal -->
+          <div class="modal-body">
+            <%= form_tag("/guru/profil.#{guru.id}", :method => "put") %>
+              <%= text_field_tag :username, params[:username], class: "form-control",  placeholder: "Username", value: guru.username, :readonly => true %>
+              <br>
+              <%= password_field_tag :passwordlama, params[:passwordlama], class: "form-control", placeholder: "Password Lama" %>
+              <br>
+              <%= password_field_tag :passwordbaru, params[:passwordbaru], class: "form-control", placeholder: "Password Baru" %>
+          </div>
+          <!-- footer modal -->
+          <div class="modal-footer">
+            <center><%= submit_tag 'Simpan', class: "btn btn-outline-primary" %></center>
+          </form>
           </div>
         </div>
       </div>

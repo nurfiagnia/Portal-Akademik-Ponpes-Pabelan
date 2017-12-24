@@ -46,7 +46,7 @@ class GuruController < ApplicationController
   end
   def update
     @guru = Guru.find(session[:guru_id])
-    if @guru.update(guru_params)
+    if @guru.update(updateguru_params)
       flash[:success] = "Biodata berhasil diubah"
       redirect_to guru_profil_path
     else
@@ -81,9 +81,21 @@ class GuruController < ApplicationController
         render 'penilaian'
       end
   end
+  def ubahpassword
+    pass = Guru.find_by(username: params[:username])
+    if pass && pass.authenticate(params[:passwordlama])
+      pass.update(password: params[:passwordbaru])
+      redirect_to guru_profil_path, :flash => { :success => "Berhasil!" }
+    else
+      redirect_to guru_profil_path, :flash => { :danger => "Gagal ubah password!" }
+    end
+  end
   private
     def guru_params
       params.permit(:username, :password, :nama, :nip, :jk, :ttl, :alamat, :no_tlp, :mapel, :pendidikan)
+    end
+    def updateguru_params
+      params.permit(:nama, :nip, :jk, :ttl, :alamat, :no_tlp, :mapel, :pendidikan)
     end
     def nilai_params
       params.permit(:nama, :nis, :nisn, :kelas, :thn_ajaran, :mapel, :kkm, :angka, :praktik, :huruf)

@@ -32,6 +32,9 @@
 <!--end header-->
 <!--kolom-->
 <div class="kolom">
+    <% flash.each do |type, message| %>
+      <div class="alert alert-<%= type %>"><%= message %></div>
+    <% end %>
     <ul class="nav nav-tabs">
       <li class="nav-item">
         <a class="nav-link active" data-toggle="tab" href="#tahunajaran">Tahun Ajaran</a>

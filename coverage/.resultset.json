@@ -277,6 +277,8 @@
         1,
         null,
         1,
+        null,
+        1,
         1,
         1,
         1,
@@ -314,20 +316,11 @@
         1,
         1,
         1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
         1,
         null,
-        null,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -338,6 +331,21 @@
         1,
         1,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
         1,
         1,
         1,
@@ -350,6 +358,10 @@
         null
       ],
       "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/helpers/comment_helper.rb": [
         1,
         null
       ],
@@ -389,7 +401,6 @@
         2,
         2,
         null,
-        0,
         0,
         null,
         null,
@@ -501,6 +512,24 @@
         0,
         null,
         0,
+        null,
+        null
+      ],
+      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/spec/controllers/comment_controller_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/controllers/comment_controller.rb": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
         null,
         null
       ],
@@ -636,12 +665,56 @@
         null,
         null,
         1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        1,
         1,
         0,
         null,
         1,
         0,
         null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/spec/helpers/comment_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null
+      ],
+      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/spec/models/comment_spec.rb": [
+        1,
+        null,
+        1,
+        null
+      ],
+      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/models/comment.rb": [
+        1,
+        1,
+        null
+      ],
+      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/models/application_record.rb": [
+        1,
+        1,
         null
       ],
       "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/spec/models/forum_spec.rb": [
@@ -657,11 +730,6 @@
         1,
         0,
         null,
-        null
-      ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/models/application_record.rb": [
-        1,
-        1,
         null
       ],
       "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/spec/models/guru_spec.rb": [
@@ -690,6 +758,17 @@
         1,
         null
       ],
+      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/spec/models/issue_spec.rb": [
+        1,
+        null,
+        1,
+        null
+      ],
+      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/models/issue.rb": [
+        1,
+        1,
+        null
+      ],
       "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/spec/models/tahunajaran_spec.rb": [
         1,
         null,
@@ -697,6 +776,12 @@
         null
       ],
       "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/models/tahunajaran.rb": [
+        1,
+        null
+      ],
+      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/spec/views/comment/create.html.erb_spec.rb": [
+        1,
+        null,
         1,
         null
       ],
@@ -716,6 +801,6 @@
         null
       ]
     },
-    "timestamp": 1514065556
+    "timestamp": 1514147887
   }
 }

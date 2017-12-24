@@ -1,0 +1,38 @@
+<!--navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="#"><%= image_tag("LogoPutih.png") %></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                  <ul class="navbar-nav mr-auto">
+                  	<% if !forums_logged_in? %>
+                    <li class="nav-item">
+						          <%= link_to 'thread',forums_path, class: 'nav-link' %>
+                    </li>               
+                    <li class="nav-item">
+						          <%= link_to 'login',forums_login_path, class: 'nav-link' %>
+                    </li> 
+                    <% elsif forums_logged_in? %>  
+
+                    <li class="nav-item">
+						          <%= link_to 'thread',forums_path, class: 'nav-link' %>
+                    </li>        
+                  	<li class="nav-item">
+						          <%= link_to f.username,'#', class: 'nav-link' %>
+                    </li>   
+                    <li class="nav-item">
+						          <%= link_to 'logout',forums_logout_path, method: :delete, class: 'nav-link' %>
+                    </li>    
+                    <% end %>
+                 </ul>
+                </div>  
+    </nav>
+    <!--end navbar-->
+  </header>
+  <!--end header-->
+  <div class="title2">
+	<h2>Issue : <%= @issue.title %></h2>
+  </div>
+  <%= render @issue.comments %>
+	<%= render 'comment' %>

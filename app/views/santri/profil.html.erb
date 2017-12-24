@@ -143,8 +143,11 @@
         <td><%= santri.pekerjaan_wali %></td>
       </tr>
     </table>
-    <center><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#form-guru">Edit Biodata</button></center>
-    <div id="form-guru" class="modal fade" role="dialog">
+    <center>
+      <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#form-santri">Edit Biodata</button>
+      <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#formpass-santri">Ganti Password</button>
+    </center>
+    <div id="form-santri" class="modal fade" role="dialog">
       <div class="modal-dialog">
         <!-- konten modal-->
         <div class="modal-content">
@@ -155,16 +158,7 @@
           </div>
            <!-- body modal -->
         <div class="modal-body">
-          <%= form_tag do %>
-            <div class="form-row">
-              <div class="col-md-6">
-                <%= text_field_tag :username, params[:username], class: "form-control",  placeholder: "Username", value: santri.username %>
-              </div>
-              <div class="col-md-6">
-                <%= password_field_tag :password, params[:password], class: "form-control", placeholder: "Password", :required => true  %>
-              </div>
-            </div>
-            <br>
+          <%= form_tag(:controller => "guru", :action => "update", :method => "post") %>
             <%= text_field_tag :nama, params[:nama], class: "form-control",  placeholder: "Nama", value: santri.nama %>
             <br>
             <%= text_field_tag :nis, params[:nis], class: "form-control", placeholder: "NIS", value: santri.nis %>
@@ -257,7 +251,33 @@
           <!-- footer modal -->
           <div class="modal-footer">
             <center><%= submit_tag 'Simpan', class: "btn btn-outline-primary" %></center>
-          <% end %>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="formpass-santri" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- konten modal-->
+        <div class="modal-content">
+          <!-- heading modal -->
+          <div class="modal-header">
+            <h4 class="modal-title">Ganti Password Santri</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <!-- body modal -->
+          <div class="modal-body">
+            <%= form_tag("/santri/profil.#{santri.id}", :method => "put") %>
+              <%= text_field_tag :username, params[:username], class: "form-control",  placeholder: "Username", value: santri.username, :readonly => true %>
+              <br>
+              <%= password_field_tag :passwordlama, params[:passwordlama], class: "form-control", placeholder: "Password Lama" %>
+              <br>
+              <%= password_field_tag :passwordbaru, params[:passwordbaru], class: "form-control", placeholder: "Password Baru" %>
+          </div>
+          <!-- footer modal -->
+          <div class="modal-footer">
+            <center><%= submit_tag 'Simpan', class: "btn btn-outline-primary" %></center>
+          </form>
           </div>
         </div>
       </div>

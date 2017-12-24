@@ -1,0 +1,9 @@
+  <div class="m-3">
+  		<div style="border: 5px dashed blue; background-color: white;">
+  			<div class="m-3">
+	  			<p><%= comment.body %></p>
+	  			<hr>
+	  			<p align="right">Created by <%= comment.username %>, at <%= time_ago_in_words(comment.created_at) %> ago</p>
+	  		</div>
+  		</div>
+  </div>

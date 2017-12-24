@@ -1,8 +1,5 @@
-<h1>New comment</h1>
+<div class="m-5">
+	<h1>New Thread</h1>
 
-	
-<% if @comment.parent %>
-  <%= render 'forum', forum: @comment.parent, from_reply_form: true %>
-<% end %>
-
-<%= render 'form' %>
+	<%= render 'form' %>
+</div>

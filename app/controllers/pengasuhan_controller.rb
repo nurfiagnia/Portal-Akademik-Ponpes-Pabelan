@@ -7,8 +7,7 @@ class PengasuhanController < ApplicationController
         session[:pengasuhan_id] = pengasuhan.id
         redirect_to pengasuhan_index_path      
       else
-        flash.now[:danger] = "Username atau Password salah!"
-        render 'login'
+        redirect_to pengasuhan_path, :flash => { :danger => "Username atau Password salah!" }
       end
   end
   def logout
@@ -34,11 +33,9 @@ class PengasuhanController < ApplicationController
   def update
     @pengasuhan = Pengasuhan.find(session[:pengasuhan_id])
     if @pengasuhan.update(pengasuhan_params)
-      flash[:success] = "Biodata berhasil diubah"
-      redirect_to pengasuhan_profil_path
+      redirect_to pengasuhan_profil_path, :flash => { :success => "Biodata berhasil diubah!" }
     else
-      flash[:danger] = "Biodata gagal diubah!"
-      redirect_to pengasuhan_profil_path
+      redirect_to pengasuhan_profil_path, :flash => { :danger => "Biodata gagal diubah!" }
     end
   end
   def mail
@@ -47,11 +44,9 @@ class PengasuhanController < ApplicationController
   def sendd
     m = SmsGateway::Sms.new(number: (params[:notlp]), message: (params[:isisms]), device: '69200')
     if m.deliver
-      flash[:success] = "Sms sedang diproses"
-      redirect_to pengasuhan_mail_path
+      redirect_to pengasuhan_mail_path, :flash => { :success => "SMS sedang diproses!" }
     else
-      flash.now[:danger] = "Gagal!"
-      render 'mail'
+      redirect_to pengasuhan_mail_path, :flash => { :danger => "Gagal kirim SMS!" }
     end
   end
 

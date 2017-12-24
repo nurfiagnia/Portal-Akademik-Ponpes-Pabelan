@@ -8,8 +8,7 @@ class AdminController < ApplicationController
         session[:admin_id] = admin.id
         redirect_to admin_index_path      
   		else
-        flash.now[:danger] = "Username atau Password salah!"
-        render 'login'
+        redirect_to admin_path, :flash => { :danger => "Username atau Password salah!" }
   		end
   end
   def logout
@@ -37,7 +36,7 @@ class AdminController < ApplicationController
     if @tahunajaran.update(params[:tahunajaran])
       redirect_to admin_pengaturan_path
     else
-      render 'pengaturan'
+      redirect_to admin_pengaturan_path, :flash => { :danger => "Error :(" }
     end
   end
 end

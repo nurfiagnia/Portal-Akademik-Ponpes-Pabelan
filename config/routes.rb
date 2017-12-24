@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'comment/create'
+
   root to: 'home#index'
   
   get "/profil", to: 'home#profil'
@@ -39,6 +41,7 @@ Rails.application.routes.draw do
   delete "/santri/logout", to: 'santri#logout'
   get "/santri/index", to: 'santri#index'
   get "/santri/profil", to: 'santri#profil'
+  put "/santri/profil.:id", to: 'santri#ubahpassword'
   post "/santri/profil", to: 'santri#update'
 
   get "/guru", to: 'guru#login'
@@ -51,6 +54,7 @@ Rails.application.routes.draw do
   delete "/guru/penilaian.:id", to: 'guru#hapusnilai'
   get "/guru/profil", to: 'guru#profil'
   post "/guru/profil", to: 'guru#update'
+  put "/guru/profil.:id", to: 'guru#ubahpassword'
   delete "/guru/logout", to: 'guru#logout'
 
 
@@ -67,6 +71,10 @@ Rails.application.routes.draw do
   get "/forums/login", to: 'forums#login'
   post "/forums/login", to: 'forums#signin'
   delete "/forums/logout", to: 'forums#logout'
-  resources :forums, only: [:index, :create, :new]
+  get "/forums", to: 'forums#index'
+  get "/forum.:id", to: 'forums#show'
+  post "/forum.:id", to: 'comment#create'
+  get "/forums/new", to: 'forums#new'
+  post "/forums/new", to: 'forums#create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
