@@ -37,7 +37,9 @@
     <h1>Join the discussion</h1>
     <p>Click the button below to start a new thread:</p>
     <p>
+    <% if forums_logged_in? %>
       <%= link_to 'Add new topic', forums_new_path, class: 'btn btn-primary btn-lg' %>
+    <% end %>
     </p>
   </div>
 </div>

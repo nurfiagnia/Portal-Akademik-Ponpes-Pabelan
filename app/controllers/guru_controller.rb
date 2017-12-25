@@ -32,6 +32,7 @@ class GuruController < ApplicationController
   def gurubaru
     @guru = Guru.new(guru_params)
       if @guru.save
+        @guru.users.build(username: params[:username], password: params[:password]).save
         flash[:success] = "Data berhasil disimpan"
         redirect_to admin_guru_path
       else
@@ -41,6 +42,7 @@ class GuruController < ApplicationController
   end
   def hapusguru
     @guru = Guru.find(params[:id])
+    @guru.users.find_by(guru_id: params[:id])
     @guru.destroy
     redirect_to admin_guru_path
   end
@@ -84,6 +86,7 @@ class GuruController < ApplicationController
   def ubahpassword
     pass = Guru.find_by(username: params[:username])
     if pass && pass.authenticate(params[:passwordlama])
+      pass.users.find_by(username: pass.username).update(password: params[:passwordbaru])
       pass.update(password: params[:passwordbaru])
       redirect_to guru_profil_path, :flash => { :success => "Berhasil!" }
     else

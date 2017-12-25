@@ -59,10 +59,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_forums, :forums_logged_in?
   def current_forums
-    @current_forums ||= Pengasuhan.find(session[:pengasuhan_id]) if session[:pengasuhan_id]
-    @current_forums ||= Santri.find(session[:santri_id]) if session[:santri_id]
-    @current_forums ||= Guru.find(session[:guru_id]) if session[:guru_id]
-    @current_forums ||= Admin.find(session[:admin_id]) if session[:admin_id]
+    @current_forums ||= User.find(session[:user_id]) if session[:user_id]
   end
   def forums_logged_in?
     !!current_forums
