@@ -22,20 +22,23 @@ kontak.push(first_contact)
 
 Kontak.create(kontak)
 
+User.destroy_all
+
+user = []
+
+first_user = {
+	username: "admin",
+	password: "admin",
+	admin_id: 1
+}
+
+user.push( first_user )
+
+User.create(user)
+
+Admin.destroy_all
+
 Admin.create(
 	username: "admin",
 	password: "admin"
-)
-
-Guru.create(
-	username: "nurfi29",
-	password: "12345678nine",
-	nama: "Nurfi Agnia",
-	nip: "2017301129011997",
-	jk: "Wanita",
-	ttl: "1997-01-29",
-	alamat: "Cirebon",
-	no_tlp: "08787878999",
-	mapel: "Khat",
-	pendidikan: "MTs"
 )

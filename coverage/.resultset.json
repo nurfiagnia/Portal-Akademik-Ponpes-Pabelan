@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/spec/controllers/admin_controller_spec.rb": [
+      "/root/Desktop/Coding/pbl/spec/controllers/admin_controller_spec.rb": [
         1,
         null,
         1,
@@ -42,7 +42,7 @@
         null,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/spec/rails_helper.rb": [
+      "/root/Desktop/Coding/pbl/spec/rails_helper.rb": [
         null,
         1,
         1,
@@ -101,14 +101,14 @@
         null,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/config/environment.rb": [
+      "/root/Desktop/Coding/pbl/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/config/application.rb": [
+      "/root/Desktop/Coding/pbl/config/application.rb": [
         1,
         null,
         1,
@@ -128,12 +128,12 @@
         null,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/config/boot.rb": [
+      "/root/Desktop/Coding/pbl/config/boot.rb": [
         1,
         null,
         1
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/config/environments/test.rb": [
+      "/root/Desktop/Coding/pbl/config/environments/test.rb": [
         1,
         null,
         null,
@@ -177,7 +177,7 @@
         null,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/config/initializers/application_controller_renderer.rb": [
+      "/root/Desktop/Coding/pbl/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -187,7 +187,7 @@
         null,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/config/initializers/assets.rb": [
+      "/root/Desktop/Coding/pbl/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -203,7 +203,7 @@
         null,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/config/initializers/backtrace_silencers.rb": [
+      "/root/Desktop/Coding/pbl/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -212,20 +212,20 @@
         null,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/config/initializers/cookies_serializer.rb": [
+      "/root/Desktop/Coding/pbl/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/config/initializers/inflections.rb": [
+      "/root/Desktop/Coding/pbl/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "/root/Desktop/Coding/pbl/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -243,19 +243,19 @@
         null,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/config/initializers/mime_types.rb": [
+      "/root/Desktop/Coding/pbl/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/config/initializers/setup_sms_gateway.rb": [
+      "/root/Desktop/Coding/pbl/config/initializers/setup_sms_gateway.rb": [
         1,
         null,
         null,
         1
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/config/initializers/wrap_parameters.rb": [
+      "/root/Desktop/Coding/pbl/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -271,7 +271,7 @@
         null,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/config/routes.rb": [
+      "/root/Desktop/Coding/pbl/config/routes.rb": [
         1,
         null,
         1,
@@ -353,19 +353,19 @@
         null,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/helpers/admin_helper.rb": [
+      "/root/Desktop/Coding/pbl/app/helpers/admin_helper.rb": [
         1,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/helpers/application_helper.rb": [
+      "/root/Desktop/Coding/pbl/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/helpers/comment_helper.rb": [
+      "/root/Desktop/Coding/pbl/app/helpers/comment_helper.rb": [
         1,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/helpers/forums_helper.rb": [
+      "/root/Desktop/Coding/pbl/app/helpers/forums_helper.rb": [
         1,
         1,
         null,
@@ -375,22 +375,22 @@
         null,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/helpers/guru_helper.rb": [
+      "/root/Desktop/Coding/pbl/app/helpers/guru_helper.rb": [
         1,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/helpers/home_helper.rb": [
+      "/root/Desktop/Coding/pbl/app/helpers/home_helper.rb": [
         1,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/helpers/santri_helper.rb": [
+      "/root/Desktop/Coding/pbl/app/helpers/santri_helper.rb": [
         1,
         1,
         0,
         null,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/controllers/admin_controller.rb": [
+      "/root/Desktop/Coding/pbl/app/controllers/admin_controller.rb": [
         1,
         1,
         1,
@@ -434,7 +434,7 @@
         null,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/controllers/application_controller.rb": [
+      "/root/Desktop/Coding/pbl/app/controllers/application_controller.rb": [
         1,
         1,
         null,
@@ -515,14 +515,14 @@
         null,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/spec/controllers/comment_controller_spec.rb": [
+      "/root/Desktop/Coding/pbl/spec/controllers/comment_controller_spec.rb": [
         1,
         null,
         1,
         null,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/controllers/comment_controller.rb": [
+      "/root/Desktop/Coding/pbl/app/controllers/comment_controller.rb": [
         1,
         1,
         0,
@@ -533,7 +533,7 @@
         null,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/spec/controllers/guru_controller_spec.rb": [
+      "/root/Desktop/Coding/pbl/spec/controllers/guru_controller_spec.rb": [
         1,
         null,
         1,
@@ -573,178 +573,6 @@
         1,
         1,
         1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/controllers/guru_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        0,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null,
-        1,
-        1,
-        0,
-        null,
-        1,
-        0,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/spec/helpers/comment_helper_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null
-      ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/spec/models/comment_spec.rb": [
-        1,
-        null,
-        1,
-        null
-      ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/models/comment.rb": [
-        1,
-        1,
-        null
-      ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/models/application_record.rb": [
-        1,
-        1,
-        null
-      ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/spec/models/forum_spec.rb": [
-        1,
-        null,
-        1,
-        null
-      ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/models/forum.rb": [
-        1,
-        null,
-        1,
-        1,
-        0,
-        null,
-        null
-      ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/spec/models/guru_spec.rb": [
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        null,
         1,
         1,
         1,
@@ -752,55 +580,227 @@
         null,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/models/guru.rb": [
+      "/root/Desktop/Coding/pbl/app/controllers/guru_controller.rb": [
         1,
         1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        1,
+        1,
+        0,
+        null,
+        1,
+        0,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/root/Desktop/Coding/pbl/spec/helpers/comment_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         1,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/spec/models/issue_spec.rb": [
+      "/root/Desktop/Coding/pbl/spec/models/comment_spec.rb": [
         1,
         null,
         1,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/models/issue.rb": [
+      "/root/Desktop/Coding/pbl/app/models/comment.rb": [
         1,
         1,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/spec/models/tahunajaran_spec.rb": [
+      "/root/Desktop/Coding/pbl/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/root/Desktop/Coding/pbl/spec/models/forum_spec.rb": [
         1,
         null,
         1,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/models/tahunajaran.rb": [
+      "/root/Desktop/Coding/pbl/app/models/forum.rb": [
+        1,
+        null,
+        1,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/root/Desktop/Coding/pbl/spec/models/guru_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/root/Desktop/Coding/pbl/app/models/guru.rb": [
+        1,
+        1,
         1,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/spec/views/comment/create.html.erb_spec.rb": [
+      "/root/Desktop/Coding/pbl/spec/models/issue_spec.rb": [
         1,
         null,
         1,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/models/santri.rb": [
+      "/root/Desktop/Coding/pbl/app/models/issue.rb": [
         1,
         1,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/models/pengasuhan.rb": [
+      "/root/Desktop/Coding/pbl/spec/models/tahunajaran_spec.rb": [
+        1,
+        null,
+        1,
+        null
+      ],
+      "/root/Desktop/Coding/pbl/app/models/tahunajaran.rb": [
+        1,
+        null
+      ],
+      "/root/Desktop/Coding/pbl/spec/views/comment/create.html.erb_spec.rb": [
+        1,
+        null,
+        1,
+        null
+      ],
+      "/root/Desktop/Coding/pbl/app/models/santri.rb": [
         1,
         1,
         null
       ],
-      "C:/Sites/Sistem Akademik Ponpes Pabelan -v.1/app/models/admin.rb": [
+      "/root/Desktop/Coding/pbl/app/models/pengasuhan.rb": [
+        1,
+        1,
+        null
+      ],
+      "/root/Desktop/Coding/pbl/app/models/admin.rb": [
         1,
         1,
         null
       ]
     },
-    "timestamp": 1514147887
+    "timestamp": 1514161504
   }
 }
