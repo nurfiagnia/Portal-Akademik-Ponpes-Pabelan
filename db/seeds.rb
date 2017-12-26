@@ -41,4 +41,3 @@ Admin.destroy_all
 Admin.create(
 	username: "admin",
 	password: "admin"
-)

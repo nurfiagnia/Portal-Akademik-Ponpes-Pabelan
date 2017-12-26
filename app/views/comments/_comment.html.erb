@@ -19,12 +19,12 @@
   </div>
   <% else %>
   <div class="m-3">
-  		<div style="background-image: url(left.png);">
-  			<div class="m-3">
-	  			<p><%= comment.body %></p>
-	  			<hr>
-	  			<p align="right">Created by <%= comment.username %>, at <%= time_ago_in_words(comment.created_at) %> ago</p>
-	  		</div>
-  		</div>
+        <div>
+          <div style="background-color: lightgreen; border-radius: 10px; color: black; text-align: left; margin-right: 52%;">
+          <p class="p-3" align="center"><%= comment.body %></p>
+          <hr>
+          <p align="left" class="px-3 pb-3">from <%= comment.username %>, at <%= time_ago_in_words(comment.created_at) %> ago</p>
+        </div>
+      </div>
   </div>
   <% end %>
