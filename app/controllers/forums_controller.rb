@@ -1,4 +1,5 @@
 class ForumsController < ApplicationController
+  before_action :must_forums_login, only: [:new]
   def index
     @thread = Issue.all
   end

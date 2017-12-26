@@ -51,7 +51,7 @@ class ApplicationController < ActionController::Base
     !!current_pengasuhan
   end
   def must_pengasuhan_login
-    if pengasuhan_logged_in?
+    if !pengasuhan_logged_in?
       flash[:danger] = "You must login first!"
       redirect_to pengasuhan_path
     end
@@ -64,6 +64,12 @@ class ApplicationController < ActionController::Base
   def forums_logged_in?
     !!current_forums
   end 
+  def must_forums_login
+    if !forums_logged_in?
+      flash[:danger] = "You must login first!"
+      redirect_to forums_path
+    end
+  end
 
   helper_method :current_nilai
   def current_nilai

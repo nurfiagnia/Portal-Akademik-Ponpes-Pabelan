@@ -32,6 +32,9 @@
     <!--end navbar-->
   </header>
   <!--end header-->
+<% flash.each do |type, message| %>
+  <div class="alert alert-<%= type %>"><%= message %></div>
+<% end %>
 <div class="jumbotron">
   <div class="container">
     <h1>Join the discussion</h1>
