@@ -1,30 +1,31 @@
   <% if forums_logged_in? %>
   <% f = current_forums %>
-  <div class="m-3">
-  		<% if f.username == comment.username %>
-  		<div>
-  			<div style="background-color: skyblue; border-radius: 10px; color: black; text-align: right; margin-left: 52%;">
-	  			<p class="p-3" align="center"><%= comment.body %></p>
-	  		</div>
-  		</div>
-  		<% else %>
-  			<div>
-          <div style="background-color: lightgreen; border-radius: 10px; color: black; text-align: left; margin-right: 52%;">
-	  			<p class="p-3" align="center"><%= comment.body %></p>
-	  			<hr>
-	  			<p align="left" class="px-3 pb-3">from <%= comment.username %>, at <%= time_ago_in_words(comment.created_at) %> ago</p>
-	  		</div>
-  		</div>
-  		<% end %>
-  </div>
-  <% else %>
-  <div class="m-3">
-        <div>
+    <div class="m-3">
+      <% if f.username == comment.username %>
+      <li class="chat">
+        <div style="background-color: skyblue; border-radius: 10px; color: black; text-align: right; margin-left: 52%;">
+          <p class="p-3" align="center"><%= comment.body %></p>
+        </div>
+      </li>
+      <% else %>
+        <li class="chat">
           <div style="background-color: lightgreen; border-radius: 10px; color: black; text-align: left; margin-right: 52%;">
           <p class="p-3" align="center"><%= comment.body %></p>
           <hr>
           <p align="left" class="px-3 pb-3">from <%= comment.username %>, at <%= time_ago_in_words(comment.created_at) %> ago</p>
         </div>
-      </div>
+      </li>
+      <% end %>
+  </div>
+  <% else %>
+  <div class="m-3">
+        <li class="chat">
+          <div style="background-color: lightgreen; border-radius: 10px; color: black; text-align: left; margin-right: 52%;">
+          <p class="p-3" align="center"><%= comment.body %></p>
+          <hr>
+          <p align="left" class="px-3 pb-3">from <%= comment.username %>, at <%= time_ago_in_words(comment.created_at) %> ago</p>
+          </div>
+        </li>
   </div>
   <% end %>
+  

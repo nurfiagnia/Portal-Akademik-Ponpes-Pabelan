@@ -35,5 +35,7 @@
   <div class="title2">
 	<h2>Issue : <%= @issue.title %></h2>
   </div>
+  <ul class="rooms">
   <%= render @issue.comments %>
+  </ul>
 	<%= render 'comment' %>
