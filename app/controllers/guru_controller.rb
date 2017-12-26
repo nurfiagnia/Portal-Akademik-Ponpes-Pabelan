@@ -21,8 +21,7 @@ class GuruController < ApplicationController
       session[:guru_id] = guru.id
       redirect_to guru_index_path
     else
-      flash.now[:danger] = "Username atau Password salah!"
-      render 'login'
+      redirect_to guru_login_path, :flash => { :danger => "Username atau password salah!" }
     end
   end
   def logout
@@ -33,11 +32,9 @@ class GuruController < ApplicationController
     @guru = Guru.new(guru_params)
       if @guru.save
         @guru.users.build(username: params[:username], password: params[:password]).save
-        flash[:success] = "Data berhasil disimpan"
-        redirect_to admin_guru_path
+        redirect_to admin_guru_path, :flash => { :success => "Berhasil tambah guru!" }
       else
-        flash.now[:danger] = "Data yang anda masukkan tidak valid!"
-        redirect_to admin_guru_path
+      redirect_to admin_guru_path, :flash => { :danger => "Gagal menambahkan guru!" }
       end
   end
   def hapusguru
@@ -49,29 +46,25 @@ class GuruController < ApplicationController
   def update
     @guru = Guru.find(session[:guru_id])
     if @guru.update(updateguru_params)
-      flash[:success] = "Biodata berhasil diubah"
-      redirect_to guru_profil_path
+      redirect_to guru_profil_path, :flash => { :success => "Berhasil merubah biodata!" }
     else
-      flash[:danger] = "Biodata gagal diubah!"
-      redirect_to guru_profil_path
+      redirect_to guru_profil_path, :flash => { :danger => "Gagal merubah biodata!" }
     end
   end
   def nilaibaru
     @nilai = Nilai.new(nilai_params)
       if @nilai.save
-        redirect_back(fallback_location: guru_penilaian_path)
+        redirect_back(fallback_location: guru_penilaian_path), :flash => { :success => "Berhasil input nilai!" }
       else
-        flash.now[:danger] = "Gagal menambahkan nilai"
-        render 'penilaian'
+        redirect_back(fallback_location: guru_penilaian_path), :flash => { :danger => "Gagal input nilai!" }
       end
   end
   def updatenilai
     @nilai = Nilai.find(params[:id])
     if @nilai.update(nilai_params)
-        redirect_back(fallback_location: guru_penilaian_path)
+        redirect_back(fallback_location: guru_penilaian_path), :flash => { :success => "Berhasil merubah nilai!"}
       else
-        flash.now[:danger] = "Gagal merubah nilai"
-        render 'penilaian'
+        redirect_back(fallback_location: guru_penilaian_path), :flash => { :danger => "Gagal merubah nilai!" }
       end
   end
   def hapusnilai
@@ -79,8 +72,7 @@ class GuruController < ApplicationController
     if @nilai.destroy
         redirect_back(fallback_location: guru_penilaian_path)
       else
-        flash.now[:danger] = "Gagal hapus nilai"
-        render 'penilaian'
+        redirect_back(fallback_location: guru_penilaian_path), :flash => { :danger => "Gagal hapus nilai!" }
       end
   end
   def ubahpassword

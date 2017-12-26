@@ -18,8 +18,7 @@ def signin
         session[:user_id] = user.id
         redirect_to forums_path 
       else
-        flash.now[:danger] = "Username atau Password salah!"
-        render 'login'
+        redirect_to forums_login_path, :flash => { :danger => "Username atau password salah!" }
       end
 end
 
@@ -30,10 +29,9 @@ end
 def create
   @issue = Issue.new(issue_params)
   if @issue.save
-    flash[:success] = 'Your comment was successfully added!'
-    redirect_to forums_path
+      redirect_to forums_path, :flash => { :success => "Berhasil menambakan thread!" }
   else
-    render 'new'
+      redirect_to forums_new_path, :flash => { :danger => "Gagal menambahkan thread!" }
   end
 end
 
