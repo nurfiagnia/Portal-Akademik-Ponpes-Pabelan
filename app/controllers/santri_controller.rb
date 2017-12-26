@@ -27,6 +27,7 @@ class SantriController < ApplicationController
   def santribaru
     @santri = Santri.new(santri_params)
     if @santri.save
+      @santri.users.build(username: params[:username], password: params[:password]).save
       redirect_to admin_santri_path
       else
         flash.now[:danger] = "Data yang anda masukkan tidak valid!"
@@ -34,6 +35,7 @@ class SantriController < ApplicationController
   end
   def hapussantri
     @santri = Santri.find(params[:id])
+    @santri.users.find_by(santri_id: params[:id]).destroy
     @santri.destroy
     redirect_to admin_santri_path
   end
@@ -48,6 +50,7 @@ class SantriController < ApplicationController
   def ubahpassword
     pass = Santri.find_by(username: params[:username])
     if pass && pass.authenticate(params[:passwordlama])
+      pass.users.find_by(username: pass.username).update(password: params[:passwordbaru])
       pass.update(password: params[:passwordbaru])
       redirect_to santri_profil_path, :flash => { :success => "Berhasil!" }
     else

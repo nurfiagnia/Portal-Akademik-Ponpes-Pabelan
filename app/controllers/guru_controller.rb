@@ -42,7 +42,7 @@ class GuruController < ApplicationController
   end
   def hapusguru
     @guru = Guru.find(params[:id])
-    @guru.users.find_by(guru_id: params[:id])
+    @guru.users.find_by(guru_id: params[:id]).destroy
     @guru.destroy
     redirect_to admin_guru_path
   end

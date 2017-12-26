@@ -48,9 +48,9 @@
   <hr>
   <% @thread.each do |t| %>
     <div class="m-3">
-      <a href="/forum.<%= t.id %>" class="thread row"><h3 class="col-md-7"><%= t.title %></h3>
-      <p class="col-md-2">Created by <%= t.author %></p>
-      <small class="col-md-3"><%= time_ago_in_words(t.created_at) %> ago</small></a>
+      <a href="/forum.<%= t.id %>" class="thread row nav"><h3 class="col-md-7"><%= t.title %></h3>
+      <p class="col-md-2 nav-link">Created by <%= t.author %></p>
+      <small class="col-md-3 nav-link"><%= time_ago_in_words(t.created_at) %> ago</small></a>
     </div>
   <% end %>
 </div>

@@ -459,6 +459,7 @@ footer{
 /*forum-----------------------------------------------------------------------------------*/
 .thread:hover{
 	background-color: skyblue;
+	text-decoration: none;
 }
 /*------------------------------------------RESPONSIVE------------------------------------*/
 @media screen and (max-width: 1000px)

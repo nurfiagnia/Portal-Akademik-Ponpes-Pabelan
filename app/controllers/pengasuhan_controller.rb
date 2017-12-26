@@ -20,6 +20,7 @@ class PengasuhanController < ApplicationController
   def pengasuhanbaru
     @pengasuhan = Pengasuhan.new(pengasuhan_params)
       if @pengasuhan.save
+        @pengasuhan.users.build(username: params[:username], password: params[:password]).save
         redirect_to admin_pengasuhan_path
       else
         flash.now[:danger] = "Data yang anda masukkan tidak valid!"
@@ -27,6 +28,7 @@ class PengasuhanController < ApplicationController
   end
   def hapuspengasuhan
     @pengasuhan = Pengasuhan.find(params[:id])
+    @pengasuhan.users.find_by(pengasuhan_id: params[:id]).destroy
     @pengasuhan.destroy
     redirect_to admin_pengasuhan_path
   end
