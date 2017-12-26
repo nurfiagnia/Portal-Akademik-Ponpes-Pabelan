@@ -1,4 +1,6 @@
 class SantriController < ApplicationController
+  before_action :must_santri_login, only: [:index, :raport, :profil]
+  before_action :santri_sudah_login, only: [:login]
   def login
   end
   def signin

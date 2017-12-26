@@ -1,5 +1,6 @@
 class AdminController < ApplicationController
-  before_action :must_admin_login, only: [:index, :guru, :santri]
+  before_action :must_admin_login, only: [:index, :guru, :santri, :pengaturan]
+  before_action :admin_sudah_login, only: [:login]
   def login
   end
   def signin

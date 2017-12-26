@@ -1,5 +1,6 @@
 class GuruController < ApplicationController
   before_action :must_guru_login, only: [:index, :penilaian, :profil]
+  before_action :guru_sudah_login, only: [:login]
   def login
   end
   def index

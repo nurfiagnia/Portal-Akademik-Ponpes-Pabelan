@@ -14,6 +14,11 @@ class ApplicationController < ActionController::Base
   		redirect_to admin_path
   	end
   end
+  def admin_sudah_login
+    if admin_logged_in?
+      redirect_to admin_index_path    
+    end
+  end
 
   helper_method :current_guru, :guru_logged_in?
   def current_guru
@@ -26,6 +31,11 @@ class ApplicationController < ActionController::Base
     if !guru_logged_in?
       flash[:danger] = "You must login first!"
       redirect_to guru_path
+    end
+  end
+  def guru_sudah_login
+    if guru_logged_in?
+      redirect_to guru_index_path    
     end
   end
 
@@ -42,6 +52,11 @@ class ApplicationController < ActionController::Base
       redirect_to santri_path
     end
   end  
+  def santri_sudah_login
+    if santri_logged_in?
+      redirect_to santri_index_path      
+    end
+  end
 
   helper_method :current_pengasuhan, :pengasuhan_logged_in?
   def current_pengasuhan
@@ -56,6 +71,11 @@ class ApplicationController < ActionController::Base
       redirect_to pengasuhan_path
     end
   end  
+  def pengasuhan_sudah_login
+    if pengasuhan_logged_in?
+      redirect_to pengasuhan_index_path
+    end
+  end
 
   helper_method :current_forums, :forums_logged_in?
   def current_forums

@@ -64,9 +64,11 @@ Rails.application.routes.draw do
   delete "/pengasuhan/logout", to: 'pengasuhan#logout'
   get "/pengasuhan/profil", to: 'pengasuhan#profil'
   post "/pengasuhan/profil", to: 'pengasuhan#update'
+  put "/pengasuhan/profil.:id", to: 'pengasuhan#ubahpassword'
   get "/pengasuhan/mail", to: 'pengasuhan#mail'
   post "/pengasuhan/mail", to: 'pengasuhan#sendd'
-  get "/pengasuhan/penilaian2", to: 'pengasuhan#penilaian2'
+  get "/pengasuhan/raport", to: 'pengasuhan#raport'
+  post "/pengasuhan/raport", to: 'pengasuhan#newraport'
    
   get "/forums/login", to: 'forums#login'
   post "/forums/login", to: 'forums#signin'
