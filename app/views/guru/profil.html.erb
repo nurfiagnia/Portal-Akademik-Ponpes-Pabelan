@@ -87,9 +87,9 @@
               <br>
               <%= text_field_tag :nip, params[:nip], class: "form-control", placeholder: "NIP", value: guru.nip %>
               <br>
-              <%= text_field_tag :jk, params[:jk], class: "form-control", placeholder: "Jenis Kelamin", value: guru.jk %>
+              <%= select_tag(:jk, options_for_select([['Pria', 'Pria'], ['Wanita','Wanita']], guru.jk), class: "form-control") %>
               <br>
-              <%= text_field_tag :ttl, params[:ttl], class: "form-control", placeholder: "Tanggal Lahir", value: guru.ttl %>
+              <%= date_field_tag :ttl, params[:ttl], class: "form-control", placeholder: "Tanggal Lahir", value: guru.ttl %>
               <br>
               <%= text_field_tag :alamat, params[:alamat], class: "form-control",  placeholder: "Alamat", value: guru.alamat %>
               <br>

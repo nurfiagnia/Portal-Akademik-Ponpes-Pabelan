@@ -21,7 +21,7 @@ class GuruController < ApplicationController
       session[:guru_id] = guru.id
       redirect_to guru_index_path
     else
-      redirect_to guru_login_path, :flash => { :danger => "Username atau password salah!" }
+      redirect_to guru_path, :flash => { :danger => "Username atau password salah!" }
     end
   end
   def logout
@@ -54,17 +54,17 @@ class GuruController < ApplicationController
   def nilaibaru
     @nilai = Nilai.new(nilai_params)
       if @nilai.save
-        redirect_back(fallback_location: guru_penilaian_path), :flash => { :success => "Berhasil input nilai!" }
+        redirect_back(fallback_location: guru_penilaian_path)
       else
-        redirect_back(fallback_location: guru_penilaian_path), :flash => { :danger => "Gagal input nilai!" }
+        redirect_back(fallback_location: guru_penilaian_path)
       end
   end
   def updatenilai
     @nilai = Nilai.find(params[:id])
     if @nilai.update(nilai_params)
-        redirect_back(fallback_location: guru_penilaian_path), :flash => { :success => "Berhasil merubah nilai!"}
+        redirect_back(fallback_location: guru_penilaian_path)
       else
-        redirect_back(fallback_location: guru_penilaian_path), :flash => { :danger => "Gagal merubah nilai!" }
+        redirect_back(fallback_location: guru_penilaian_path)
       end
   end
   def hapusnilai
@@ -72,7 +72,7 @@ class GuruController < ApplicationController
     if @nilai.destroy
         redirect_back(fallback_location: guru_penilaian_path)
       else
-        redirect_back(fallback_location: guru_penilaian_path), :flash => { :danger => "Gagal hapus nilai!" }
+        redirect_back(fallback_location: guru_penilaian_path)
       end
   end
   def ubahpassword

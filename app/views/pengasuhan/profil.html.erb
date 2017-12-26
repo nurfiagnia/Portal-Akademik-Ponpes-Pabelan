@@ -85,13 +85,13 @@
               <br>
               <%= text_field_tag :nama, params[:nama], class: "form-control",  placeholder: "Nama", value: pengasuhan.nama %>
               <br>
-              <%= text_field_tag :jk, params[:jk], class: "form-control", placeholder: "Jenis Kelamin", value: pengasuhan.jk %>
+              <%= select_tag(:jk, options_for_select([['Pria', 'Pria'], ['Wanita','Wanita']], pengasuhan.jk), class: "form-control") %>
               <br>
               <%= text_field_tag :alamat, params[:alamat], class: "form-control",  placeholder: "Alamat", value: pengasuhan.alamat %>
               <br>
               <%= text_field_tag :tempat, params[:tempat], class: "form-control", placeholder: "Tempat", value: pengasuhan.tempat %> 
               <br>
-              <%= text_field_tag :tanggal_lahir, params[:tanggal_lahir], class: "form-control", placeholder: "Tanggal Lahir", value: pengasuhan.tanggal_lahir %>
+              <%= date_field_tag :tanggal_lahir, params[:tanggal_lahir], class: "form-control", placeholder: "Tanggal Lahir", value: pengasuhan.tanggal_lahir %>
               <br>
               <%= text_field_tag :tlp, params[:tlp], class: "form-control", placeholder: "Telepon", value: pengasuhan.tlp %>
               <br>

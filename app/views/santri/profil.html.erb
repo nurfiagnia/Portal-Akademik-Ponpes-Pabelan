@@ -167,7 +167,7 @@
             <br>
             <div class="form-row">
               <div class="col-md-5">
-                <%= select_tag(:jk, options_for_select([['Pria', 'Pria'], ['Wanita','Wanita']]), class: "form-control") %>
+                <%= select_tag(:jk, options_for_select([['Pria', 'Pria'], ['Wanita','Wanita']],santri.jk), class: "form-control") %>
               </div>
               <div class="col-md-7">
                 <%= text_field_tag :agama, params[:agama], class: "form-control", placeholder: "Agama", value: santri.agama %>
@@ -179,7 +179,7 @@
                 <%= text_field_tag :tempat, params[:tempat], class: "form-control", placeholder: "Tempat", value: santri.tempat %>
               </div>
               <div class="col-md-7">
-                <%= text_field_tag :tl, params[:tl], class: "form-control", placeholder: "Tanggal Lahir", value: santri.tl %>
+                <%= date_field_tag :tl, params[:tl], class: "form-control", placeholder: "Tanggal Lahir", value: santri.tl %>
               </div>
             </div>
             <br>

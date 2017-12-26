@@ -60,7 +60,7 @@
             <br>
             <%= select_tag(:jk, options_for_select([['Pria', 'Pria'], ['Wanita','Wanita']]), class: "form-control") %>
             <br>
-            <%= text_field_tag :ttl, params[:ttl], class: "form-control", placeholder: "Tanggal Lahir" %>
+            <%= date_field_tag :ttl, params[:ttl], class: "form-control", placeholder: "Tanggal Lahir" %>
             <br>
             <%= text_field_tag :alamat, params[:alamat], class: "form-control",  placeholder: "Alamat" %>
             <br>
