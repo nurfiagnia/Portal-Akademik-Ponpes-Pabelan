@@ -29,7 +29,6 @@ user = []
 first_user = {
 	username: "admin",
 	password: "admin",
-	admin_id: 1
 }
 
 user.push( first_user )
@@ -41,3 +40,4 @@ Admin.destroy_all
 Admin.create(
 	username: "admin",
 	password: "admin"
+)
