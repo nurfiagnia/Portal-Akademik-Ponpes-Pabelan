@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get "/aktivitas", to: 'home#aktivitas'
   get "/fasilitas", to: 'home#fasilitas'
   get "/prestasi", to: 'home#prestasi'
+  get "/form-santri", to: 'home#formsantri'
+  post "/form-santri", to: 'santri#newsantri'
 
   get "/admin", to: 'admin#login'
   post "/admin", to: 'admin#signin'
@@ -69,6 +71,7 @@ Rails.application.routes.draw do
   post "/pengasuhan/mail", to: 'pengasuhan#sendd'
   get "/pengasuhan/raport", to: 'pengasuhan#raport'
   post "/pengasuhan/raport", to: 'pengasuhan#newraport'
+  delete "/pengasuhan/raport.:id", to: 'pengasuhan#tinggalkelas'
    
   get "/forums/login", to: 'forums#login'
   post "/forums/login", to: 'forums#signin'

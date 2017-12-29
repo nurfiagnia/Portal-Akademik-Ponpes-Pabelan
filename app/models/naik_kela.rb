@@ -1,0 +1,2 @@
+class NaikKela < ApplicationRecord
+end

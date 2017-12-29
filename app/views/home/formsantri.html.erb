@@ -1,0 +1,110 @@
+<!--title-->
+<div class="title2">
+   <h2>Form Santri Baru</h2>
+</div>
+<!--end title-->
+<% flash.each do |type, message| %>
+  <div class="alert alert-<%= type %>"><%= message %></div>
+<% end %>
+<div class="m-5">
+  <%= form_tag do %>
+      <div class="form-row">
+        <div class="col-md-6">
+          <%= text_field_tag :username, params[:username], class: "form-control",  placeholder: "Username", :required => true %>
+        </div>
+        <div class="col-md-6">
+          <%= password_field_tag :password, params[:password], class: "form-control", placeholder: "Password" %>
+        </div>
+      </div>
+      <br>
+      <%= text_field_tag :nama, params[:nama], class: "form-control",  placeholder: "Nama" %>
+      <br>
+      <%= text_field_tag :nis, params[:nis], class: "form-control", placeholder: "NIS" %>
+      <br>
+      <%= text_field_tag :nisn, params[:nisn], class: "form-control", placeholder: "NISN" %>
+      <br>
+      <div class="form-row">
+        <div class="col-md-5">
+          <%= select_tag(:jk, options_for_select([['Pria', 'Pria'], ['Wanita','Wanita']]), class: "form-control") %>
+        </div>
+        <div class="col-md-7">
+          <%= text_field_tag :agama, params[:agama], class: "form-control", placeholder: "Agama" %>
+        </div>
+      </div>
+      <br>
+      <div class="form-row">
+        <div class="col-md-5">
+          <%= text_field_tag :tempat, params[:tempat], class: "form-control", placeholder: "Tempat" %>
+        </div>
+        <div class="col-md-7">
+          <%= date_field_tag :tl, params[:tl], class: "form-control", placeholder: "Tanggal Lahir", max: "#{DateTime.now.strftime "%Y-%m-%d"}" %>
+        </div>
+      </div>
+      <br>
+      <div class="form-row">
+        <div class="col-md-5">  
+          <%= text_field_tag :anak_ke, params[:anak_ke], class: "form-control", placeholder: "Anak ke-" %>
+        </div>
+        <div class="col-md-7">
+          <%= text_field_tag :status_keluarga, params[:status_keluarga], class: "form-control", placeholder: "Status Keluarga" %>
+        </div>
+      </div>
+      <br>
+      <%= text_field_tag :alamat, params[:alamat], class: "form-control",  placeholder: "Alamat" %>
+      <br>
+      <%= text_field_tag :tlp, params[:tlp], class: "form-control", placeholder: "Telepon" %>
+      <br>
+      <div class="form-row">
+        <div class="col-md-5">
+          <%= text_field_tag :kelas, params[:kelas], class: "form-control", placeholder: "Kelas" %>
+        </div>
+        <div class="col-md-7">
+          <%= text_field_tag :tahun_masuk, params[:tahun_masuk], class: "form-control", placeholder: "Tahun Masuk" %>
+        </div>
+      </div>
+      <br>
+      <%= text_field_tag :nama_sekolah, params[:nama_sekolah], class: "form-control", placeholder: "Nama Sekolah Sebelumnya" %>
+      <br>
+      <%= text_field_tag :alamat_sekolah, params[:alamat_sekolah], class: "form-control",  placeholder: "Alamat Sekolah Sebelumnya" %>
+      <br>
+      <div class="form-row">
+        <div class="col-md-5">
+          <%= text_field_tag :nama_ayah, params[:nama_ayah], class: "form-control", placeholder: "Nama Ayah" %>
+        </div>
+        <div class="col-md-7">
+          <%= text_field_tag :nama_ibu, params[:nama_ibu], class: "form-control", placeholder: "Nama Ibu" %>
+        </div>
+      </div>
+      <br>
+      <div class="form-row">
+        <div class="col-md-5">
+          <%= text_field_tag :pekerjaan_ayah, params[:pekerjaan_ayah], class: "form-control", placeholder: "Pekerjaan Ayah" %>
+        </div>
+        <div class="col-md-7">
+          <%= text_field_tag :pekerjaan_ibu, params[:pekerjaan_ibu], class: "form-control", placeholder: "Pekerjaan Ibu" %>
+        </div>
+      </div>
+      <br>
+      <div class="form-row">
+        <div class="col-md-5">
+          <%= text_field_tag :agama_ayah, params[:agama_ayah], class: "form-control", placeholder: "Agama Ayah" %>
+        </div>
+        <div class="col-md-7">
+          <%= text_field_tag :agama_ibu, params[:agama_ibu], class: "form-control", placeholder: "Agama Ibu" %>
+        </div>
+      </div>
+      <br>
+      <%= text_field_tag :tlp_wali, params[:tlp_wali], class: "form-control", placeholder: "Telepon Orang tua atau Wali" %>
+      <br>
+      <%= text_field_tag :nama_wali, params[:nama_wali], class: "form-control", placeholder: "Nama Wali" %>
+      <br>
+      <%= text_field_tag :agama_wali, params[:agama_wali], class: "form-control", placeholder: "Agama Wali" %>
+      <br>
+      <%= text_field_tag :alamat_wali, params[:alamat_wali], class: "form-control", placeholder: "Alamat Wali" %>
+      <br>
+      <%= text_field_tag :pekerjaan_wali, params[:pekerjaan_wali], class: "form-control", placeholder: "Pekerjaan Wali" %>
+      <br>
+      <%= hidden_field_tag :tahun_ajaran, params[:tahun_ajaran], class: "form-control", value: @tahunajaran.tahun.to_i %>
+    <center><%= submit_tag 'Simpan', class: "btn btn-outline-primary" %></center>
+  <% end %>
+</div>

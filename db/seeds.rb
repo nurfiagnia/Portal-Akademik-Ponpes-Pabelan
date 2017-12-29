@@ -41,3 +41,7 @@ Admin.create(
 	username: "admin",
 	password: "admin"
 )
+
+Tahunajaran.destroy_all
+
+Tahunajaran.create(tahun: "#{DateTime.now.strftime "%Y"}/#{(DateTime.now + 1.year).strftime "%Y"}")

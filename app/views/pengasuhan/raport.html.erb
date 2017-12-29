@@ -50,8 +50,8 @@
       <%= submit_tag 'Pilih', class: 'btn btn-primary col-md-3' %>
     <% end %>
     <hr>
-    <div class="row">
-      <div class="col-md-5">
+    <div>
+      <div>
         <legend>Daftar Santri</legend>
         <table class="table table-light">
           <tr>
@@ -61,69 +61,62 @@
             <th></th>
           </tr>
           <% @santri.each do |santri|%>
+          <% if santri.nis = naik_nis && naik_kelas != "tidak naik kelas"  %>
           <tr>
             <td><%= santri.nama %></td>
             <td><%= santri.nis %></td>
+            <td><%= santri.tlp_wali %></td>
             <td><%= santri.kelas %></td>
             <% if santri.nis != nil %>
-            <td><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#form-nilai<%= santri.id %>">+</button></td>
-            <div id="form-nilai<%= santri.id %>" class="modal fade" role="dialog">
+            <td>
+              <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#form-kenaikan<%= santri.id %>">Naik Kelas</button>
+              <%= link_to 'Tinggal Kelas', pengasuhan_raport_path(santri.id), method: :delete, class: "btn btn-outline-danger" %>
+            </td>
+            <div id="form-kenaikan<%= santri.id %>" class="modal fade" role="dialog">
               <div class="modal-dialog">
                 <!-- konten modal-->
                 <div class="modal-content">
                   <!-- heading modal -->
                   <div class="modal-header">
-                    <h4 class="modal-title">Tambah Nilai</h4>
+                    <h4 class="modal-title"><center><%= santri.nama %> Naik Kelas</center></h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
                   <!-- body modal -->
                   <div class="modal-body">
-                    
+                    <%= form_tag do %>
+                    <div class="mx-5">
+                      <label>Nama :</label>
+                      <%= text_field_tag :nama, params[:nama], class: "form-control-plaintext", value: santri.nama, :readonly => true, style: "width: 75%;" %>
+                      <br>
+                      <label>NIS :</label>
+                      <%= text_field_tag :nis, params[:nis], class: "form-control-plaintext", value: santri.nis, :readonly => true, style: "width: 75%;" %>
+                      <br>
+                      <label>Kelas :</label>
+                      <%= text_field_tag :kelas, params[:kelas], class: "form-control-plaintext", value: santri.kelas, :readonly => true, style: "width: 75%;" %>
+                      <br>
+                      <label>Tahun Ajaran</label><%= text_field_tag :tahun_ajaran, params[:tahun_ajaran], class: "form-control-plaintext", value: @tahunajaran.tahun, :readonly => true %>
+                      <hr>
+                      <center>
+                        <h3>naik ke kelas <%= santri.kelas.to_i + 1 %></h3>
+                        <select id="kenaikan" name="kenaikan" class="form-control">
+                          <option value="">Pilih Kenaikan</option>
+                          <option value="Naik Positif">Naik Positif</option>
+                          <option value="Naik Negatif">Naik Negatif</option>
+                          <option value="Pertimbangan">Pertimbangan</option>
+                        </select>
+                      </center>
+                    </div>
                   </div>
+                  <div class="modal-footer">
+                    <%= submit_tag 'Submit', class: "btn btn-outline-primary" %>
+                  </div>
+                  <% end %>
                 </div>
               </div>
             </div>
             <% end %>
           </tr>
           <% end %>
-        </table>
-      </div>
-      <div class="col-md-5">
-        <legend>Inputan Nilai</legend>
-        <table class="table table-light col-md-6">
-          <tr>
-            <th>Nama Santri</th>
-            <th>Angka</th>
-            <th>Praktik</th>
-            <th>Huruf</th>
-            <th></th>
-            <th></th>
-          </tr>
-          <% @nilai.each do |santri|%>
-          <tr>
-            <td><%= santri.nama %></td>
-            <td><%= santri.angka %></td>
-            <td><%= santri.praktik %></td>
-            <td><%= santri.huruf %></td>
-            <td><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#form-nilai<%= santri.id %>">/</button></td>
-            <td><%= link_to '#', guru_penilaian_path(santri.id), method: :delete, class: "btn btn-outline-danger" %></td>
-            <div id="form-nilai<%= santri.id %>" class="modal fade" role="dialog">
-              <div class="modal-dialog">
-                <!-- konten modal-->
-                <div class="modal-content">
-                  <!-- heading modal -->
-                  <div class="modal-header">
-                    <h4 class="modal-title">Edit Nilai</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  </div>
-                  <!-- body modal -->
-                  <div class="modal-body">
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </tr>
           <% end %>
         </table>
       </div>

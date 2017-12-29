@@ -56,10 +56,37 @@ class PengasuhanController < ApplicationController
   def raport
     @tahunajaran = Tahunajaran.first
     @santri = Santri.find_by_sql("SELECT * FROM santris WHERE kelas = '#{params[:kelas]}'")
-        @nilai = Nilai.find_by_sql("SELECT * FROM nilais WHERE kelas = '#{params[:kelas]}' AND thn_ajaran = '#{@tahunajaran.tahun}'")
+    @naik = NaikKela.all
   end
   def newraport
-    
+    santri = Santri.find_by(nis: params[:nis])
+    kelas = params[:kelas].to_i + 1
+    tahun = params[:tahun_ajaran].to_i + 1
+    naik = NaikKela.new(kenaikan_params)
+    naik.kelas = kelas
+    naik.tahun_ajaran = tahun
+    if naik.save
+      santri.update(kelas: kelas)
+      redirect_back(fallback_location: pengasuhan_raport_path)
+    else
+      redirect_to pengasuhan_raport_path, :flash => { :danger => "Gagal menaikan kelas!" }
+    end
+  end
+  def tinggalkelas
+    santri = Santri.find(params[:id])
+    tahun = Tahunajaran.first
+    naik = NaikKela.new(
+      nama: santri.nama,
+      nis: santri.nis,
+      kelas: santri.kelas,
+      tahun_ajaran: tahun.tahun.to_i + 1,
+      kenaikan: "tidak naik kelas"
+      )
+    if naik.save
+      redirect_back(fallback_location: pengasuhan_raport_path)
+    else
+      redirect_to pengasuhan_raport_path, :flash => { :danger => "Perintah gagal!" }      
+    end
   end
   def ubahpassword
     pass = Pengasuhan.find_by(username: params[:username])
@@ -78,5 +105,8 @@ class PengasuhanController < ApplicationController
     end
     def updatepengasuhan_params
       params.permit(:nama, :jk, :tempat, :tanggal_lahir, :alamat, :tlp)
+    end
+    def kenaikan_params
+      params.permit(:nama, :nis, :kelas, :tahun_ajaran, :kenaikan)
     end
 end

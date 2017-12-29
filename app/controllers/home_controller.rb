@@ -42,5 +42,8 @@ class HomeController < ApplicationController
   def prestasi
     
   end
+  def formsantri
+    @tahunajaran = Tahunajaran.first
+  end
 end
 

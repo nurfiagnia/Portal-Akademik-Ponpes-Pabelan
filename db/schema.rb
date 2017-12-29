@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171225083216) do
+ActiveRecord::Schema.define(version: 20171229175451) do
 
   create_table "admins", force: :cascade do |t|
     t.string "username"
@@ -65,6 +65,16 @@ ActiveRecord::Schema.define(version: 20171225083216) do
     t.string "kmi"
     t.string "ma"
     t.string "sikpb"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "naik_kelas", force: :cascade do |t|
+    t.string "nama"
+    t.string "nis"
+    t.integer "kelas"
+    t.string "tahun_ajaran"
+    t.string "kenaikan"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

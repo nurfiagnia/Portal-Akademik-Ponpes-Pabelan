@@ -59,7 +59,7 @@
                 <%= text_field_tag :username, params[:username], class: "form-control",  placeholder: "Username", :required => true %>
               </div>
               <div class="col-md-6">
-                <%= password_field_tag :password, params[:password], class: "form-control", placeholder: "Password", min %>
+                <%= password_field_tag :password, params[:password], class: "form-control", placeholder: "Password" %>
               </div>
             </div>
             <br>
@@ -150,6 +150,7 @@
             <br>
             <%= text_field_tag :pekerjaan_wali, params[:pekerjaan_wali], class: "form-control", placeholder: "Pekerjaan Wali" %>
             <br>
+            <%= hidden_field_tag :tahun_ajaran, params[:tahun_ajaran], class: "form-control", value: @tahunajaran.tahun.to_i %>
         </div>
         <!-- footer modal -->
         <div class="modal-footer">
