@@ -179,7 +179,7 @@
                 <%= text_field_tag :tempat, params[:tempat], class: "form-control", placeholder: "Tempat", value: santri.tempat %>
               </div>
               <div class="col-md-7">
-                <%= date_field_tag :tl, params[:tl], class: "form-control", placeholder: "Tanggal Lahir", value: santri.tl %>
+                <%= date_field_tag :tl, params[:tl], class: "form-control", placeholder: "Tanggal Lahir", value: santri.tl, max: "#{DateTime.now.strftime "%Y-%m-%d"}" %>
               </div>
             </div>
             <br>

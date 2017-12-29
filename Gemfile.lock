@@ -52,6 +52,8 @@ GEM
     autoprefixer-rails (7.1.6)
       execjs
     bcrypt (3.1.11)
+    bcrypt (3.1.11-java)
+    bcrypt (3.1.11-x86-mingw32)
     bindex (0.5.0)
     bootstrap (4.0.0.beta2.1)
       autoprefixer-rails (>= 6.0.3)
@@ -79,12 +81,14 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    concurrent-ruby (1.0.5-java)
     crass (1.0.3)
     diff-lcs (1.3)
     docile (1.1.5)
     erubi (1.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
+    ffi (1.9.18-java)
     ffi (1.9.18-x86-mingw32)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -95,11 +99,13 @@ GEM
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    jdbc-sqlite3 (3.20.1)
     jquery-rails (4.3.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (2.1.0)
+    json (2.1.0-java)
     loofah (2.1.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -112,8 +118,10 @@ GEM
     multi_json (1.12.2)
     multi_xml (0.6.0)
     nio4r (2.1.0)
+    nio4r (2.1.0-java)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
+    nokogiri (1.8.1-java)
     nokogiri (1.8.1-x86-mingw32)
       mini_portile2 (~> 2.3.0)
     pg (0.21.0)
@@ -121,6 +129,7 @@ GEM
     popper_js (1.12.5)
     public_suffix (3.0.1)
     puma (3.11.0)
+    puma (3.11.0-java)
     rack (2.0.3)
     rack-test (0.8.2)
       rack (>= 1.0, < 3)
@@ -208,6 +217,7 @@ GEM
     sqlite3 (1.3.13-x86-mingw32)
     thor (0.20.0)
     thread_safe (0.3.6)
+    thread_safe (0.3.6-java)
     tilt (2.0.8)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
@@ -225,6 +235,8 @@ GEM
       railties (>= 5.0)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
+    websocket-driver (0.6.5-java)
+      websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
     with_advisory_lock (3.2.0)
       activerecord (>= 3.2)
@@ -232,6 +244,7 @@ GEM
       nokogiri (~> 1.3)
 
 PLATFORMS
+  java
   ruby
   x86-mingw32
 

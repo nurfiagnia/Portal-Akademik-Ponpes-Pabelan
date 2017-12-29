@@ -31,6 +31,9 @@
   </header>
   <!--end header-->
   <div class="p-5">
+    <% flash.each do |type, message| %>
+      <div class="alert alert-<%= type %>"><%= message %></div>
+      <% end %>
     <h1>Tabel Data Guru</h1>
     <%= link_to "Guru Baru", '#', data: {:'target' => '#form-guru', :'toggle' => 'modal' }, class: "btn btn-outline-primary" %>
   <div id="form-guru" class="modal fade" role="dialog">
@@ -60,7 +63,7 @@
             <br>
             <%= select_tag(:jk, options_for_select([['Pria', 'Pria'], ['Wanita','Wanita']]), class: "form-control") %>
             <br>
-            <%= date_field_tag :ttl, params[:ttl], class: "form-control", placeholder: "Tanggal Lahir" %>
+            <%= date_field_tag :ttl, params[:ttl], class: "form-control", placeholder: "Tanggal Lahir", max: "#{DateTime.now.strftime "%Y-%m-%d"}" %>
             <br>
             <%= text_field_tag :alamat, params[:alamat], class: "form-control",  placeholder: "Alamat" %>
             <br>

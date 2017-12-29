@@ -54,7 +54,9 @@ class PengasuhanController < ApplicationController
     end
   end
   def raport
-    
+    @tahunajaran = Tahunajaran.first
+    @santri = Santri.find_by_sql("SELECT * FROM santris WHERE kelas = '#{params[:kelas]}'")
+        @nilai = Nilai.find_by_sql("SELECT * FROM nilais WHERE kelas = '#{params[:kelas]}' AND thn_ajaran = '#{@tahunajaran.tahun}'")
   end
   def newraport
     

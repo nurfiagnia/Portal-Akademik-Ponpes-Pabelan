@@ -89,7 +89,7 @@
               <br>
               <%= select_tag(:jk, options_for_select([['Pria', 'Pria'], ['Wanita','Wanita']], guru.jk), class: "form-control") %>
               <br>
-              <%= date_field_tag :ttl, params[:ttl], class: "form-control", placeholder: "Tanggal Lahir", value: guru.ttl %>
+              <%= date_field_tag :ttl, params[:ttl], class: "form-control", placeholder: "Tanggal Lahir", value: guru.ttl, max: "#{DateTime.now.strftime "%Y-%m-%d"}" %>
               <br>
               <%= text_field_tag :alamat, params[:alamat], class: "form-control",  placeholder: "Alamat", value: guru.alamat %>
               <br>

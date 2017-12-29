@@ -11,8 +11,8 @@
 				<legend>Santri Login</legend>
 			</center>
 			<hr>
-			<%= text_field_tag :username, params[:username], class: "form-control", placeholder: "Username" %>
-			<%= text_field_tag :password, params[:password], class: "form-control", type: "password", placeholder: "Password" %>
+			<%= text_field_tag :username, params[:username], class: "form-control", placeholder: "Username", :required => true %>
+			<%= text_field_tag :password, params[:password], class: "form-control", type: "password", placeholder: "Password", :required => true %>
 			<br>
 			<center>
 				<%= submit_tag "Login", class: "btn btn-success" %>

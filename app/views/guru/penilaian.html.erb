@@ -35,7 +35,18 @@
   <div class="m-5">
     <center><h3>Tahun Ajaran <%= @tahunajaran.tahun %></h3></center>
     <%= form_tag(guru_penilaian_path, :method => "get", :class => 'form-row mx-5') do %>
-      <%= select_tag(:kelas, options_for_select([['PILIH KELAS',''],['1',1],['2',2],['3',3],['4',4],['5',5],['6',6]],), class: "form-control col-md-3", style: "height: 52px; margin-left: 25%;") %>
+      <select id="kelas" name="kelas" class="form-control col-md-3" style="height: 52px; margin-left: 25%;">
+        <option value="">Pilih Kelas</option>
+        <% if guru.pendidikan == "MTs" %>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <% elsif guru.pendidikan == "MA" %>          
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <% end %>
+      </select>
       <%= submit_tag 'Pilih', class: 'btn btn-primary col-md-3' %>
     <% end %>
     <hr>

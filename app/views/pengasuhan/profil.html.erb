@@ -10,7 +10,7 @@
           <a class="nav-link" href="/pengasuhan/index">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/pengasuhan/penilaian">Raport</a>
+          <a class="nav-link" href="/pengasuhan/raport">Raport</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/pengasuhan/mail">Pesan</a>
@@ -90,7 +90,7 @@
               <br>
               <%= text_field_tag :tempat, params[:tempat], class: "form-control", placeholder: "Tempat", value: pengasuhan.tempat %> 
               <br>
-              <%= date_field_tag :tanggal_lahir, params[:tanggal_lahir], class: "form-control", placeholder: "Tanggal Lahir", value: pengasuhan.tanggal_lahir %>
+              <%= date_field_tag :tanggal_lahir, params[:tanggal_lahir], class: "form-control", placeholder: "Tanggal Lahir", value: pengasuhan.tanggal_lahir, max: "#{DateTime.now.strftime "%Y-%m-%d"}" %>
               <br>
               <%= text_field_tag :tlp, params[:tlp], class: "form-control", placeholder: "Telepon", value: pengasuhan.tlp %>
               <br>

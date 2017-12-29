@@ -1,0 +1,131 @@
+<!--navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="/"><%= image_tag("LogoPutih.png") %></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+      	<li class="nav-item">
+          <a class="nav-link" href="/pengasuhan/index">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/pengasuhan/raport">Raport</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pengasuhan/mail">Pesan</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pengasuhan/profil">Profil</a>
+            <li class="nav-item">
+					     <%= link_to 'logout', pengasuhan_logout_path, method: :delete, class: 'nav-link' %>
+            </li>                    
+      </ul>
+    </div>  
+</nav>
+<!--end navbar-->
+</header>
+<!--end header-->
+<% guru = current_pengasuhan %>
+  <!--title-->
+  <div class="title2">
+     <h2>Form kenaikan kelas</h2>
+  </div>
+  <!--end title-->
+  <% flash.each do |type, message| %>
+    <div class="alert alert-<%= type %>"><%= message %></div>
+  <% end %>
+  <div class="m-5">
+    <center><h3>Tahun Ajaran <%= @tahunajaran.tahun %></h3></center>
+    <%= form_tag(pengasuhan_raport_path, :method => "get", :class => 'form-row mx-5') do %>
+      <select id="kelas" name="kelas" class="form-control col-md-3" style="height: 52px; margin-left: 25%;">
+        <option value="">Pilih Kelas</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>      
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+      <%= submit_tag 'Pilih', class: 'btn btn-primary col-md-3' %>
+    <% end %>
+    <hr>
+    <div class="row">
+      <div class="col-md-5">
+        <legend>Daftar Santri</legend>
+        <table class="table table-light">
+          <tr>
+            <th>Nama Santri</th>
+            <th>NIS</th>
+            <th>Kelas</th>
+            <th></th>
+          </tr>
+          <% @santri.each do |santri|%>
+          <tr>
+            <td><%= santri.nama %></td>
+            <td><%= santri.nis %></td>
+            <td><%= santri.kelas %></td>
+            <% if santri.nis != nil %>
+            <td><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#form-nilai<%= santri.id %>">+</button></td>
+            <div id="form-nilai<%= santri.id %>" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+                <!-- konten modal-->
+                <div class="modal-content">
+                  <!-- heading modal -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Tambah Nilai</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <!-- body modal -->
+                  <div class="modal-body">
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+      <div class="col-md-5">
+        <legend>Inputan Nilai</legend>
+        <table class="table table-light col-md-6">
+          <tr>
+            <th>Nama Santri</th>
+            <th>Angka</th>
+            <th>Praktik</th>
+            <th>Huruf</th>
+            <th></th>
+            <th></th>
+          </tr>
+          <% @nilai.each do |santri|%>
+          <tr>
+            <td><%= santri.nama %></td>
+            <td><%= santri.angka %></td>
+            <td><%= santri.praktik %></td>
+            <td><%= santri.huruf %></td>
+            <td><button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#form-nilai<%= santri.id %>">/</button></td>
+            <td><%= link_to '#', guru_penilaian_path(santri.id), method: :delete, class: "btn btn-outline-danger" %></td>
+            <div id="form-nilai<%= santri.id %>" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+                <!-- konten modal-->
+                <div class="modal-content">
+                  <!-- heading modal -->
+                  <div class="modal-header">
+                    <h4 class="modal-title">Edit Nilai</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <!-- body modal -->
+                  <div class="modal-body">
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>

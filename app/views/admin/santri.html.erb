@@ -31,6 +31,9 @@
   </header>
   <!--end header-->
   <div class="p-5">
+    <% flash.each do |type, message| %>
+      <div class="alert alert-<%= type %>"><%= message %></div>
+    <% end %>
     <h1>Tabel Data Santri</h1>
     <div class="form-row">
       <button type="button" class="btn btn-outline-primary col-md-3" data-toggle="modal" data-target="#form-santri">Santri Baru</button>
@@ -53,10 +56,10 @@
           <%= form_tag do %>
             <div class="form-row">
               <div class="col-md-6">
-                <%= text_field_tag :username, params[:username], class: "form-control",  placeholder: "Username" %>
+                <%= text_field_tag :username, params[:username], class: "form-control",  placeholder: "Username", :required => true %>
               </div>
               <div class="col-md-6">
-                <%= password_field_tag :password, params[:password], class: "form-control", placeholder: "Password" %>
+                <%= password_field_tag :password, params[:password], class: "form-control", placeholder: "Password", min %>
               </div>
             </div>
             <br>
@@ -80,7 +83,7 @@
                 <%= text_field_tag :tempat, params[:tempat], class: "form-control", placeholder: "Tempat" %>
               </div>
               <div class="col-md-7">
-                <%= date_field_tag :tl, params[:tl], class: "form-control", placeholder: "Tanggal Lahir" %>
+                <%= date_field_tag :tl, params[:tl], class: "form-control", placeholder: "Tanggal Lahir", max: "#{DateTime.now.strftime "%Y-%m-%d"}" %>
               </div>
             </div>
             <br>
