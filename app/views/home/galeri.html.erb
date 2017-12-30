@@ -68,9 +68,9 @@
       <div class="tab-pane show active" id="50">
       	<!--isi 50 tahun-->
         <div class="setengahabad-galeri">
-          <%= image_tag("1-galeri.jpg") %><%= image_tag("2-galeri.jpg") %><%= image_tag("3-galeri.jpg") %><%= image_tag("4-galeri.jpg") %>
-          <%= image_tag("5-galeri.jpg") %><%= image_tag("6-galeri.jpg") %><%= image_tag("7-galeri.jpg") %><%= image_tag("8-galeri.jpg") %>
-          <%= image_tag("9-galeri.jpg") %><%= image_tag("10-galeri.jpg") %>
+          <%= image_tag("1-galeri.jpg", :name => "myImg", :id => "myImg") %><%= image_tag("2-galeri.jpg", :name => "myImg", :id => "myImg") %><%= image_tag("3-galeri.jpg", :name => "myImg", :id => "myImg") %><%= image_tag("4-galeri.jpg", :name => "myImg", :id => "myImg") %>
+          <%= image_tag("5-galeri.jpg", :name => "myImg", :id => "myImg") %><%= image_tag("6-galeri.jpg", :name => "myImg", :id => "myImg") %><%= image_tag("7-galeri.jpg", :name => "myImg", :id => "myImg") %><%= image_tag("8-galeri.jpg", :name => "myImg", :id => "myImg") %>
+          <%= image_tag("9-galeri.jpg", :name => "myImg", :id => "myImg") %><%= image_tag("10-galeri.jpg", :name => "myImg", :id => "myImg") %>
         </div>
         <!--end isi 50 tahun-->
       </div>
@@ -79,9 +79,9 @@
       <div class="tab-pane" id="kegiatan">
       	<!--kegiatan santri-->
         <div class="kegiatan-galeri">
-          <%= image_tag("1a-galeri.jpg") %><%= image_tag("2a-galeri.jpg") %><%= image_tag("3a-galeri.jpg") %><%= image_tag("4a-galeri.jpg") %>
-          <%= image_tag("5a-galeri.jpg") %><%= image_tag("6a-galeri.jpg") %><%= image_tag("7a-galeri.jpg") %><%= image_tag("8a-galeri.jpg") %>
-          <%= image_tag("9a-galeri.jpg") %><%= image_tag("10a-galeri.jpg") %>
+          <%= image_tag("1a-galeri.jpg", :name => "myImg", :id => "myImg") %><%= image_tag("2a-galeri.jpg", :name => "myImg", :id => "myImg") %><%= image_tag("3a-galeri.jpg", :name => "myImg", :id => "myImg") %><%= image_tag("4a-galeri.jpg", :name => "myImg", :id => "myImg") %>
+          <%= image_tag("5a-galeri.jpg", :name => "myImg", :id => "myImg") %><%= image_tag("6a-galeri.jpg", :name => "myImg", :id => "myImg") %><%= image_tag("7a-galeri.jpg", :name => "myImg", :id => "myImg") %><%= image_tag("8a-galeri.jpg", :name => "myImg", :id => "myImg") %>
+          <%= image_tag("9a-galeri.jpg", :name => "myImg", :id => "myImg") %><%= image_tag("10a-galeri.jpg", :name => "myImg", :id => "myImg") %>
         </div>
         <!--end kegiatan santri-->
       </div>
@@ -90,3 +90,31 @@
     <!--end tab content-->
 </div>
 <!--end kolom-->
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">×</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>

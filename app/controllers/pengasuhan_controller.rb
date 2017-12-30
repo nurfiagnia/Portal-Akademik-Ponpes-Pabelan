@@ -55,7 +55,7 @@ class PengasuhanController < ApplicationController
   end
   def raport
     @tahunajaran = Tahunajaran.first
-    @santri = Santri.find_by_sql("SELECT * FROM santris WHERE kelas = '#{params[:kelas]}'")
+    @santri = Santri.find_by_sql("SELECT * FROM santris WHERE kelas = '#{params[:kelas]}' AND tahun_ajaran = '#{@tahunajaran.tahun.to_i}'")
     @naik = NaikKela.all
   end
   def newraport
@@ -66,7 +66,7 @@ class PengasuhanController < ApplicationController
     naik.kelas = kelas
     naik.tahun_ajaran = tahun
     if naik.save
-      santri.update(kelas: kelas)
+      santri.update(kelas: kelas, tahun_ajaran: tahun)
       redirect_back(fallback_location: pengasuhan_raport_path)
     else
       redirect_to pengasuhan_raport_path, :flash => { :danger => "Gagal menaikan kelas!" }
@@ -75,6 +75,7 @@ class PengasuhanController < ApplicationController
   def tinggalkelas
     santri = Santri.find(params[:id])
     tahun = Tahunajaran.first
+    tahunbaru = tahun.tahun.to_i + 1
     naik = NaikKela.new(
       nama: santri.nama,
       nis: santri.nis,
@@ -83,6 +84,7 @@ class PengasuhanController < ApplicationController
       kenaikan: "tidak naik kelas"
       )
     if naik.save
+      santri.update(tahun_ajaran: tahunbaru)
       redirect_back(fallback_location: pengasuhan_raport_path)
     else
       redirect_to pengasuhan_raport_path, :flash => { :danger => "Perintah gagal!" }      

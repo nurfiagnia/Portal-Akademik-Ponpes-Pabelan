@@ -61,11 +61,9 @@
             <th></th>
           </tr>
           <% @santri.each do |santri|%>
-          <% if santri.nis = naik_nis && naik_kelas != "tidak naik kelas"  %>
           <tr>
             <td><%= santri.nama %></td>
             <td><%= santri.nis %></td>
-            <td><%= santri.tlp_wali %></td>
             <td><%= santri.kelas %></td>
             <% if santri.nis != nil %>
             <td>
@@ -116,7 +114,6 @@
             </div>
             <% end %>
           </tr>
-          <% end %>
           <% end %>
         </table>
       </div>

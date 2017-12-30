@@ -35,7 +35,7 @@ class AdminController < ApplicationController
   end
   def setpengaturan
     @tahunajaran = Tahunajaran.first
-    if @tahunajaran.update(params[:tahunajaran])
+    if @tahunajaran.update(tahun: params[:tahunajaran])
       redirect_to admin_pengaturan_path
     else
       redirect_to admin_pengaturan_path, :flash => { :danger => "Error :(" }

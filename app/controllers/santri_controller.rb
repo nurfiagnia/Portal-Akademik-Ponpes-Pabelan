@@ -77,7 +77,7 @@ class SantriController < ApplicationController
       params.permit(:username, :password, :nama, :nis, :nisn, :jk, :tempat, :tl, :agama, :anak_ke,
                     :status_keluarga, :alamat, :tlp, :kelas, :tahun_masuk, :nama_sekolah, :alamat_sekolah,
                     :nama_ayah, :nama_ibu, :pekerjaan_ayah, :pekerjaan_ibu, :agama_ayah, :agama_ibu, :nama_wali,
-                    :agama_wali, :alamat_wali, :tlp_wali, :pekerjaan_wali)
+                    :agama_wali, :alamat_wali, :tlp_wali, :pekerjaan_wali, :tahun_ajaran)
     end
     def updatesantri_params
       params.permit(:nama, :nis, :nisn, :jk, :tempat, :tl, :agama, :anak_ke,
