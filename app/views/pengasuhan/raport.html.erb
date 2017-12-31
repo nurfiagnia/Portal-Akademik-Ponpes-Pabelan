@@ -67,8 +67,12 @@
             <td><%= santri.kelas %></td>
             <% if santri.nis != nil %>
             <td>
+              <% if @tahunajaran.tahun.to_i % 2 == 0 %>
               <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#form-kenaikan<%= santri.id %>">Naik Kelas</button>
               <%= link_to 'Tinggal Kelas', pengasuhan_raport_path(santri.id), method: :delete, class: "btn btn-outline-danger" %>
+              <% else %>
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#form-semester<%= santri.id %>">Ke Semester Selanjutnya</button>
+              <% end %>
             </td>
             <div id="form-kenaikan<%= santri.id %>" class="modal fade" role="dialog">
               <div class="modal-dialog">
@@ -102,6 +106,42 @@
                           <option value="Naik Negatif">Naik Negatif</option>
                           <option value="Pertimbangan">Pertimbangan</option>
                         </select>
+                      </center>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <%= submit_tag 'Submit', class: "btn btn-outline-primary" %>
+                  </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <div id="form-semester<%= santri.id %>" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+                <!-- konten modal-->
+                <div class="modal-content">
+                  <!-- heading modal -->
+                  <div class="modal-header">
+                    <h4 class="modal-title"><center><%= santri.nama %> Naik Kelas</center></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+                  <!-- body modal -->
+                  <div class="modal-body">
+                    <%= form_tag do %>
+                    <div class="mx-5">
+                      <label>Nama :</label>
+                      <%= text_field_tag :nama, params[:nama], class: "form-control-plaintext", value: santri.nama, :readonly => true, style: "width: 75%;" %>
+                      <br>
+                      <label>NIS :</label>
+                      <%= text_field_tag :nis, params[:nis], class: "form-control-plaintext", value: santri.nis, :readonly => true, style: "width: 75%;" %>
+                      <br>
+                      <label>Kelas :</label>
+                      <%= text_field_tag :kelas, params[:kelas], class: "form-control-plaintext", value: santri.kelas, :readonly => true, style: "width: 75%;" %>
+                      <br>
+                      <label>Tahun Ajaran</label><%= text_field_tag :tahun_ajaran, params[:tahun_ajaran], class: "form-control-plaintext", value: @tahunajaran.tahun, :readonly => true %>
+                      <hr>
+                      <center>
+                        <h3>Masuk ke Semester <%= "#{@tahunajaran.tahun.to_i}/#{@tahunajaran.tahun.to_i + 1}" %></h3>
                       </center>
                     </div>
                   </div>

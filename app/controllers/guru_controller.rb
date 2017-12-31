@@ -30,13 +30,18 @@ class GuruController < ApplicationController
     redirect_to guru_path
   end
   def gurubaru
+    guruc = Guru.find_by_sql("SELECT * FROM gurus WHERE username = '#{params[:username]}'")
     @guru = Guru.new(guru_params)
+    if guruc.count == 0
       if @guru.save
         @guru.users.build(username: params[:username], password: params[:password]).save
         redirect_to admin_guru_path, :flash => { :success => "Berhasil tambah guru!" }
       else
       redirect_to admin_guru_path, :flash => { :danger => "Gagal menambahkan guru!" }
       end
+    else
+      redirect_to admin_guru_path, :flash => { :danger => "Username sudah digunakan!" }
+    end
   end
   def hapusguru
     @guru = Guru.find(params[:id])

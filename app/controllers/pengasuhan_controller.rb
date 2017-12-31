@@ -20,13 +20,18 @@ class PengasuhanController < ApplicationController
     @pengasuhan = Pengasuhan.all
   end
   def pengasuhanbaru
+    pengasuhanc = Pengasuhan.find_by_sql("SELECT * FROM pengasuhans WHERE username = '#{params[:username]}'")
     @pengasuhan = Pengasuhan.new(pengasuhan_params)
+    if pengasuhanc.count == 0
       if @pengasuhan.save
         @pengasuhan.users.build(username: params[:username], password: params[:password]).save
         redirect_to admin_pengasuhan_path
       else
         flash.now[:danger] = "Data yang anda masukkan tidak valid!"
       end
+    else
+      redirect_to admin_pengasuhan_path, :flash => { :danger => "Username sudah digunakan!" }
+    end
   end
   def hapuspengasuhan
     @pengasuhan = Pengasuhan.find(params[:id])
@@ -60,8 +65,12 @@ class PengasuhanController < ApplicationController
   end
   def newraport
     santri = Santri.find_by(nis: params[:nis])
-    kelas = params[:kelas].to_i + 1
     tahun = params[:tahun_ajaran].to_i + 1
+    if tahun % 2 == 1
+      kelas = params[:kelas].to_i + 1
+    else
+      kelas = params[:kelas]
+    end
     naik = NaikKela.new(kenaikan_params)
     naik.kelas = kelas
     naik.tahun_ajaran = tahun

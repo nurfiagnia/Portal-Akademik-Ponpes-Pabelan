@@ -32,6 +32,12 @@
 	<legend>Nilai Raport</legend>
 	<hr>
 	<table class="table table-dark">
+		<tr>
+			<th>Mata Pelajaran</th>
+			<th>Pengetahuan</th>
+			<th>Keterampilan</th>
+			<th>Sikap</th>
+		</tr>
 		<% @raport.each do |raport| %>
 			<tr>
 				<th><%= raport.mapel %></th>
@@ -43,14 +49,18 @@
 	</table>
 </div>
 <div class="kenaikan-kelas-santri m-5">
+	<% @kenaikan.each do |k| %>
+	<% if k.kenaikan != nil %>
 	<legend>Kenaikan Kelas</legend>
 	<hr>
-	<table class="table table-light">
-		<tr>
-			<td>Anda : </td>
-			<td>kenaikan</td>
-		</tr>
+		<% if k.kenaikan != "tidak naik kelas" %>
+  	 		<div class="alert alert-success p-4"><center><h4>Naik ke kelas <%= params[:kelas] %> dengan predikat <%= k.kenaikan %></h4></center></div>
+  	 	<% else %>
+  	 		<div class="alert alert-danger p-4"><center><h4>Maaf anda tinggal di kelas <%= params[:kelas] %> dengan predikat <%= k.kenaikan %></h4></center></div>
+  	 	<% end %>
 	</table>
+	<% end %>
+	<% end %>
 </div>
 <div class="ekskul-santri p-5">
 	<legend>Ekstrakulikuler</legend>

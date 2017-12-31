@@ -21,14 +21,18 @@ class SantriController < ApplicationController
   end
   def raport
     santri = current_santri
+    tahunajaran = Tahunajaran.first
     @raport = Nilai.find_by_sql("SELECT * FROM nilais WHERE nis = '#{santri.nis}' AND kelas = '#{params[:kelas]}'")
     @kelas = Nilai.find_by_sql("SELECT kelas FROM nilais WHERE nis = '#{santri.nis}' GROUP BY kelas")
+    @kenaikan = NaikKela.find_by_sql("SELECT * FROM naik_kelas WHERE nis = '#{santri.nis}' AND kelas = '#{params[:kelas]}'")
   end
   def profil 
   end
   def santribaru
+    santric = Santri.find_by_sql("SELECT * FROM santris WHERE username = '#{params[:username]}'")
     @santri = Santri.new(santri_params)
     @naik = NaikKela.new(naik_params)
+    if santric.count == 0
     if @santri.save
       @naik.save
       @santri.users.build(username: params[:username], password: params[:password]).save
@@ -36,17 +40,25 @@ class SantriController < ApplicationController
       else
         flash.now[:danger] = "Data yang anda masukkan tidak valid!"
       end
+    else
+      redirect_to admin_santri_path, :flash => { :danger => "Username sudah digunakan!" }
+    end
   end
   def newsantri
+    santric = Santri.find_by_sql("SELECT * FROM santris WHERE username = '#{params[:username]}'")
     @santri = Santri.new(santri_params)
     @naik = NaikKela.new(naik_params)
-    if @santri.save
+    if santric.count == 0
+     if @santri.save
       @naik.save
       @santri.users.build(username: params[:username], password: params[:password]).save
       redirect_to form_santri_path, :flash => { :success => "Biodata anda berhasil diinput!" }
       else
         flash.now[:danger] = "Data yang anda masukkan tidak valid!"
       end
+    else
+      redirect_to admin_santri_path, :flash => { :danger => "Username sudah digunakan!" }
+    end
   end
   def hapussantri
     @santri = Santri.find(params[:id])
