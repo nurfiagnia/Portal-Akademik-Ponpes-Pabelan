@@ -17,7 +17,7 @@ class HomeController < ApplicationController
   end
   def kenaikan
     @tahunajaran = Tahunajaran.first
-  	@rankings = Nilai.find_by_sql("SELECT nama,nis,AVG(angka) AS angka FROM nilais WHERE kelas = '#{params["kelas"]}' AND thn_ajaran = '2017/2018' GROUP BY nis ORDER BY angka DESC")
+  	@rankings = Nilai.find_by_sql("SELECT nama,nis,AVG(angka) AS angka FROM nilais WHERE kelas = '#{params["kelas"]}' AND thn_ajaran = '#{@tahunajaran.tahun}' GROUP BY nis ORDER BY angka DESC")
   end
   def kelulusan
   	
