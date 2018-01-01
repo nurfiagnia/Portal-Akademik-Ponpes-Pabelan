@@ -52,3 +52,41 @@
 		<h2>Kenaikan Kelas</h2>
 	</div>
 	<!--end title-->
+	<div class="m-5">
+    <center><h3>Tahun Ajaran <%= @tahunajaran.tahun %></h3></center>
+    <%= form_tag(kenaikan_kelas_path, :method => "get", :class => 'form-row mx-5') do %>
+      <select id="kelas" name="kelas" class="form-control col-md-3" style="height: 52px; margin-left: 25%;">
+        <option value="">Pilih Kelas</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>       
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+      <%= submit_tag 'Pilih', class: 'btn btn-primary col-md-3' %>
+    <% end %>
+    <hr>
+    <div>
+      <div>
+        <legend>Daftar Santri</legend>
+        <table class="table table-light">
+          <tr>
+          	<th>Ranking</th>
+          	<th>Nama</th>
+            <th>NIS</th>
+            <th>Rata-rata</th>
+          </tr>
+          <% i = 0 %>
+          <% @rankings.each do |rank|%>
+          <tr>
+          	<td><%= i+=1 %></td>
+          	<td><%= rank.nama %></td>
+            <td><%= rank.nis %></td>
+            <td><%= rank.angka.to_i %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
