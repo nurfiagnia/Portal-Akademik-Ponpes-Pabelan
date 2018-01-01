@@ -57,7 +57,7 @@ class SantriController < ApplicationController
         flash.now[:danger] = "Data yang anda masukkan tidak valid!"
       end
     else
-      redirect_to admin_santri_path, :flash => { :danger => "Username sudah digunakan!" }
+      redirect_to form_santri_path, :flash => { :danger => "Username sudah digunakan!" }
     end
   end
   def hapussantri
