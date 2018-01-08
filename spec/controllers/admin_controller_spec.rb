@@ -1,10 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe AdminController, type: :controller do
-	context 'GET #login' do
-		it 'returns success response' do
-			get :login
-			expect(response).to be_success
+	describe 'Login admin' do
+		context 'GET #login' do
+			it 'when admin get login url' do
+				get :login
+				expect(response).to be_success
+			end
+		end
+		context 'POST #signin' do
+			it 'when admin login with valid data' do
+				params = {username: 'admin',
+						  password: 'admin'}
+				post :signin, params: params
+			end
 		end
 	end
 
