@@ -3,6 +3,9 @@ class AdminController < ApplicationController
   before_action :admin_sudah_login, only: [:login]
   def login
   end
+  def kontak
+    @kontak = Kontak.last
+  end
   def signin
     admin = Admin.find_by(username: params[:username])
   		if admin && admin.authenticate(params[:password])

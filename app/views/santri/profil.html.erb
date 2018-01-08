@@ -161,9 +161,9 @@
           <%= form_tag(:controller => "guru", :action => "update", :method => "post") %>
             <%= text_field_tag :nama, params[:nama], class: "form-control",  placeholder: "Nama", value: santri.nama %>
             <br>
-            <%= text_field_tag :nis, params[:nis], class: "form-control", placeholder: "NIS", value: santri.nis %>
+            <%= number_field_tag :nis, params[:nis], class: "form-control", placeholder: "NIS", value: santri.nis %>
             <br>
-            <%= text_field_tag :nisn, params[:nisn], class: "form-control", placeholder: "NISN", value: santri.nisn %>
+            <%= number_field_tag :nisn, params[:nisn], class: "form-control", placeholder: "NISN", value: santri.nisn %>
             <br>
             <div class="form-row">
               <div class="col-md-5">
@@ -185,7 +185,7 @@
             <br>
             <div class="form-row">
               <div class="col-md-5">  
-                <%= text_field_tag :anak_ke, params[:anak_ke], class: "form-control", placeholder: "Anak ke-", value: santri.anak_ke %>
+                <%= number_field_tag :anak_ke, params[:anak_ke], class: "form-control", placeholder: "Anak ke-", value: santri.anak_ke %>
               </div>
               <div class="col-md-7">
                 <%= text_field_tag :status_keluarga, params[:status_keluarga], class: "form-control", placeholder: "Status Keluarga", value: santri.status_keluarga %>
@@ -194,14 +194,14 @@
             <br>
             <%= text_field_tag :alamat, params[:alamat], class: "form-control",  placeholder: "Alamat", value: santri.alamat %>
             <br>
-            <%= text_field_tag :tlp, params[:tlp], class: "form-control", placeholder: "Telepon", value: santri.tlp %>
+            <%= number_field_tag :tlp, params[:tlp], class: "form-control", placeholder: "Telepon", value: santri.tlp %>
             <br>
             <div class="form-row">
               <div class="col-md-5">
-                <%= text_field_tag :kelas, params[:kelas], class: "form-control", placeholder: "Kelas", value: santri.kelas %>
+                <%= number_field_tag :kelas, params[:kelas], class: "form-control", placeholder: "Kelas", value: santri.kelas %>
               </div>
               <div class="col-md-7">
-                <%= text_field_tag :tahun_masuk, params[:tahun_masuk], class: "form-control", placeholder: "Tahun Masuk", value: santri.tahun_masuk %>
+                <%= number_field_tag :tahun_masuk, params[:tahun_masuk], class: "form-control", placeholder: "Tahun Masuk", value: santri.tahun_masuk, onKeyPress: "if(this.value.length==4) return false;" %>
               </div>
             </div>
             <br>
@@ -236,7 +236,7 @@
               </div>
             </div>
             <br>
-            <%= text_field_tag :tlp_wali, params[:tlp_wali], class: "form-control", placeholder: "Telepon Orang tua atau Wali", value: santri.tlp_wali %>
+            <%= number_field_tag :tlp_wali, params[:tlp_wali], class: "form-control", placeholder: "Telepon Orang tua atau Wali", value: santri.tlp_wali %>
             <br>
             <%= text_field_tag :nama_wali, params[:nama_wali], class: "form-control", placeholder: "Nama Wali", value: santri.nama_wali %>
             <br>

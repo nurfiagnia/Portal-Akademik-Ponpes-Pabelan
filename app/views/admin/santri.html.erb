@@ -18,8 +18,15 @@
                     <li class="nav-item">
                       <a class="nav-link" href="/admin/pengasuhan">Pengasuhan</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="/admin/pengaturan">Pengaturan</a>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Pengaturan
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/admin/tahun-ajaran">Tahun Ajaran</a>
+                        <a class="dropdown-item" href="/admin/files">Files | Kalender Akademik, Info PSB</a>
+                        <a class="dropdown-item" href="/admin/kontak">Kontak</a>
+                      </div>
                     </li>
                     <li class="nav-item">
 						          <%= link_to 'logout',admin_logout_path, method: :delete, class: 'nav-link' %>
@@ -65,9 +72,9 @@
             <br>
             <%= text_field_tag :nama, params[:nama], class: "form-control",  placeholder: "Nama" %>
             <br>
-            <%= text_field_tag :nis, params[:nis], class: "form-control", placeholder: "NIS" %>
+            <%= number_field_tag :nis, params[:nis], class: "form-control", placeholder: "NIS" %>
             <br>
-            <%= text_field_tag :nisn, params[:nisn], class: "form-control", placeholder: "NISN" %>
+            <%= number_field_tag :nisn, params[:nisn], class: "form-control", placeholder: "NISN" %>
             <br>
             <div class="form-row">
               <div class="col-md-5">
@@ -89,7 +96,7 @@
             <br>
             <div class="form-row">
               <div class="col-md-5">  
-                <%= text_field_tag :anak_ke, params[:anak_ke], class: "form-control", placeholder: "Anak ke-" %>
+                <%= number_field_tag :anak_ke, params[:anak_ke], class: "form-control", placeholder: "Anak ke-" %>
               </div>
               <div class="col-md-7">
                 <%= text_field_tag :status_keluarga, params[:status_keluarga], class: "form-control", placeholder: "Status Keluarga" %>
@@ -98,14 +105,14 @@
             <br>
             <%= text_field_tag :alamat, params[:alamat], class: "form-control",  placeholder: "Alamat" %>
             <br>
-            <%= text_field_tag :tlp, params[:tlp], class: "form-control", placeholder: "Telepon" %>
+            <%= number_field_tag :tlp, params[:tlp], class: "form-control", placeholder: "Telepon" %>
             <br>
             <div class="form-row">
               <div class="col-md-5">
-                <%= text_field_tag :kelas, params[:kelas], class: "form-control", placeholder: "Kelas" %>
+                <%= number_field_tag :kelas, params[:kelas], class: "form-control", placeholder: "Kelas" %>
               </div>
               <div class="col-md-7">
-                <%= text_field_tag :tahun_masuk, params[:tahun_masuk], class: "form-control", placeholder: "Tahun Masuk" %>
+                <%= number_field_tag :tahun_masuk, params[:tahun_masuk], class: "form-control", placeholder: "Tahun Masuk", onKeyPress: "if(this.value.length==4) return false;" %>
               </div>
             </div>
             <br>
@@ -140,7 +147,7 @@
               </div>
             </div>
             <br>
-            <%= text_field_tag :tlp_wali, params[:tlp_wali], class: "form-control", placeholder: "Telepon Orang tua atau Wali" %>
+            <%= number_field_tag :tlp_wali, params[:tlp_wali], class: "form-control", placeholder: "Telepon Orang tua atau Wali" %>
             <br>
             <%= text_field_tag :nama_wali, params[:nama_wali], class: "form-control", placeholder: "Nama Wali" %>
             <br>

@@ -34,7 +34,7 @@
 <!--pesan-->
 <div class="pesan">
   <%= form_tag do %>
-  <%= text_field_tag :notlp, params[:notlp] , class: 'form-control', placeholder: 'No tujuan'  %>
+  <%= number_field_tag :notlp, params[:notlp] , class: 'form-control', placeholder: 'No tujuan'  %>
   <%= text_area_tag :isisms, params[:isisms] , class: 'form-control', placeholder: 'Isi pesan'  %>
   <hr>
   <center><%= submit_tag 'kirim', class: 'btn btn-outline-primary' %></center>

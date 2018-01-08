@@ -22,9 +22,9 @@ class SantriController < ApplicationController
   def raport
     santri = current_santri
     tahunajaran = Tahunajaran.first
-    @raport = Nilai.find_by_sql("SELECT * FROM nilais WHERE nis = '#{santri.nis}' AND kelas = '#{params[:kelas]}'")
-    @kelas = Nilai.find_by_sql("SELECT kelas FROM nilais WHERE nis = '#{santri.nis}' GROUP BY kelas")
-    @kenaikan = NaikKela.find_by_sql("SELECT * FROM naik_kelas WHERE nis = '#{santri.nis}' AND kelas = '#{params[:kelas]}'")
+    @raport = Nilai.find_by_sql("SELECT * FROM nilais WHERE nis = '#{santri.nis}' AND thn_ajaran = '#{params[:thn_ajaran]}'")
+    @kelas = Nilai.find_by_sql("SELECT thn_ajaran FROM nilais WHERE nis = '#{santri.nis}' GROUP BY thn_ajaran")
+    @kenaikan = NaikKela.find_by_sql("SELECT * FROM naik_kelas WHERE nis = '#{santri.nis}' AND tahun_ajaran = '#{params[:thn_ajaran].to_i}'")
   end
   def profil 
   end

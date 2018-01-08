@@ -37,10 +37,26 @@
 <!--end navbar-->
 </header>
 <!--end header-->
-        <center><h1 class="pt-5 bg-dark" style="color: white;">Tahun Ajaran Default</h1></center>
-          <%= form_tag do %>
-            <div class="p-5 form-row bg-dark">
-              <%= text_field_tag :tahunajaran, params[:tahunajaran], class: "form-control col-md-10", value: @tahunajaran.tahun, style: 'text-align: center;' %>
-              <%= submit_tag 'Set', class: "btn btn-primary col-md-2" %>
-            </div>
-          <% end %>
+  <center><h1 class="pt-5">Kontak Pondok Pesantren</h1></center>
+  <hr>
+  <%= form_tag do %>
+    <table style="margin: 0px 100px;">
+      <tr>
+        <td align="center">Email</td>
+        <td align="center">Telepon/Fax</td>
+        <td align="center">Pengasuhan</td>
+        <td align="center">KMI</td>
+        <td align="center">MA</td>
+        <td align="center">SIKPB</td>
+      </tr>
+      <tr>
+        <td><%= email_field_tag :email, params[:email], class: 'form-control', style: 'text-align: center;', value: @kontak.email %><br></td>
+        <td><%= text_field_tag :tlp, params[:tlp], class: 'form-control', style: 'text-align: center;', value: @kontak.tlp %><br></td>
+        <td><%= text_field_tag :pengasuhan, params[:pengasuhan], class: 'form-control', style: 'text-align: center;', value: @kontak.pengasuhan %><br></td>
+        <td><%= text_field_tag :kmi, params[:kmi], class: 'form-control', style: 'text-align: center;', value: @kontak.kmi %><br></td>
+        <td><%= text_field_tag :ma, params[:ma], class: 'form-control', style: 'text-align: center;', value: @kontak.ma %><br></td>
+        <td><%= text_field_tag :sikpb, params[:sikpb], class: 'form-control', style: 'text-align: center;', value: @kontak.sikpb %><br></td>
+      </tr>
+    </table>
+    <center class="pb-5"><%= submit_tag "Update Data Kontak", class: 'btn btn-outline-primary' %></center>
+  <% end %>

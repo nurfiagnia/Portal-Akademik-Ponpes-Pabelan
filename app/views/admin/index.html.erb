@@ -18,11 +18,18 @@
                     <li class="nav-item">
                       <a class="nav-link" href="/admin/pengasuhan">Pengasuhan</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="/admin/pengaturan">Pengaturan</a>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Pengaturan
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/admin/tahun-ajaran">Tahun Ajaran</a>
+                        <a class="dropdown-item" href="/admin/files">Files | Kalender Akademik, Info PSB</a>
+                        <a class="dropdown-item" href="/admin/kontak">Kontak</a>
+                      </div>
                     </li>
                     <li class="nav-item">
-						<%= link_to 'logout',admin_logout_path, method: :delete, class: 'nav-link' %>
+						          <%= link_to 'logout',admin_logout_path, method: :delete, class: 'nav-link' %>
                     </li>                    
                  </ul>
                 </div>  

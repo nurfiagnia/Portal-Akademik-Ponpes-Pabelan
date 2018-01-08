@@ -85,7 +85,7 @@
             <%= form_tag(:controller => "guru", :action => "update", :method => "post") %>
               <%= text_field_tag :nama, params[:nama], class: "form-control",  placeholder: "Nama", value: guru.nama %>
               <br>
-              <%= text_field_tag :nip, params[:nip], class: "form-control", placeholder: "NIP", value: guru.nip %>
+              <%= number_field_tag :nip, params[:nip], class: "form-control", placeholder: "NIP", value: guru.nip %>
               <br>
               <%= select_tag(:jk, options_for_select([['Pria', 'Pria'], ['Wanita','Wanita']], guru.jk), class: "form-control") %>
               <br>
@@ -93,7 +93,7 @@
               <br>
               <%= text_field_tag :alamat, params[:alamat], class: "form-control",  placeholder: "Alamat", value: guru.alamat %>
               <br>
-              <%= text_field_tag :no_tlp, params[:no_tlp], class: "form-control", placeholder: "Telepon", value: guru.no_tlp %>
+              <%= number_field_tag :no_tlp, params[:no_tlp], class: "form-control", placeholder: "Telepon", value: guru.no_tlp %>
               <br>
               <%= text_field_tag :mapel, params[:mapel], class: "form-control",  placeholder: "Mata Pelajaran", value: guru.mapel %>
               <br>
