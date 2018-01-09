@@ -25,6 +25,13 @@ class SantriController < ApplicationController
     @raport = Nilai.find_by_sql("SELECT * FROM nilais WHERE nis = '#{santri.nis}' AND thn_ajaran = '#{params[:thn_ajaran]}'")
     @kelas = Nilai.find_by_sql("SELECT thn_ajaran FROM nilais WHERE nis = '#{santri.nis}' GROUP BY thn_ajaran")
     @kenaikan = NaikKela.find_by_sql("SELECT * FROM naik_kelas WHERE nis = '#{santri.nis}' AND tahun_ajaran = '#{params[:thn_ajaran].to_i}'")
+    @ekskul = Ekskul.find_by_sql("SELECT * FROM ekskuls WHERE nis = '#{santri.nis}' AND thn_ajaran = '#{params[:thn_ajaran]}'")
+    respond_to do |format|
+      format.html
+      format.pdf do
+          render :pdf => "file_name"
+      end
+    end
   end
   def profil 
   end

@@ -71,10 +71,16 @@ class PengasuhanController < ApplicationController
     else
       kelas = params[:kelas]
     end
+    ekskul1 = Ekskul.new(nama: paramas[:nama], nis: params[:nis], nama_ekskul: params[:nama_ekskul1], nilai: params[:nilai1], kelas: params[:kelas], thn_ajaran: params[:tahun_ajaran])
+    ekskul2 = Ekskul.new(nama: paramas[:nama], nis: params[:nis], nama_ekskul: params[:nama_ekskul2], nilai: params[:nilai2], kelas: params[:kelas], thn_ajaran: params[:tahun_ajaran])
+    ekskul3 = Ekskul.new(nama: paramas[:nama], nis: params[:nis], nama_ekskul: params[:nama_ekskul3], nilai: params[:nilai3], kelas: params[:kelas], thn_ajaran: params[:tahun_ajaran])
     naik = NaikKela.new(kenaikan_params)
     naik.kelas = kelas
     naik.tahun_ajaran = tahun
     if naik.save
+      ekskul1.save
+      ekskul2.save
+      ekskul3.save
       santri.update(kelas: kelas, tahun_ajaran: tahun)
       redirect_back(fallback_location: pengasuhan_raport_path)
     else

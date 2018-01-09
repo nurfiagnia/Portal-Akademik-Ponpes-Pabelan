@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'attach/create'
+
   get 'comment/create'
 
   root to: 'home#index'
@@ -35,8 +37,8 @@ Rails.application.routes.draw do
   delete "/admin/pengasuhan.:id", to: 'pengasuhan#hapuspengasuhan'
   get "/admin/tahun-ajaran", to: 'admin#pengaturan'
   post "/admin/tahun-ajaran", to: 'admin#setpengaturan'
-  get "/admin/files", to: 'admin#pengaturan'
-  post "/admin/files", to: 'admin#setpengaturan'
+  get "/admin/files", to: 'admin#files'
+  post "/admin/files", to: 'admin#setfiles'
   get "/admin/kontak", to: 'admin#kontak'
   post "/admin/kontak", to: 'admin#setkontak'
   delete "/admin/logout", to: 'admin#logout'

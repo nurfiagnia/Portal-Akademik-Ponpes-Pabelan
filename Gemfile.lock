@@ -1,6 +1,6 @@
 GIT
-  remote: https://github.com/hilmysyarif/sms_gateway.git
-  revision: ba29ec651d82cc07dbc8579acaa67066b8a77bf2
+  remote: https://github.com/rietzche/sms_gateway.git
+  revision: 62945a2b289cf7725d21d8e60efd69194b2bf15a
   branch: master
   specs:
     sms_gateway (0.3.0)
@@ -68,6 +68,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (1.2.2)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     childprocess (0.8.0)
       ffi (~> 1.0, >= 1.0.11)
     closure_tree (6.6.0)
@@ -112,6 +116,9 @@ GEM
     mail (2.7.0)
       mini_mime (>= 0.1.1)
     method_source (0.9.0)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.10.3)
@@ -253,6 +260,7 @@ DEPENDENCIES
   bootstrap (~> 4.0.0.beta2.1)
   byebug
   capybara
+  carrierwave (~> 1.2, >= 1.2.2)
   closure_tree
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)

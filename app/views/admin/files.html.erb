@@ -1,0 +1,17 @@
+<div class = "well">
+   <%= form_tag do %>
+   	<div>
+      <%= label_tag :name %>
+      <%= text_field_tag :namaa %>
+      <%= label_tag :attachment %>
+      <%= file_field_tag :attachmenta %>
+  	</div>
+  	<div>
+  	  <%= label_tag :name %>
+      <%= text_field_tag :namab %>
+      <%= label_tag :attachment %>
+      <%= file_field_tag :attachmentb %>
+  	</div>
+	<%= submit_tag "Save", class: "btn btn-primary" %>
+   <% end %>
+</div>

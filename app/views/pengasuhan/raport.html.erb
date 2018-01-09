@@ -97,6 +97,15 @@
                       <%= text_field_tag :kelas, params[:kelas], class: "form-control-plaintext", value: santri.kelas, :readonly => true, style: "width: 75%;" %>
                       <br>
                       <label>Tahun Ajaran</label><%= text_field_tag :tahun_ajaran, params[:tahun_ajaran], class: "form-control-plaintext", value: @tahunajaran.tahun, :readonly => true %>
+                      <br>
+                      <%= text_field_tag :nama_ekskul1, params[:nama_ekskul1], class: "form-control", style: "width: 75%;", placeholder: 'Nama Ekskul' %>
+                      <%= text_field_tag :nilai1, params[:nilai1], class: "form-control", style: "width: 75%;", placeholder: 'Nilai Ekskul' %>
+                      <br>
+                      <%= text_field_tag :nama_ekskul2, params[:nama_ekskul2], class: "form-control", style: "width: 75%;", placeholder: 'Nama Ekskul' %>
+                      <%= text_field_tag :nilai3, params[:nilai3], class: "form-control", style: "width: 75%;", placeholder: 'Nilai Ekskul' %>
+                      <br>
+                      <%= text_field_tag :nama_ekskul3, params[:nama_ekskul3], class: "form-control", :readonly => true, value: 'Muhadharah', style: "width: 75%;" %>
+                      <%= text_field_tag :nilai3, params[:nilai3], class: "form-control", style: "width: 75%;", placeholder: 'Nilai Ekskul' %>
                       <hr>
                       <center>
                         <h3>naik ke kelas <%= santri.kelas.to_i + 1 %></h3>
@@ -139,6 +148,14 @@
                       <%= text_field_tag :kelas, params[:kelas], class: "form-control-plaintext", value: santri.kelas, :readonly => true, style: "width: 75%;" %>
                       <br>
                       <label>Tahun Ajaran</label><%= text_field_tag :tahun_ajaran, params[:tahun_ajaran], class: "form-control-plaintext", value: @tahunajaran.tahun, :readonly => true %>
+                      <%= text_field_tag :nama_ekskul1, params[:nama_ekskul1], class: "form-control", style: "width: 75%;", placeholder: 'Nama Ekskul' %>
+                      <%= text_field_tag :nilai1, params[:nilai1], class: "form-control", style: "width: 75%;", placeholder: 'Nilai Ekskul' %>
+                      <br>
+                      <%= text_field_tag :nama_ekskul2, params[:nama_ekskul2], class: "form-control", style: "width: 75%;", placeholder: 'Nama Ekskul' %>
+                      <%= text_field_tag :nilai3, params[:nilai3], class: "form-control", style: "width: 75%;", placeholder: 'Nilai Ekskul' %>
+                      <br>
+                      <%= text_field_tag :nama_ekskul3, params[:nama_ekskul3], class: "form-control", :readonly => true, value: 'Muhadharah', style: "width: 75%;" %>
+                      <%= text_field_tag :nilai3, params[:nilai3], class: "form-control", style: "width: 75%;", placeholder: 'Nilai Ekskul' %>
                       <hr>
                       <center>
                         <h3>Masuk ke Semester <%= "#{@tahunajaran.tahun.to_i}/#{@tahunajaran.tahun.to_i + 1}" %></h3>

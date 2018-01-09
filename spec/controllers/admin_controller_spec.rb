@@ -78,7 +78,7 @@ RSpec.describe AdminController, type: :controller do
 				Tahunajaran.create(tahun: '2016/2017')
 				params = {tahun: '2017/2018'}
 				post :setpengaturan, params: params
-				expect(response).to redirect_to(admin_pengaturan_path)
+				expect(response).to redirect_to(admin_tahun_ajaran_path)
 			end
 		end
 		context 'GET #pengaturan' do
@@ -90,6 +90,43 @@ RSpec.describe AdminController, type: :controller do
 				post :signin, params: params
 				thn = Tahunajaran.last
 				get :pengaturan, params: {tahunajaran: thn.tahun}
+				expect(response).to be_success
+			end
+		end
+	end
+	describe 'changing kontak for all system' do
+		context 'POST #setkontak' do
+			it 'edit value of kontak' do
+				Kontak.create(email: "supportpabelan@gmail.com",
+									tlp: "(0293) 782040",
+									pengasuhan: "0877-7007-1144 / 0822-2514-5745",
+									kmi: "(0293)  782061",
+									ma: "(0293) 3285188",
+									sikpb: "(0293) 3301645")
+				params = {email: "sample@gmail.com",
+							tlp: "(0293) 782040",
+							pengasuhan: "0877-7007-1144 / 0822-2514-5745",
+							kmi: "(0293)  782061",
+							ma: "(0293) 3285188",
+							sikpb: "(0293) 3301645"}
+				post :setkontak, params: params
+				expect(response).to redirect_to(admin_kontak_path)
+			end
+		end
+		context 'GET #kontak' do
+			it 'showing value of kontak' do
+				params = {username: 'admin',
+						  password: 'admin'}
+				Tahunajaran.create(tahun: '2017/2018')
+				Admin.create(params)
+				post :signin, params: params
+				thn = Kontak.last
+				get :kontak, params: {email: "supportpabelan@gmail.com",
+										tlp: "(0293) 782040",
+										pengasuhan: "0877-7007-1144 / 0822-2514-5745",
+										kmi: "(0293)  782061",
+										ma: "(0293) 3285188",
+										sikpb: "(0293) 3301645"}
 				expect(response).to be_success
 			end
 		end

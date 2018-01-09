@@ -66,14 +66,12 @@
 	<legend>Ekstrakulikuler</legend>
 	<hr>
 	<table class="table table-dark">
+		<% @ekskul.each do |e| %>
 		<tr>
-			<td>Pramuka</td>
-			<td>A</td>
+			<td>e.nama_ekskul</td>
+			<td>e.nilai</td>
 		</tr>
-		<tr>
-			<td>Paskibra</td>
-			<td>B</td>
-		</tr>
+		<% end %>
 	</table>
 </div>
 </div>

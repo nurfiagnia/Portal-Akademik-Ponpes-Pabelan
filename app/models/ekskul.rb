@@ -1,0 +1,2 @@
+class Ekskul < ApplicationRecord
+end
