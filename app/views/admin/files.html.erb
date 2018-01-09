@@ -1,3 +1,42 @@
+<!--navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="/"><%= image_tag("LogoPutih.png") %></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                  <ul class="navbar-nav mr-auto">
+                  	<li class="nav-item">
+                      <a class="nav-link" href="/admin/index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/admin/santri">Data Santri</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/admin/guru">Data Guru</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/admin/pengasuhan">Pengasuhan</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Pengaturan
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/admin/tahun-ajaran">Tahun Ajaran</a>
+                        <a class="dropdown-item" href="/admin/files">Files | Kalender Akademik, Info PSB</a>
+                        <a class="dropdown-item" href="/admin/kontak">Kontak</a>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+						          <%= link_to 'logout',admin_logout_path, method: :delete, class: 'nav-link' %>
+                    </li>                    
+                 </ul>
+                </div>  
+</nav>
+<!--end navbar-->
+</header>
+<!--end header-->
 <div class = "well">
    <%= form_tag do %>
    	<div>
